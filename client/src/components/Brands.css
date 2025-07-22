@@ -1,0 +1,82 @@
+/* components/Brands/Brands.css */
+.brands-section {
+  padding: 80px 5%;
+  background-color: #fff;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brands-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+}
+
+.brand-logo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brand-card:hover .brand-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .brand-logo {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

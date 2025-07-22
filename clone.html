@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunderbolt Motorcycles | Premium American Motorcycles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #c00;
+            --secondary-color: #333;
+            --light-color: #fff;
+            --dark-color: #000;
+            --accent-color: #ffcc00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: var(--dark-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .top-bar {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 8px 0;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .top-bar a {
+            color: var(--light-color);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+        
+        .logo {
+            width: 180px;
+            transition: all 0.3s;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-actions a {
+            color: var(--light-color);
+            margin-left: 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .header-actions a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-color);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            animation: pulse 8s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 1;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-color);
+            border: 2px solid var(--light-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Models Section */
+        .models-section {
+            padding: 80px 5%;
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .model-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .model-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .model-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .model-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .model-card:hover .model-image img {
+            transform: scale(1.1);
+        }
+        
+        .model-info {
+            padding: 20px;
+        }
+        
+        .model-name {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .model-price {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .model-specs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        
+        .spec-item {
+            text-align: center;
+        }
+        
+        .spec-value {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .spec-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 80px 5%;
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 80px 5%;
+            background-color: var(--light-color);
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-title {
+            color: var(--light-color);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-title {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 5%;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        
+        .testimonials-slider {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 20px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '\201C';
+            font-size: 5rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 5%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1580310614655-94b3fb8e5d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: var(--light-color);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 5% 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            width: 100%;
+        }
+        
+        .footer-about p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: var(--light-color);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--light-color);
+        }
+        
+        .footer-newsletter p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #a00;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-actions a:not(.mobile-menu-btn) {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .main-header {
+                padding: 15px 3%;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="top-bar">
+            <a href="#">Find a Dealer</a>
+            <a href="#">Test Ride</a>
+            <a href="#">Book Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="main-header">
+            <a href="#" class="logo">
+                <img src="https://via.placeholder.com/180x60?text=Thunderbolt" alt="Thunderbolt Motorcycles">
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Motorcycles</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Apparel</a></li>
+                    <li><a href="#">Heritage</a></li>
+                    <li><a href="#">Owners</a></li>
+                    <li><a href="#">Dealers</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-bag"></i></a>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="floating">Ride The Thunder</h1>
+            <p class="delay-1">Experience the raw power and unmatched craftsmanship of Thunderbolt Motorcycles - where American heritage meets modern performance.</p>
+            <div class="hero-buttons delay-2">
+                <a href="#" class="btn btn-primary">Build Your Bike</a>
+                <a href="#" class="btn btn-secondary">Explore Models</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Models Section -->
+    <section class="models-section">
+        <h2 class="section-title">Our Legendary Models</h2>
+        <div class="models-grid">
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Thunder Chief">
+                </div>
+                <div class="model-info">
+                    <h3 class="model-name">Thunder Chief</h3>
+                    <p class="model-price">Starting at $21,999</p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">116</div>
+                            <div class="spec-label">HP</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1,890cc</div>
+                            <div class="spec-label">Engine</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">128ft-lb</div>
+                            <div class="spec-label">Torque</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Storm Scout">
+                </div>
+                <div class="model-info">
+                    <h3 class="model-name">Storm Scout</h3>
+                    <p class="model-price">Starting at $13,499</p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">100</div>
+                            <div class="spec-label">HP</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1,133cc</div>
+                            <div class="spec-label">Engine</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">72ft-lb</div>
+                            <div class="spec-label">Torque</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <div class="model-image">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Lightning FTR">
+                </div>
+                <div class="model-info">
+                    <h3 class="model-name">Lightning FTR</h3>
+                    <p class="model-price">Starting at $14,999</p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">120</div>
+                            <div class="spec-label">HP</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1,203cc</div>
+                            <div class="spec-label">Engine</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">87ft-lb</div>
+                            <div class="spec-label">Torque</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="section-title">Why Choose Thunderbolt</h2>
+        <div class="features-grid">
+            <div class="feature-card floating delay-1">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="feature-title">American Engineering</h3>
+                <p class="feature-desc">Each Thunderbolt motorcycle is built with precision engineering and uncompromising quality standards in our U.S. facilities.</p>
+            </div>
+            
+            <div class="feature-card floating delay-2">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">5-Year Warranty</h3>
+                <p class="feature-desc">We stand behind our bikes with the industry's best warranty coverage for complete peace of mind.</p>
+            </div>
+            
+            <div class="feature-card floating delay-3">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="feature-title">Customization</h3>
+                <p class="feature-desc">Make it uniquely yours with our extensive customization options and genuine Thunderbolt accessories.</p>
+            </div>
+            
+            <div class="feature-card floating">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="feature-title">Rider Community</h3>
+                <p class="feature-desc">Join our passionate community of Thunderbolt riders with exclusive events and rides across the country.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">Thunderbolt Lifestyle</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517846693594-1567da72af75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Riding Community">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Riding Community</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Custom Builds">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Custom Builds</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Adventure Riding">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Adventure Riding</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1606220940363-9752a87c3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Heritage">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Heritage</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1601758003837-40f7d3cf9ef3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Events">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Events</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1606220940363-9752a87c3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Apparel">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">Apparel</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2 class="section-title">Rider Stories</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <p class="testimonial-text">"I've ridden many bikes over the years, but nothing compares to the raw power and smooth handling of my Thunder Chief. Thunderbolt has truly created something special with this machine."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mike Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Mike Johnson</h4>
+                        <p>Thunder Chief Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Ride the Thunder?</h2>
+            <p class="cta-text">Schedule a test ride at your nearest Thunderbolt dealer and experience the power, performance, and craftsmanship for yourself.</p>
+            <a href="#" class="btn btn-primary">Find a Dealer</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="https://via.placeholder.com/180x60?text=Thunderbolt" alt="Thunderbolt Motorcycles">
+                </div>
+                <p>Thunderbolt Motorcycles is America's premier motorcycle manufacturer, crafting legendary bikes since 1952. Born from a passion for the open road and built with uncompromising quality.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Motorcycles</h3>
+                <ul>
+                    <li><a href="#">Thunder Chief</a></li>
+                    <li><a href="#">Storm Scout</a></li>
+                    <li><a href="#">Lightning FTR</a></li>
+                    <li><a href="#">All Models</a></li>
+                    <li><a href="#">Build Your Bike</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Owners Manuals</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">Service & Maintenance</a></li>
+                    <li><a href="#">Recalls</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for the latest news, events, and exclusive offers from Thunderbolt Motorcycles.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Thunderbolt Motorcycles. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+            }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.floating, .delay-1, .delay-2, .delay-3');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Simple Testimonial Slider
+        const testimonials = [
+            {
+                text: "I've ridden many bikes over the years, but nothing compares to the raw power and smooth handling of my Thunder Chief. Thunderbolt has truly created something special with this machine.",
+                name: "Mike Johnson",
+                role: "Thunder Chief Owner",
+                image: "https://randomuser.me/api/portraits/men/32.jpg"
+            },
+            {
+                text: "The Storm Scout is the perfect balance of power and agility. I've taken it on cross-country trips and city commutes - it handles everything with ease and turns heads everywhere I go.",
+                name: "Sarah Williams",
+                role: "Storm Scout Owner",
+                image: "https://randomuser.me/api/portraits/women/44.jpg"
+            },
+            {
+                text: "As a long-time rider, I was skeptical about trying a new brand. The Lightning FTR completely changed my mind. The performance and build quality are unmatched in its class.",
+                name: "David Chen",
+                role: "Lightning FTR Owner",
+                image: "https://randomuser.me/api/portraits/men/67.jpg"
+            }
+        ];
+        
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial');
+        
+        function changeTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            const testimonial = testimonials[currentTestimonial];
+            
+            testimonialElement.innerHTML = `
+                <p class="testimonial-text">"${testimonial.text}"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="${testimonial.image}" alt="${testimonial.name}">
+                    </div>
+                    <div class="author-info">
+                        <h4>${testimonial.name}</h4>
+                        <p>${testimonial.role}</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add fade animation
+            testimonialElement.style.animation = 'none';
+            void testimonialElement.offsetWidth; // Trigger reflow
+            testimonialElement.style.animation = 'fadeIn 1s';
+        }
+        
+        // Change testimonial every 5 seconds
+        setInterval(changeTestimonial, 5000);
+    </script>
+</body>
+</html>
