@@ -1,43 +1,17 @@
-/* index.css - Base/reset styles */
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+/* Add these rules to your existing index.css */
+html, body {
+  overflow-x: hidden; /* This prevents horizontal scrolling */
+  width: 100%;
+  max-width: 100%; /* Ensures content doesn't exceed viewport width */
   margin: 0;
-  padding: 0;
 }
 
-/* html {
-  font-size: 16px;
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-} */
-
-html.no-js {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #545454;
-}
-
+/* Optional: Add these if you're still seeing overflow issues */
 body {
-  line-height: 1.15;
-  background-color: #f5f5f5;
+  position: relative; /* Helps contain absolutely positioned elements */
 }
 
-div {
-  display: block;
-  unicode-bidi: isolate;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-family: inherit;
+/* This will prevent any child element from causing overflow */
+.container, .dual-posters, .scooty-poster {
+  max-width: 100%;
 }

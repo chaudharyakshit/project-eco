@@ -129,7 +129,7 @@ const Models = () => {
   return (
     <section className="models-section">
       <div className="models-header">
-        <h2 className="section-title">America's Leading Electric Two-Wheelers</h2>
+        <h2 className="section-title1">Our Latest Models</h2>
         <p className="section-subtitle">Innovative design meets sustainable performance</p>
       </div>
       

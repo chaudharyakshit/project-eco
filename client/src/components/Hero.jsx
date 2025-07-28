@@ -15,14 +15,14 @@ const Hero = () => {
         >
           Ride The Thunder
         </motion.h1>
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="delay-1"
         >
           Experience the raw power and unmatched craftsmanship of Thunderbolt Motorcycles - where American heritage meets modern performance.
-        </motion.p>
+        </motion.p> */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -52,7 +52,7 @@ const galleryItems = [
 const Gallery = () => {
   return (
     <section className="gallery-section">
-      <h2 className="section-title">Thunderbolt Lifestyle</h2>
+      <h2 className="section-title">Ecocruze Lifestyle</h2>
       <div className="gallery-grid">
         {galleryItems.map((item, index) => (
           <motion.div 

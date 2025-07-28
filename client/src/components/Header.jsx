@@ -1,40 +1,33 @@
 // components/Header/Header.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Header.css';
 import { FaSearch, FaUser, FaShoppingBag, FaBars } from 'react-icons/fa';
-import logo from '../assets/main-logo.png'; // Adjust the path as necessary
+import logo from '../assets/main-logo.png';
 
 const Header = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
     <header className={scrolled ? 'scrolled' : ''}>
-      {/* <div className="top-bar">
-        <a href="#">Find a Dealer</a>
-        <a href="#">Test Ride</a>
-        <a href="#">Book Service</a>
-        <a href="#">Contact Us</a>
-      </div> */}
       <div className="main-header">
-        <a href="#" className="logo">
+        <Link to="/" className="logo">
           <img src={logo} alt="Thunderbolt Motorcycles" />
-        </a>
+        </Link>
         
         <nav className={mobileMenuOpen ? 'mobile-open' : ''}>
           <ul>
-            <li><a href="#">Motorcycles</a></li>
-            <li><a href="#">Accessories</a></li>
-            <li><a href="#">Apparel</a></li>
-            <li><a href="#">Heritage</a></li>
-            <li><a href="#">Owners</a></li>
-            <li><a href="#">Dealers</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </nav>
         
         <div className="header-actions">
-          <a href="#"><FaSearch /></a>
-          <a href="#"><FaUser /></a>
-          <a href="#"><FaShoppingBag /></a>
+          <button className="icon-btn"><FaSearch /></button>
+          <Link to="/account"><FaUser /></Link>
+          <Link to="/cart"><FaShoppingBag /></Link>
           <button 
             className="mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
