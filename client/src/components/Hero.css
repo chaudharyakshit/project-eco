@@ -51,13 +51,13 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* .hero p {
+.hero p {
   font-size: 1.2rem;
   margin-bottom: 30px;
   line-height: 1.6;
   bottom: 20px;
   position: relative;
-} */
+}
 
 .hero-buttons {
   display: flex;
@@ -91,14 +91,14 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.btn-secondary {
-  background-color: black;
-  color: #fff;
+.btn-secondary1 {
+  background-color: white;
+  color: black;
   border: 2px solid #fff;
 }
 
-.btn-secondary:hover {
-  background-color: #2c2a2a;
+.btn-secondary1:hover {
+  background-color: #191818;
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);

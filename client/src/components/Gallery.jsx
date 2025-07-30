@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const galleryItems = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1517846693594-1567da72af75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
     title: 'Riding Community'
   },
   {
@@ -37,12 +37,12 @@ const galleryItems = [
 
    {
     id: 7,
-    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
+    image: 'https://cdn.bikedekho.com/processedimages/komaki/xone/source/xone67067b2cdd342.jpg',
     title: 'Accessories'
   },
   {
     id: 8,
-    image: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    image: 'https://cdn.bikedekho.com/processedimages/ola-electric/2025-s1x/source/2025-s1x679cde26932de.jpg',
     title: 'Custom Builds'
   },
   
@@ -52,7 +52,7 @@ const galleryItems = [
 const Gallery = () => {
   return (
     <section className="gallery-section">
-      <h2 className="section-title">Ecocruze Lifestyle</h2>
+      <h2 className="section-title1">Ecocruze Lifestyle</h2>
       <div className="gallery-grid">
         {galleryItems.map((item, index) => (
           <motion.div 

@@ -1,20 +1,20 @@
 import React from 'react';
 import './About.css';
 
-// Import all images (replace with your actual image paths)
-// import aboutHero from '../assets/';
-// import team1 from './images/team-1.jpg';
-// import team2 from './images/team-2.jpg';
-// import team3 from './images/team-3.jpg';
-// import team4 from './images/team-4.jpg';
-// import featureCar from './images/feature-car.png';
-// import featureTag from './images/feature-tag.png';
+// Import all images manually
+const aboutHero = 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80';
+const team1 = 'https://randomuser.me/api/portraits/men/32.jpg';
+const team2 = 'https://randomuser.me/api/portraits/women/44.jpg';
+const team3 = 'https://randomuser.me/api/portraits/men/75.jpg';
+const team4 = 'https://randomuser.me/api/portraits/women/65.jpg';
+const featureCar = 'https://cdn-icons-png.flaticon.com/512/1570/1570887.png';
+const featureTag = 'https://cdn-icons-png.flaticon.com/512/4776/4776371.png';
 
 const About = () => {
   return (
     <div className="kars-about-page">
       {/* Breadcrumb Section */}
-      <section className="breadcrumb-section" style={{backgroundImage: "url('./images/breadcrumb-bg.jpg')"}}>
+      <section className="breadcrumb-section" style={{backgroundImage: "url('https://cdn.olaelectric.com/sites/evdp/pages/home_banner/hpb_web_image.webp')"}}>
         <div className="container">
           <h1>About Us</h1>
           <div className="breadcrumb">

@@ -30,7 +30,7 @@ const Hero = () => {
           className="hero-buttons delay-2"
         >
           <a href="#" className="btn btn-primary">Build Your Bike</a>
-          <a href="#" className="btn btn-secondary">Explore Models</a>
+          <a href="#" className="btn btn-secondary1">Explpore Models</a>
         </motion.div>
       </div>
     </section>

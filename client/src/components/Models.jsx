@@ -10,8 +10,8 @@ const models = [
     name: 'Thunderbolt EV-1',
     tagline: 'Premium Electric Cruiser',
     price: 'Starting at $4,499',
-    image: 'https://models.readyplayer.me/63f0e3b8f6f3a9f5a8f3b3a8.glb?preview=true&variant=glb',
-    poster: 'https://w7.pngwing.com/pngs/736/853/png-transparent-scooter-sym-motors-motorcycle-sym-scootas-sym-jet-scooter-scooter-motorcycle-sport-bike.png',
+    image: 'https://cdn.bikedekho.com/processedimages/ather-energy/2025-450x/source/2025-450x6777b988a3d27.jpg',
+    poster: 'https://cdn.bikedekho.com/processedimages/ather-energy/2025-450x/source/2025-450x6777b988a3d27.jpg',
     specs: [
       { value: '60', label: 'MPH' },
       { value: '90mi', label: 'Range' },
@@ -24,8 +24,8 @@ const models = [
     name: 'Urban Spark',
     tagline: 'City Commuter Pro',
     price: 'Starting at $2,999',
-    image: 'https://models.readyplayer.me/63f0e3b8f6f3a9f5a8f3b3a8.glb?preview=true&variant=glb',
-    poster: 'https://e7.pngegg.com/pngimages/1000/544/png-clipart-scooter-motorcycle-sym-motors-car-four-stroke-engine-scooter-vehicle-engine.png',
+    image: 'https://cdn.bikedekho.com/processedimages/yulu/wynn/source/wynn6694b31e5e579.jpg',
+    poster: 'https://cdn.bikedekho.com/processedimages/yulu/wynn/source/wynn6694b31e5e579.jpg',
     specs: [
       { value: '45', label: 'MPH' },
       { value: '75mi', label: 'Range' },
@@ -38,8 +38,8 @@ const models = [
     name: 'Trail Blazer',
     tagline: 'Off-Road Adventure',
     price: 'Starting at $5,299',
-    image: 'https://models.readyplayer.me/63f0e3b8f6f3a9f5a8f3b3a8.glb?preview=true&variant=glb',
-    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHu97iPRC4XZM_0Q9m8kWa0Z6TXy9ldTxjRXpYs_v52hR2-KzJI0K4trItpYwRfDog9fY&usqp=CAU',
+    image: 'https://cdn.bikedekho.com/processedimages/ola-electric/2025-s1x/source/2025-s1x679cde26932de.jpg',
+    poster: 'https://cdn.bikedekho.com/processedimages/ola-electric/2025-s1x/source/2025-s1x679cde26932de.jpg',
     specs: [
       { value: '55', label: 'MPH' },
       { value: '80mi', label: 'Range' },
@@ -174,9 +174,9 @@ const Models = () => {
                   <div className="model-colors">
                     {model.colors.map((color, i) => (
                       <span 
-                        key={i} 
-                        className="color-option" 
-                        style={{ backgroundColor: color }}
+                        // key={i} 
+                        // className="color-option" 
+                        // style={{ backgroundColor: color }}
                       />
                     ))}
                   </div>

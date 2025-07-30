@@ -25,7 +25,7 @@ const Header = ({ scrolled }) => {
         </nav>
         
         <div className="header-actions">
-          <button className="icon-btn"><FaSearch /></button>
+
           <Link to="/account"><FaUser /></Link>
           <Link to="/cart"><FaShoppingBag /></Link>
           <button 
