@@ -1,77 +1,157 @@
-// components/Gallery/Gallery.jsx
-import React from 'react';
+// Inventory.jsx
+import React, { useState } from 'react';
 import './Gallery.css';
-import { motion } from 'framer-motion';
 
-const galleryItems = [
+const scootyData = [
   {
-    id: 1,
-    image: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
-    title: 'Riding Community'
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZWxlY3RyaWMlMjBzY29vdGVyfGVufDB8fDB8fHww',
-    title: 'Custom Builds'
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1623079398118-11b5da627a00?q=80&w=2060&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Adventure Riding'
+    title: 'Ather 450X',
+    seller: 'ScootyMart Delhi',
+    cc: '120cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$1,200',
+    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
   },
   {
-    id: 4,
-    image: 'https://images.unsplash.com/photo-1623079396775-e7137aff8385?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    title: 'Heritage'
+    title: 'Ola S1 Pro',
+    seller: 'Ola Showroom',
+    cc: '150cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$1,100',
+    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
   },
   {
-    id: 5,
-    image: 'https://images.unsplash.com/photo-1696955565902-19a37e1a7f1f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY3fHxlbGVjdHJpYyUyMHNjb290ZXJ8ZW58MHx8MHx8fDA%3D',
-    title: 'Events'
+    title: 'TVS iQube',
+    seller: 'TVS Center',
+    cc: '100cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$890',
+    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
   },
   {
-    id: 6,
-    image: 'https://images.unsplash.com/photo-1648204819350-ee7da535bdf2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fGVsZWN0cmljJTIwc2Nvb3RlcnxlbnwwfHwwfHx8MA%3D%3D',
-    title: 'Apparel'
-  },
-
-   {
-    id: 7,
-    image: 'https://cdn.bikedekho.com/processedimages/komaki/xone/source/xone67067b2cdd342.jpg',
-    title: 'Accessories'
+    title: 'Bajaj Chetak',
+    seller: 'Bajaj Auto',
+    cc: '120cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$950',
+    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
   },
   {
-    id: 8,
-    image: 'https://cdn.bikedekho.com/processedimages/ola-electric/2025-s1x/source/2025-s1x679cde26932de.jpg',
-    title: 'Custom Builds'
+    title: 'Hero Vida V1',
+    seller: 'Hero Motors',
+    cc: '130cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$990',
+    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
   },
-  
-
+  {
+    title: 'Simple One',
+    seller: 'Simple Energy',
+    cc: '110cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$999',
+    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+  },
+  {
+    title: 'Bounce Infinity',
+    seller: 'Bounce Co.',
+    cc: '105cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$899',
+    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+  },
+  {
+    title: 'Okaya Faast F4',
+    seller: 'Okaya Mobility',
+    cc: '125cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$950',
+    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+  },
+  {
+    title: 'Pure EV EPluto',
+    seller: 'Pure EV Dealer',
+    cc: '115cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$870',
+    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+  },
+  {
+    title: 'Ampere Magnus',
+    seller: 'Ampere Dealer',
+    cc: '135cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$880',
+    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+  },
+  {
+    title: 'Lectrix EV LXS',
+    seller: 'Lectrix India',
+    cc: '125cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$940',
+    img: 'https://evtechnews.in/wp-content/uploads/2020/07/Ather450X-5.png',
+  },
+  {
+    title: 'Evtric Axis',
+    seller: 'Evtric Motors',
+    cc: '100cc',
+    type: 'Electric',
+    fuel: 'Battery',
+    price: '$870',
+    img: 'https://evtechnews.in/wp-content/uploads/2020/07/Ather450X-5.png',
+  }
 ];
 
-const Gallery = () => {
+const Inventory = () => {
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 4, scootyData.length));
+  };
+
   return (
-    <section className="gallery-section">
-      <h2 className="section-title1">Ecocruze Lifestyle</h2>
-      <div className="gallery-grid">
-        {galleryItems.map((item, index) => (
-          <motion.div 
-            key={item.id}
-            className="gallery-item"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <img src={item.image} alt={item.title} />
-            <div className="gallery-overlay">
-              <h3 className="gallery-title">{item.title}</h3>
+    <section className="inventory-section">
+      <div className="inventory-header">
+        <h2>Latest Featured Scooty Inventory</h2>
+      </div>
+
+      <div className="inventory-grid">
+        {scootyData.slice(0, visibleCount).map((scooty, idx) => (
+          <div key={idx} className="inventory-card">
+            <img src={scooty.img} alt={scooty.title} />
+            <h3>{scooty.title}</h3>
+            <p><strong>Listed by:</strong> {scooty.seller}</p>
+            <div className="scooty-info">
+              <span>{scooty.cc}</span>
+              <span>{scooty.type}</span>
+              <span>{scooty.fuel}</span>
             </div>
-          </motion.div>
+            <div className="scooty-bottom">
+              <span className="price">{scooty.price}</span>
+              <button className="view-btn">View Details →</button>
+            </div>
+          </div>
         ))}
       </div>
+
+      {visibleCount < scootyData.length && (
+        <div className="load-more-container">
+          <button className="load-more-btn" onClick={handleLoadMore}>Load More</button>
+        </div>
+      )}
     </section>
   );
 };
 
-export default Gallery;
+export default Inventory;

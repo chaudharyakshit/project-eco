@@ -12,6 +12,8 @@ import Footer from '../src/components/Footer';
 import About from './pages/About';
 // import Services from '../src/components/Services';
 import Poster from '../src/components/poster';
+import ScootyBanner from './components/Banner';
+import Calculator from './components/calculator';
 import Contact from './pages/Contact';
 import './index.css';
 
@@ -20,11 +22,14 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Models />
-      <Features />
-      <Brands />
       <Gallery />
+      <Features />
+      <Models />
+        <ScootyBanner />
+   
       <Poster/>
+      
+       <Calculator /> 
       <Testimonials />
       
       <CTA />

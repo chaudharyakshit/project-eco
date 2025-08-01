@@ -1,244 +1,50 @@
-/* Kars Theme About Page Styles */
-.kars-about-page {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-}
-
-/* Breadcrumb Section */
-.breadcrumb-section {
-  background: #f8f8f8;
-  padding: 60px 0;
-  margin-bottom: 60px;
-}
-
-.breadcrumb-section h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.breadcrumb {
-  color: #777;
-}
-
-.breadcrumb a {
-  color: #777;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.breadcrumb a:hover {
-  color: #f0151f;
-}
-
-/* About Content Section */
-.about-content-section {
-  padding: 60px 0;
-}
-
-.section-title {
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.section-title h2 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 15px;
-}
-
-.section-title h2 span {
-  color: #f0151f;
-}
-
-.title-divider {
+.about-banner {
+  background: url('https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg') no-repeat center center;
+  background-size: cover;
+  height: 300px; /* Banner height */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-}
-
-.title-divider .dot {
-  width: 8px;
-  height: 8px;
-  background: #f0151f;
-  border-radius: 50%;
-}
-
-.title-divider .line {
-  width: 40px;
-  height: 2px;
-  background: #f0151f;
-  margin: 0 5px;
-}
-
-.about-content p {
-  color: #555;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.about-features {
-  margin-top: 30px;
-}
-
-.feature-item {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.feature-icon {
-  width: 60px;
-  height: 60px;
-  background: #f0151f;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  color: #fff;
-  font-size: 24px;
-}
-
-.feature-text h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 5px;
-}
-
-.feature-text p {
-  color: #777;
-  font-size: 14px;
-  margin: 0;
-}
-
-.about-image {
   position: relative;
+  z-index: 1;
+  margin-top: 80px; /* Ensures it doesn't overlap your fixed header */
 }
 
-.main-image {
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.main-image img {
+.about-banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
   width: 100%;
-  height: auto;
-  display: block;
-}
-
-.image-badge {
-  position: absolute;
-  bottom: -30px;
-  right: 30px;
-  background: #f0151f;
-  color: #fff;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.image-badge span {
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.image-badge p {
-  font-size: 14px;
-  margin: 5px 0 0;
-}
-
-/* Stats Section */
-.stats-section {
-  background: #f0151f;
-  padding: 80px 0;
+.about-banner-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: left;
   color: #fff;
-  margin: 60px 0;
 }
 
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
+.about-title {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 10px;
-  line-height: 1;
 }
 
-.stat-title {
+.about-breadcrumb {
   font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #ddd;
 }
 
-/* Team Section */
-.team-section {
-  padding: 60px 0;
+.breadcrumb-link {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
 }
 
-.team-member {
-  margin-bottom: 30px;
-}
-
-.member-image {
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.member-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.member-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #222;
-  margin-bottom: 5px;
-}
-
-.member-info p {
-  color: #777;
-  font-size: 14px;
-  margin: 0;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-  .about-content, .about-image {
-    margin-bottom: 50px;
-  }
-  
-  .image-badge {
-    right: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .breadcrumb-section {
-    padding: 40px 0;
-  }
-  
-  .section-title h2 {
-    font-size: 26px;
-  }
-  
-  .stat-item {
-    margin-bottom: 30px;
-  }
+.breadcrumb-link:hover {
+  color: #ff3c2f;
+  border-color: #ff3c2f;
 }

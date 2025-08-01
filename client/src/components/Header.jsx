@@ -1,6 +1,6 @@
 // components/Header/Header.jsx
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; 
 import './Header.css';
 import { FaSearch, FaUser, FaShoppingBag, FaBars } from 'react-icons/fa';
 import logo from '../assets/main-logo.png';
@@ -21,6 +21,7 @@ const Header = ({ scrolled }) => {
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/contact">Dealership</Link></li>
           </ul>
         </nav>
         

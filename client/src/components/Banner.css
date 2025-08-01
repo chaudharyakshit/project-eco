@@ -1,0 +1,173 @@
+/* Banner Container */
+.main-banner {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #111;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Offer Section & Animations */
+.offer-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 100px;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.offer-box {
+  position: relative;
+  border: 2px solid #fff;
+  padding: 40px 50px;
+  max-width: 400px;
+  background: transparent;
+}
+
+.offer-box::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to right, #9d0000, #111);
+  width: 160%;
+  height: 160%;
+  top: -30%;
+  left: -30%;
+  transform: rotate(-25deg);
+  z-index: -1;
+  animation: brushFade 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Text Animations */
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes brushFade {
+  to { opacity: 0.3; }
+  from { opacity: 0; }
+}
+
+.offer-text {
+  color: white;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Text styling */
+.offer-text .black { font-size: 20px; display: block; }
+.offer-text .friday { font-size: 60px; display: block; }
+.offer-text .discount {
+  font-size: 48px;
+  display: block;
+  margin-top: 10px;
+}
+.offer-text .percent {
+  font-size: 18px;
+  vertical-align: super;
+}
+.offer-text .upto {
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Button */
+.buy-btn {
+  background-color: #e91e1e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 25px;
+  font-size: 14px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.buy-btn:hover { background-color: #c31313; }
+
+/* Scooty Image & Slide Animation */
+.scooty-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  z-index: 1;
+  overflow: hidden;
+}
+.scooty-img {
+  max-height: 500px;
+  width: auto;
+  object-fit: contain;
+  transform: translateX(100px) scale(0.9);
+  opacity: 0;
+  animation: scootySlide 1s ease-out 1s forwards;
+}
+
+@keyframes scootySlide {
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========== CUSTOM CURSOR INSIDE BANNER ========== */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.15s ease-out;
+}
+
+.cursor-ring {
+  width: 30px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+  opacity: 0.3;
+}
+
+/* Light sweep effect on banner */
+.horizontal-light,
+.vertical-light {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.1;
+  transition: all 0.05s ease;
+}
+
+/* Horizontal glowing bar */
+.horizontal-light {
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #ffffff55, transparent);
+  transform: translateX(-50%);
+}
+
+/* Vertical glowing bar */
+.vertical-light {
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #ffffff33, transparent);
+  transform: translateY(-50%);
+}

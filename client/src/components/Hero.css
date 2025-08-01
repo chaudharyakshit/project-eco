@@ -1,156 +1,142 @@
-/* components/Hero/Hero.css */
-.hero {
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('https://cdn.olaelectric.com/sites/evdp/pages/home_banner/hpb_web_image.webp') no-repeat center center/cover;
+/* Fullscreen Hero Section */
+.hero-section {
+ background: url('https://media.istockphoto.com/id/1283821588/photo/black-sand-texture-background-black-friday-background-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=4RzYGXhSzOYb0snKfZ_ew2J1qFE9pt-N-pKzQVbOW5U=') no-repeat center center;
+  background-size: cover;
+  color: white;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Wrapper to center content */
+.hero-wrapper {
   width: 100%;
-  height: 100%;
-  /* background: radial-gradient(circle, transparent 0%, rgba(0, 0, 0, 0.7) 100%); */
-  animation: pulse 8s infinite alternate;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
+/* Slide that holds both text & image */
+.hero-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
 }
 
-.hero-content {
-  max-width: 800px;
-  padding: 0 20px;
-  z-index: 1;
+/* Text Section */
+.hero-left {
+  flex: 1;
+  max-width: 600px;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
+.hero-text .tagline {
+  color: #ff3c2f;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  top: -250px;
-  position: relative;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 1.2px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+.hero-text .grey {
+  color: #888;
+}
+
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
   line-height: 1.6;
-  bottom: 20px;
-  position: relative;
+  color: #cccccc;
+  margin-bottom: 35px;
 }
 
+/* Buttons */
 .hero-buttons {
   display: flex;
   gap: 20px;
-  justify-content: center;
-  bottom: 250px;
-  position: relative;
 }
 
 .btn {
-  padding: 12px 30px;
+  padding: 12px 28px;
   border-radius: 30px;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.3s;
+  font-weight: bold;
+  font-size: 14px;
   text-decoration: none;
-  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.btn-primary {
-  background-color: #c00;
-  color: #fff;
-  border: 2px solid #c00;
-}
-
-.btn-primary:hover {
-  background-color: transparent;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.btn-secondary1 {
-  background-color: white;
-  color: black;
-  border: 2px solid #fff;
-}
-
-.btn-secondary1:hover {
-  background-color: #191818;
+.btn.primary {
+  background-color: #ff3c2f;
   color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.floating {
-  animation: float 3s ease-in-out infinite;
+.btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.btn.primary:hover {
+  background-color: #cc2e24;
 }
 
-.delay-1 {
-  animation-delay: 0.2s;
+.btn.secondary:hover {
+  background-color: white;
+  color: #000;
 }
 
-.delay-2 {
-  animation-delay: 0.4s;
+/* Scooty Image Section */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 250px;
-    margin: 0 auto;
-  }
+.hero-image {
+  max-width: 170%;
+  max-height: 100vh;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.7s ease;
 }
 
-@media (max-width: 576px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
+.hero-image:hover {
+  transform: scale(1.03);
+}
+
+/* Dot Pagination */
+.hero-pagination {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #666;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #ff3c2f;
 }
