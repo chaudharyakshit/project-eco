@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./Banner.css";
+import banner1 from "../assets/banner1.png";
 
 const ScootyBanner = () => {
   const bannerRef = useRef();
@@ -47,7 +48,7 @@ const ScootyBanner = () => {
       {/* Image */}
       <div className="scooty-image">
         <img
-          src="https://www.atherenergy.com/_next/image?url=https%3A%2F%2Fmedia.atherenergy.com%2F450-compare-models-d.webp&w=1080&q=75"
+          src={banner1}
           alt="Electric Scooty"
           className="scooty-img"
         />

@@ -17,8 +17,8 @@ const ContactUs = () => {
           <div className="info-section">
             <h3>Our Address</h3>
             <ul>
-              <li>30 March 1 Corney Bus File</li>
-              <li>8pm MA 771.100</li>
+              <li>Block I-64 FOUNTAIN CHOWK </li>
+              <li>NEHRU COLONY, DEHRADUN</li>
             </ul>
           </div>
 

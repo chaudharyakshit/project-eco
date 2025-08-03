@@ -127,3 +127,23 @@ footer {
     margin-top: 20px;
   }
 }
+
+.scroll-to-top-footer {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #a00;
+  color: #fff;
+  border: none;
+  border-radius: 40%;
+  padding: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top-footer:hover {
+  background-color: #dc5f5f;
+  transform: translateY(-3px);
+}

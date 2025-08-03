@@ -12,7 +12,7 @@ const Header = ({ scrolled }) => {
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="main-header">
         <Link to="/" className="logo">
-          <img src={logo} alt="Thunderbolt Motorcycles" />
+          <img src={logo} alt="Ecocruze Motorcycles" />
         </Link>
         
         <nav className={mobileMenuOpen ? 'mobile-open' : ''}>
@@ -27,8 +27,8 @@ const Header = ({ scrolled }) => {
         
         <div className="header-actions">
 
-          <Link to="/account"><FaUser /></Link>
-          <Link to="/cart"><FaShoppingBag /></Link>
+          {/* <Link to="/account"><FaUser /></Link>
+          <Link to="/cart"><FaShoppingBag /></Link> */}
           <button 
             className="mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -1,19 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.css';
 import { AnimatePresence, motion } from 'framer-motion';
+import hero1 from '../assets/hero1.png'; 
+import hero2 from '../assets/hero2.png'; 
+import hero3 from '../assets/hero3.png'; 
+
+
 
 const heroData = [
   {
     title: 'Find Your Perfect Scooty For Ride',
     desc: 'Explore stylish and high-performance electric scooties built for modern commuters.',
-    img: 'https://images.tractorjunction.com/Cosmic_Black_6_730309d42c.png?format=webp&quality=40',
+    img :  hero1,
+    alt: "Ecocruze Motorcycles",
     primaryBtn: 'Go To Listing',
     secondaryBtn: 'Contact Us',
   },
   {
     title: 'Power Meets Elegance',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
-    img: 'https://images.tractorjunction.com/Cosmic_Black_6_730309d42c.png?format=webp&quality=40',
+    img: hero2,
+    primaryBtn: 'Build Yours',
+    secondaryBtn: 'Learn More',
+  },
+   {
+    title: 'Power Meets Elegance',
+    desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
+    img: hero3,
     primaryBtn: 'Build Yours',
     secondaryBtn: 'Learn More',
   }

@@ -1,70 +1,70 @@
 // Inventory.jsx
 import React, { useState } from 'react';
 import './Gallery.css';
+import cruzeon from '../assets/cruzeon.png';
+import CruzeBlade from '../assets/Cruze-blade.png';
+import Ecoshine from '../assets/eco-shine.png';
+import EcoSwift from '../assets/EcoSwift.png';
+import Ecojoy from '../assets/eco-joy.png';
+import EcoGlide from '../assets/Eco-Glider.png';
+import Rapidsign from '../assets/Rapi-dsign.png'
 
 const scootyData = [
   {
-    title: 'Ather 450X',
-    seller: 'ScootyMart Delhi',
+    title: 'Cruze Blade',
+    seller: 'Ecocruze',
     cc: '120cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$1,200',
-    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+    img: CruzeBlade
   },
   {
-    title: 'Ola S1 Pro',
-    seller: 'Ola Showroom',
+    title: 'EcoShine',
+    seller: 'Ecocruze',
     cc: '150cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$1,100',
-    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+    img: Ecoshine,
   },
   {
-    title: 'TVS iQube',
-    seller: 'TVS Center',
+    title: 'EcoSwift',
+    seller: 'Ecocruze',
     cc: '100cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$890',
-    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+    img: EcoSwift,
   },
   {
-    title: 'Bajaj Chetak',
-    seller: 'Bajaj Auto',
+    title: 'EcoJoy',
+    seller: 'Ecocruze',
     cc: '120cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$950',
-    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+    img: Ecojoy,
   },
   {
-    title: 'Hero Vida V1',
-    seller: 'Hero Motors',
+    title: 'EcoGlide',
+    seller: 'Ecocruze',
     cc: '130cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$990',
-    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+    img: EcoGlide,
   },
   {
-    title: 'Simple One',
-    seller: 'Simple Energy',
+    title: 'Cruzeon',
+    seller: 'Ecocruze',
     cc: '110cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$999',
-    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+    img:  cruzeon,
   },
   {
-    title: 'Bounce Infinity',
-    seller: 'Bounce Co.',
+    title: 'Rapidsign',
+    seller: 'Ecocruze',
     cc: '105cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$899',
-    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+    img:  Rapidsign,
   },
   {
     title: 'Okaya Faast F4',
@@ -72,45 +72,40 @@ const scootyData = [
     cc: '125cc',
     type: 'Electric',
     fuel: 'Battery',
-    price: '$950',
     img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
   },
-  {
-    title: 'Pure EV EPluto',
-    seller: 'Pure EV Dealer',
-    cc: '115cc',
-    type: 'Electric',
-    fuel: 'Battery',
-    price: '$870',
-    img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
-  },
-  {
-    title: 'Ampere Magnus',
-    seller: 'Ampere Dealer',
-    cc: '135cc',
-    type: 'Electric',
-    fuel: 'Battery',
-    price: '$880',
-    img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
-  },
-  {
-    title: 'Lectrix EV LXS',
-    seller: 'Lectrix India',
-    cc: '125cc',
-    type: 'Electric',
-    fuel: 'Battery',
-    price: '$940',
-    img: 'https://evtechnews.in/wp-content/uploads/2020/07/Ather450X-5.png',
-  },
-  {
-    title: 'Evtric Axis',
-    seller: 'Evtric Motors',
-    cc: '100cc',
-    type: 'Electric',
-    fuel: 'Battery',
-    price: '$870',
-    img: 'https://evtechnews.in/wp-content/uploads/2020/07/Ather450X-5.png',
-  }
+  // {
+  //   title: 'Pure EV EPluto',
+  //   seller: 'Pure EV Dealer',
+  //   cc: '115cc',
+  //   type: 'Electric',
+  //   fuel: 'Battery',
+  //   img: 'https://cdn.bikedekho.com/processedimages/tvs/iqube-s/source/iqube-s6825981c36579.jpg',
+  // },
+  // {
+  //   title: 'Ampere Magnus',
+  //   seller: 'Ampere Dealer',
+  //   cc: '135cc',
+  //   type: 'Electric',
+  //   fuel: 'Battery',
+  //   img: 'https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600',
+  // },
+  // {
+  //   title: 'Lectrix EV LXS',
+  //   seller: 'Lectrix India',
+  //   cc: '125cc',
+  //   type: 'Electric',
+  //   fuel: 'Battery',
+  //   img: 'https://evtechnews.in/wp-content/uploads/2020/07/Ather450X-5.png',
+  // },
+  // {
+  //   title: 'Evtric Axis',
+  //   seller: 'Evtric Motors',
+  //   cc: '100cc',
+  //   type: 'Electric',
+  //   fuel: 'Battery',
+  //   img: 'https://evtechnews.in/wp-content/uploads/2020/07/Ather450X-5.png',
+  // }
 ];
 
 const Inventory = () => {
@@ -138,8 +133,38 @@ const Inventory = () => {
               <span>{scooty.fuel}</span>
             </div>
             <div className="scooty-bottom">
-              <span className="price">{scooty.price}</span>
-              <button className="view-btn">View Details →</button>
+              {/* WhatsApp CTA */}
+             
+              <a
+                href={`https://wa.me/918607998882?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(scooty.title)}.%20Please%20share%20more%20details.%20(No%20price%20disclosed)`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-button"
+              > 
+              
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                  alt="WhatsApp"
+                  className="whatsapp-icon"
+                />
+              
+              </a>
+             
+
+        <a
+  href={scooty.title === 'Cruze Blade' ? '/cruze-blade-details' : '#'}
+  className="view-btn"
+  target={scooty.title === 'Cruze Blade' ? '_self' : '_self'}
+  onClick={(e) => {
+    if (scooty.title !== 'Cruze Blade') {
+      e.preventDefault();
+      alert('Details page not available yet.');
+    }
+  }}
+>
+  View Details →
+</a>
+
             </div>
           </div>
         ))}

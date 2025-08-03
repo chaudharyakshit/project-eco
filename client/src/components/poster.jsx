@@ -1,6 +1,6 @@
 import React from 'react';
 import './poster.css';
-import scootyPoster1 from '../assets/poster_1.png';
+import Rapidsign from '../assets/Rapi-dsign.png';
 import scootyPoster2 from '../assets/poster_2.png';
 
 const Poster = () => {
@@ -11,7 +11,7 @@ const Poster = () => {
           {/* Poster 1 */}
           <div className="scooty-poster">
             <div className="poster-image">
-              <img src={scootyPoster1} alt="EcroZue Scooty Model X" />
+              <img src={Rapidsign} alt="EcroZue Scooty Model X" />
               <div className="image-overlay"></div>
             </div>
             <div className="poster-content">

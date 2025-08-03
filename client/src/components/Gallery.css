@@ -58,14 +58,17 @@
 }
 
 /* Card */
-.inventory-card {
+.inventory-card  .whatsapp-button .whatsapp-icon{
   background: white;
   border-radius: 6px;
   overflow: hidden;
   padding: 18px;
+  width: 18px !important;
+  height: 18px !important;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   transition: transform 0.3s ease;
 }
+
 
 .inventory-card:hover {
   transform: translateY(-6px);
@@ -127,3 +130,46 @@
 .view-btn:hover {
   background-color: #222;
 }
+
+.whatsapp-container {
+ display: inline-flex;
+  align-items: center;
+  gap: 4px;           
+  height: 18px;       
+  width: auto;        
+  padding: 2px 6px;   
+ border-radius: 6px; 
+
+}
+
+
+.whatsapp-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;   /* Horizontally center the button */
+  margin-top: 40px;
+}
+
+.load-more-btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+}
+
+

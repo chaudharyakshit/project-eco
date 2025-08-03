@@ -1,0 +1,283 @@
+/* ECOCRUZE BLADE Specification Page */
+.ecocruze-specs-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Fullscreen Hero Section */
+.hero-section1 {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Remove separate hero-image container styling */
+.hero-image {
+  display: none; /* Hide separate img since we use background */
+}
+
+.hero-content {
+  max-width: 500px;
+  z-index: 2;
+}
+
+
+.hero-content {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.model-name1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.model-name span {
+  color: #4ade80;
+  position: relative;
+}
+
+.model-name span::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #4ade80;
+  border-radius: 3px;
+}
+
+.model-tagline1 {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.color-selector {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.color-option.active {
+  border-color: #4ade80;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.hero-image {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-height: 80%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+/* Interactive Specs Section */
+.specs-section {
+  padding: 5rem 5%;
+  background: white;
+}
+
+.specs-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tab-btn {
+  padding: 1rem 2rem;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #4ade80;
+  color: white;
+}
+
+.tab-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.spec-card {
+  background: #f8f9fa;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.spec-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  background: #4ade80;
+  color: white;
+}
+
+.spec-card:hover .spec-icon {
+  background: white;
+  color: #4ade80;
+}
+
+.spec-icon {
+  width: 60px;
+  height: 60px;
+  background: #4ade80;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.spec-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.spec-details p {
+  color: #666;
+}
+
+.spec-card:hover .spec-details p {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Key Features Highlight */
+.features-highlight {
+  padding: 5rem 5%;
+  background: linear-gradient(135deg, #111 0%, #333 100%);
+  color: white;
+  text-align: center;
+}
+
+.features-highlight h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.features-highlight h2 span {
+  color: #4ade80;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+  background: rgba(74, 222, 128, 0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #4ade80;
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    margin-bottom: 3rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .color-selector {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .model-name {
+    font-size: 2.5rem;
+  }
+
+  .specs-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}

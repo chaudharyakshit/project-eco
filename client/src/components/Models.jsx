@@ -2,16 +2,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Models.css';
 import { motion } from 'framer-motion';
+import EcoShine from '../assets/Eco-Shine.png'
+import EcoGlider from '../assets/Eco-Glider.png'
+import Ecojoy from '../assets/eco-joy.png'
 
 // 3D scooter models from reputable sources
 const models = [
   {
     id: 1,
-    name: 'Thunderbolt EV-1',
+    name: 'EcoShine',
     tagline: 'Premium Electric Cruiser',
     price: 'Starting at $4,499',
-    image: 'https://cdn.bikedekho.com/processedimages/ather-energy/2025-450x/source/2025-450x6777b988a3d27.jpg',
-    poster: 'https://cdn.bikedekho.com/processedimages/ather-energy/2025-450x/source/2025-450x6777b988a3d27.jpg',
+    image: EcoShine,
+    poster: EcoShine,
     specs: [
       { value: '60', label: 'MPH' },
       { value: '90mi', label: 'Range' },
@@ -21,11 +24,11 @@ const models = [
   },
   {
     id: 2,
-    name: 'Urban Spark',
+    name: 'EcoGilder',
     tagline: 'City Commuter Pro',
     price: 'Starting at $2,999',
-    image: 'https://cdn.bikedekho.com/processedimages/yulu/wynn/source/wynn6694b31e5e579.jpg',
-    poster: 'https://cdn.bikedekho.com/processedimages/yulu/wynn/source/wynn6694b31e5e579.jpg',
+    image: EcoGlider,
+    poster: EcoGlider,
     specs: [
       { value: '45', label: 'MPH' },
       { value: '75mi', label: 'Range' },
@@ -35,11 +38,11 @@ const models = [
   },
   {
     id: 3,
-    name: 'Trail Blazer',
+    name: 'EcoJoy',
     tagline: 'Off-Road Adventure',
     price: 'Starting at $5,299',
-    image: 'https://cdn.bikedekho.com/processedimages/ola-electric/2025-s1x/source/2025-s1x679cde26932de.jpg',
-    poster: 'https://cdn.bikedekho.com/processedimages/ola-electric/2025-s1x/source/2025-s1x679cde26932de.jpg',
+    image: Ecojoy ,
+    poster: Ecojoy,
     specs: [
       { value: '55', label: 'MPH' },
       { value: '80mi', label: 'Range' },

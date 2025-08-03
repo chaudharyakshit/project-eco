@@ -30,7 +30,7 @@ const features = [
 const Features = () => {
   return (
     <section className="features-section">
-      <h2 className="section-title1">Why Choose Thunderbolt</h2>
+      <h2 className="section-title1">Why Choose Ecocruze</h2>
       <div className="features-grid">
         {features.map((feature, index) => (
           <motion.div 

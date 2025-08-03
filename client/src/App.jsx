@@ -15,6 +15,8 @@ import Poster from '../src/components/poster';
 import ScootyBanner from './components/Banner';
 import Calculator from './components/calculator';
 import Contact from './pages/Contact';
+import CruzeBladeDetails from './pages/CruzeBladeDetails'; 
+
 import './index.css';
 
 // Create a Home component that contains all your main page sections
@@ -62,7 +64,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
              {/* <Route path="/services" element={<Services/>} /> */}
-             <Route path="/contact" element={<Contact />} />          
+             <Route path="/contact" element={<Contact />} /> 
+              <Route path="/cruze-blade-details" element={<CruzeBladeDetails />} />         
              </Routes>
         </main>
         <Footer />
