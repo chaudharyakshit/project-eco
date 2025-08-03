@@ -10,13 +10,14 @@ import Testimonials from '../src/components/Testimonials';
 import CTA from '../src/components/CTA';
 import Footer from '../src/components/Footer';
 import About from './pages/About';
-// import Services from '../src/components/Services';
+import Services from './pages/Services';
 import Poster from '../src/components/poster';
 import ScootyBanner from './components/Banner';
 import Calculator from './components/calculator';
 import Contact from './pages/Contact';
-import CruzeBladeDetails from './pages/CruzeBladeDetails'; 
-
+import CruzeBladeDetails from './pages/CruzeBladeDetails';
+import EcoShine from './pages/EcoShine';
+import Dealership from './pages/Dealership';
 import './index.css';
 
 // Create a Home component that contains all your main page sections
@@ -63,9 +64,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-             {/* <Route path="/services" element={<Services/>} /> */}
+             <Route path="/services" element={<Services/>} />
              <Route path="/contact" element={<Contact />} /> 
-              <Route path="/cruze-blade-details" element={<CruzeBladeDetails />} />         
+             <Route path="/Dealership" element={<Dealership />} /> 
+              <Route path="/cruze-blade-details" element={<CruzeBladeDetails />} />
+              <Route path = "/EcoShine-details" element={<EcoShine/>}/>  
              </Routes>
         </main>
         <Footer />
