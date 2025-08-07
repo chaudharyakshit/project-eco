@@ -3,11 +3,11 @@ import './CruzeBladeDetails.css';
 import { motion } from 'framer-motion';
 import banner from '../assets/Cruze-Blade.png'
 
-import Green from '../assets/Inner-Images/Cruze-Blade/labradorite_green/left.png';
+import Green from '../assets/Inner-Images/Cruze-Blade/green/left.png';
 import Gray from '../assets/Inner-Images/Cruze-Blade/Gray/left.png';
-import bladeBlack from '../assets/Cruze-Blade.png';
-import bladeGray from '../assets/Cruze-Blade.png';
-import bladeGreen from '../assets/Cruze-Blade.png';
+import Red from '../assets/Inner-Images/Cruze-Blade/red/left.png';
+import White from '../assets/Inner-Images/Cruze-Blade/white/left.png';
+import Black from '../assets//Inner-Images/Cruze-Blade/black/left.png';
 import batteryImg from "../assets/Tyre.png";
 import tyreImg from "../assets/Tyre.png";
 import motorImg from "../assets/Tyre.png";
@@ -32,20 +32,20 @@ import {
 import { GiCarWheel, GiWeight, GiSuspensionBridge } from "react-icons/gi";
 
 
-// const colorOptions = [
-//   { name: 'White', img: Green, code: '#ffffff' },
-//   { name: 'Toile Red', img: bladeRed, code: '#8B0000' },
-//   { name: 'Black', img: bladeBlack, code: '#000' },
-//   { name: 'Gray', img: bladeGray, code: '#808080' },
-//   { name: 'Labradorite Green', img: bladeGreen, code: '#3b6b4d' },
-// ];
+const colorOptions = [
+  { name: 'Green', img: Green, code: '#ffffff' },
+  { name: 'Gray', img: Gray, code: '#8B0000' },
+  { name: 'Black', img: Black, code: '#000' },
+  { name: 'Red', img: Red, code: '#808080' },
+  { name: 'White', img: White, code: '#3b6b4d' },
+];
 
 const images = [
 { src: Green, alt: 'Green' },
   { src: Gray, alt: 'Gray' },
-  { src: bladeBlack, alt: 'Black' },
-  { src: bladeGreen, alt: 'Labradorite Green' },
-  // { src: bladeRed, alt: 'Toile Red' },
+  { src: Black, alt: 'Black' },
+  { src: Red, alt: 'Red' },
+  { src: White, alt: 'White' },
 ];
 
 const CruzeBladeDetails = () => {
