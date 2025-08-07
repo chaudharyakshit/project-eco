@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './CruzeBladeDetails.css';
 import { motion } from 'framer-motion';
-import banner from '../assets/banner1.png'
+import banner from '../assets/Cruze-Blade.png'
 
-import bladeWhite from '../assets/Cruze-Blade.png';
-import bladeRed from '../assets/Cruze-Blade.png';
+import Green from '../assets/Inner-Images/Cruze-Blade/labradorite_green/left.png';
+import Gray from '../assets/Inner-Images/Cruze-Blade/Gray/left.png';
 import bladeBlack from '../assets/Cruze-Blade.png';
 import bladeGray from '../assets/Cruze-Blade.png';
 import bladeGreen from '../assets/Cruze-Blade.png';
@@ -32,20 +32,20 @@ import {
 import { GiCarWheel, GiWeight, GiSuspensionBridge } from "react-icons/gi";
 
 
-const colorOptions = [
-  { name: 'White', img: bladeWhite, code: '#ffffff' },
-  { name: 'Toile Red', img: bladeRed, code: '#8B0000' },
-  { name: 'Black', img: bladeBlack, code: '#000' },
-  { name: 'Gray', img: bladeGray, code: '#808080' },
-  { name: 'Labradorite Green', img: bladeGreen, code: '#3b6b4d' },
-];
+// const colorOptions = [
+//   { name: 'White', img: Green, code: '#ffffff' },
+//   { name: 'Toile Red', img: bladeRed, code: '#8B0000' },
+//   { name: 'Black', img: bladeBlack, code: '#000' },
+//   { name: 'Gray', img: bladeGray, code: '#808080' },
+//   { name: 'Labradorite Green', img: bladeGreen, code: '#3b6b4d' },
+// ];
 
 const images = [
-  { src: bladeRed, alt: 'Toile Red' },
-  { src: bladeWhite, alt: 'White' },
-  { src: bladeGray, alt: 'Gray' },
+{ src: Green, alt: 'Green' },
+  { src: Gray, alt: 'Gray' },
   { src: bladeBlack, alt: 'Black' },
   { src: bladeGreen, alt: 'Labradorite Green' },
+  // { src: bladeRed, alt: 'Toile Red' },
 ];
 
 const CruzeBladeDetails = () => {

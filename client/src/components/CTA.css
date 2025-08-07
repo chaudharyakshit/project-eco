@@ -1,11 +1,12 @@
 .cta-section {
   padding: 100px 5%;
   background-image: url('../assets/banner2.png');
+  /* opacity: 2px; */
   background-repeat: no-repeat;
   background-size: cover;            /* Ensures image covers the section */
   background-position: center;       /* Center the image */
   text-align: center;
-  color: #fff;
+  color: #e3e0e0;
 }
 
 .cta-content {

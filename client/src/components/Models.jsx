@@ -190,7 +190,18 @@ const Models = () => {
                     <h3 className="model-name">{model.name}</h3>
                     <p className="model-tagline">{model.tagline}</p>
                   </div>
-                  <p className="model-price">{model.price}</p>
+                  <div>
+                    <span className='Starting-Text1'>Starting at</span>
+           <a 
+           
+  href={`https://wa.me/918607998882?text=Hi, I'm interested in the ${model.name} model!`} 
+  className="whatsapp-link1" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" className="whatsapp-icon1" />
+</a>
+</div>
                   
                   <div className="model-specs">
                     {model.specs.map((spec, i) => (

@@ -369,3 +369,27 @@
     height: 250px;
   }
 }
+
+.whatsapp-icon1 {
+  width: 30px;
+  height: 28px;
+  margin-bottom:-8px;
+  margin-right: 40px;
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+.model-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Starting-Text1{
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #333;
+}
