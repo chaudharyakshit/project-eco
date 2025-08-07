@@ -21,7 +21,9 @@ const Header = ({ scrolled }) => {
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/contact">Dealership</Link></li>
+            <li><Link to="/dealership">Dealership</Link></li>
+
+            <li><Link to="/news">News</Link></li>
           </ul>
         </nav>
         

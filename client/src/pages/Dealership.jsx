@@ -1,79 +1,102 @@
-import React from 'react';
-import './Dealership.css';
-import contactImage from '../assets/Banner1.png'; // Add your image path
+import React from "react";
+import "./Dealership.css";
 
-const Dealership= () => {
-  return (
-    <div className="contact-container">
-      {/* Main heading with decorative line */}
-      <div className="contact-header">
-        <h1>Our Contact Information</h1>
-        <div className="header-line"></div>
-      </div>
-
-      <div className="contact-content">
-        {/* Left column - Contact information */}
-        <div className="contact-info">
-          <div className="info-section">
-            <h3>Our Address</h3>
-            <ul>
-              <li>Block I-64 FOUNTAIN CHOWK </li>
-              <li>NEHRU COLONY, DEHRADUN</li>
-            </ul>
-          </div>
-
-          <div className="info-section">
-            <h3>Contact Number</h3>
-            <ul>
-              <li>10am, +00.3019.2019</li>
-              <li>Email: sunbeng@mail.com</li>
-            </ul>
-          </div>
-
-          <div className="info-section">
-            <h3>Opening Hour</h3>
-            <ul>
-              <li>Monday - 9:00 - 18:00</li>
-              <li>Sunday, Chapel</li>
-            </ul>
-          </div>
-
-          {/* Location image */}
-          <div className="contact-image">
-            <img src={contactImage} alt="Our location" />
-          </div>
-        </div>
-
-        {/* Right column - Contact form */}
-        <div className="contact-form">
-          <h2>Get In Touch</h2>
-          <form>
-            <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
-            </div>
-            <div className="form-group">
-              <input type="email" placeholder="Email Address" required />
-            </div>
-            <div className="form-group">
-              <input type="tel" placeholder="Phone Number" />
-            </div>
-            <div className="form-group">
-              <input type="text" placeholder="Electronic Dating" />
-            </div>
-            <div className="form-group">
-              <textarea placeholder="Your Message" rows="5" required></textarea>
-            </div>
-            <button type="submit" className="submit-btn">
-              Submit
-            </button>
-          </form>
+// --- Banner Section ---
+const BannerSection = () => (
+  <section className="bold-banner">
+    <div className="bold-banner-content">
+      <div className="banner-lines">
+        <div className="banner-line banner-line-1">THE KEY TO</div>
+        <div className="banner-line banner-line-2">BUSINESS SUCCESS</div>
+        <div className="banner-line banner-line-3">IS MAKING</div>
+        <div className="banner-line banner-line-4">
+          <span className="bold-word">BOLD</span>&nbsp;DECISIONS
         </div>
       </div>
-
-      {/* Additional decorative element */}
-      <div className="contact-footer-line"></div>
+      <button className="banner-btn">Become ECOCRUZE Partner</button>
     </div>
-  );
-};
+    <div className="bold-banner-bg" />
+  </section>
+);
+
+// --- Form Section ---
+const cityOptions = [
+  "Delhi", "Dehradun", "Lucknow", "Mumbai", "Kolkata", "Chennai", "Bangalore", "Hyderabad", "Other"
+];
+const stateOptions = [
+  "Delhi", "Uttar Pradesh", "Haryana", "Uttarakhand", "Rajasthan", "Maharashtra", "West Bengal", "Tamil Nadu", "Karnataka", "Telangana", "Other"
+];
+
+const DealershipForm = () => (
+  <div className="dealership-root">
+    <h1 className="dealership-title">Electric Scooter Dealership</h1>
+    <form className="dealership-form">
+      <div className="dealership-grid">
+        <div className="dealership-field">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Name" required />
+        </div>
+        <div className="dealership-field">
+          <label>Contact Number</label>
+          <input type="tel" name="contact" placeholder="Contact" required />
+        </div>
+        <div className="dealership-field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div className="dealership-field">
+          <label>State</label>
+          <select name="state" required>
+            <option value="">-Select State-</option>
+            {stateOptions.map((state) => (
+              <option value={state} key={state}>{state}</option>
+            ))}
+          </select>
+        </div>
+        <div className="dealership-field">
+          <label>City</label>
+          <select name="city" required>
+            <option value="">-Select City-</option>
+            {cityOptions.map((city) => (
+              <option value={city} key={city}>{city}</option>
+            ))}
+          </select>
+        </div>
+        <div className="dealership-field">
+          <label>Current Business</label>
+          <input type="text" name="currentBusiness" placeholder="Current Business" />
+        </div>
+        <div className="dealership-field">
+          <label>Firm Name</label>
+          <input type="text" name="firmName" placeholder="Firm Name" />
+        </div>
+        <div className="dealership-field">
+          <label>Current Business Turnover</label>
+          <input type="text" name="turnover" placeholder="Current Business Turnover" />
+        </div>
+        <div className="dealership-field">
+          <label>GST No.</label>
+          <input type="text" name="gst" placeholder="GST No." />
+        </div>
+        <div className="dealership-field dealership-field--full">
+          <label>Message</label>
+          <textarea name="message" rows={3} placeholder="Type your message..." />
+        </div>
+      </div>
+      <div className="dealership-actions">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+);
+
+// --- Main Page Export ---
+const Dealership = () => (
+  <>
+    <BannerSection />
+    <DealershipForm />
+  </>
+);
 
 export default Dealership;
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import './poster.css';
 import Rapidsign from '../assets/Rapi-dsign.png';
-import scootyPoster2 from '../assets/poster_2.png';
+import ecoglider from '../assets/Eco-Glider.png';
 
 const Poster = () => {
   return (
@@ -15,8 +15,8 @@ const Poster = () => {
               <div className="image-overlay"></div>
             </div>
             <div className="poster-content">
-              <h3>Do You Want to Sell Your Scooty?</h3>
-              <p>Get the best value for your EcroZue or other electric scooty brands</p>
+              <h3>Do You Want to Buy Your Scooty?</h3>
+              <p>Get the best value for your Ecocruze or other electric scooty brands</p>
               <button className="poster-btn">
                 GET STARTED <span>1</span>
               </button>
@@ -26,7 +26,7 @@ const Poster = () => {
           {/* Poster 2 */}
           <div className="scooty-poster">
             <div className="poster-image">
-              <img src={scootyPoster2} alt="EcroZue Scooty Model Z" />
+              <img src={ecoglider} alt="EcroZue Scooty Model Z" />
               <div className="image-overlay"></div>
             </div>
             <div className="poster-content">

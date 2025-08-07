@@ -1,141 +1,208 @@
-/* Contact Us Page Styles */
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-}
-
-.contact-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.contact-header h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #222;
-}
-
-.header-line {
-  width: 80px;
-  height: 3px;
-  background-color: #f0151f;
-  margin: 0 auto;
-}
-
-.contact-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.contact-info {
-  flex: 1;
-  min-width: 300px;
-}
-
-.contact-form {
-  flex: 1;
-  min-width: 300px;
-}
-
-.info-section {
-  margin-bottom: 30px;
-}
-
-.info-section h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #222;
+/* --- Responsive Bold Steps Banner (Red/Black/White) --- */
+.bold-banner {
   position: relative;
-  padding-bottom: 10px;
+  width: 100vw;
+  min-height: 420px;
+  background: #111;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 22px;
 }
-
-.info-section h3::after {
-  content: '';
+.bold-banner-bg {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 40px;
-  height: 2px;
-  background-color: #f0151f;
+  left: 0; right: 0; bottom: 0; height: 76%;
+  background: #f60606;
+  clip-path: polygon(0 80%, 17% 36%, 44% 87%, 68% 44%, 100% 93%, 100% 100%, 0 100%);
+  z-index: 1;
 }
-
-.info-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.info-section li {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.contact-image {
-  margin-top: 30px;
-}
-
-.contact-image img {
+.bold-banner-content {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  text-align: left;
+  padding-left: 18px;
+  margin: 0 auto;
+  color: #f2efef;
+}
+.banner-lines { margin-bottom: 31px; }
+.banner-line {
+  display: inline-block;
+  font-family: Impact, 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  color: #f10a0a;
+  font-size: 2.10rem;
+  background: #f7f3f3;
+  letter-spacing: 1px;
+  padding: 7px 14px 4px 14px;
+  margin: 0 0 10px 8px;
+  box-shadow: 2px 2px 10px #0004;
+  line-height: 1.04;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.banner-line-1 { margin-left: 16px; }
+.banner-line-3 { margin-left: 32px; }
+.banner-line-4 {
+  background: none;
+  font-size: 2.7rem;
+  color: #fff;
+  margin-left: 90px;
+  padding: 0;
+}
+.bold-word {
+  font-size: 3.05rem;
+  background: #f1f1f1;
+  color: #e30707;
+  font-family: Impact, 'Arial Black', Arial, sans-serif;
+  font-weight: 900;
+  padding: 2.5px 14px 4px 17px;
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 4px;
+}
+.banner-btn {
+  background: #f4f1f1;
+  color: #e90505;
+  font-size: 1.13rem;
+  font-weight: 700;
+  padding: 12px 40px;
+  border-radius: 2px;
+  margin-top: 25px;
+  border: none;
+  box-shadow: 1px 2px 10px #0003;
+  cursor: pointer;
+  letter-spacing: 1.1px;
+  transition: background 0.2s;
+}
+.banner-btn:hover {
+  background: #08bac7;
 }
 
-.contact-form h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #222;
+@media (max-width: 700px) {
+  .bold-banner-content { padding-left: 6px; max-width: 98vw; }
+  .banner-line, .banner-line-1, .banner-line-2, .banner-line-3, .bold-word, .banner-line-4 {
+    font-size: 1.08rem !important;
+    margin-left: 0 !important;
+    padding: 4px 6px !important;
+  }
+  .bold-word, .banner-line-4 { font-size: 1.54rem !important; }
+  .bold-banner-bg { height: 55%; }
+  .banner-lines { margin-bottom: 12px; }
+  .banner-btn { padding: 9px 18px; font-size: .98rem; margin-top: 12px; }
+}
+@media (max-width: 480px) {
+  .bold-banner { min-height: 130px; }
+  .banner-btn { padding: 7px 11px; }
+  .banner-lines { margin-bottom: 3px; }
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
+
+
+
+
+/* --- Dealership Form Section, Responsive --- */
+.dealership-root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px 4vw 24px 4vw;
+}
+.dealership-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: bold;
+  margin-bottom: 26px;
+  color: #444;
+  letter-spacing: 0.5px;
+}
+.dealership-form {
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px 10px 24px 10px;
+  box-shadow: 0 2px 12px #0001;
+}
+.dealership-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 30px;
+}
+.dealership-field {
+  display: flex;
+  flex-direction: column;
+}
+.dealership-field label {
+  font-size: 0.97rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #555;
+}
+.dealership-field input,
+.dealership-field select,
+.dealership-field textarea {
+  padding: 10px 10px;
+  font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px;
+  background: #fafafa;
+  transition: border 0.15s;
 }
-
-.form-group textarea {
-  resize: vertical;
+.dealership-field input:focus,
+.dealership-field select:focus,
+.dealership-field textarea:focus {
+  border: 1.5px solid #c13f57;
+  outline: none;
+  background: #fff;
 }
-
-.submit-btn {
-  background-color: #f0151f;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  font-size: 16px;
+.dealership-field--full {
+  grid-column: 1 / span 2;
+}
+.dealership-actions {
+  margin-top: 28px;
+  text-align: center;
+}
+.dealership-actions button {
+  background: #d9001b;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 48px;
+  font-size: 1.05rem;
   border-radius: 4px;
+  border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+.dealership-actions button:hover {
+  background: #a10013;
 }
 
-.submit-btn:hover {
-  background-color: #d0121a;
+/* -- Responsive tweaks for grid and padding -- */
+@media (max-width: 900px) {
+  .dealership-root { padding: 19px 2vw 13px 2vw; }
 }
-
-.contact-footer-line {
-  width: 100%;
-  height: 2px;
-  background-color: #eee;
-  margin-top: 60px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .contact-content {
-    flex-direction: column;
+@media (max-width: 750px) {
+  .dealership-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
-  
-  .contact-header h1 {
-    font-size: 28px;
+  .dealership-field--full {
+    grid-column: auto;
   }
+  .dealership-title {
+    font-size: 1.34rem;
+  }
+  .dealership-form {
+    padding: 10px 2vw 12px 2vw;
+  }
+}
+@media (max-width: 480px) {
+  .dealership-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .dealership-root { padding: 6px 1vw 4px 1vw; }
 }

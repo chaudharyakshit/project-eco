@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Models from './components/Models';
 import Features from '../src/components/Features';
-import Brands from '../src/components/Brands';
 import Gallery from '../src/components/Gallery';
 import Testimonials from '../src/components/Testimonials';
 import CTA from '../src/components/CTA';
@@ -17,8 +16,13 @@ import Calculator from './components/calculator';
 import Contact from './pages/Contact';
 import CruzeBladeDetails from './pages/CruzeBladeDetails';
 import EcoShine from './pages/EcoShine';
+// import EcoswiftDetails from './pages/ecoswift'; 
+import News from './pages/Newssection';
 import Dealership from './pages/Dealership';
+import EcoJoy from './pages/EcoJoy'; 
+
 import './index.css';
+
 
 // Create a Home component that contains all your main page sections
 const Home = () => {
@@ -36,6 +40,7 @@ const Home = () => {
       <Testimonials />
       
       <CTA />
+     
     </>
   );
 };
@@ -66,9 +71,13 @@ function App() {
             <Route path="/about" element={<About />} />
              <Route path="/services" element={<Services/>} />
              <Route path="/contact" element={<Contact />} /> 
-             <Route path="/Dealership" element={<Dealership />} /> 
+             <Route path="/dealership" element={<Dealership />} />
+
               <Route path="/cruze-blade-details" element={<CruzeBladeDetails />} />
               <Route path = "/EcoShine-details" element={<EcoShine/>}/>  
+              {/* <Route path="/ecoswift-details" element={<EcoswiftDetails />} /> */}
+              <Route path = "/News" element={<News/>}/>
+              <Route path="/EcoJoy-details" element={<EcoJoy />} />
              </Routes>
         </main>
         <Footer />

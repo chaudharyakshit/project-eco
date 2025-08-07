@@ -2,9 +2,11 @@
 import React from 'react';
 import './Hero.css';
 import { motion } from 'framer-motion';
+import ChatBot from '../ChatBot/ChatBot'
 
 const Hero = () => {
   return (
+    <>
     <section className="hero">
       <div className="hero-content">
         <motion.h1
@@ -33,7 +35,10 @@ const Hero = () => {
           <a href="#" className="btn btn-secondary">Explore Models</a>
         </motion.div>
       </div>
+      
     </section>
+      <ChatBot />
+      </>
   );
 };
 

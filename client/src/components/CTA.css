@@ -1,8 +1,9 @@
-/* components/CTA/CTA.css */
 .cta-section {
   padding: 100px 5%;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('https://images.unsplash.com/photo-1580310614655-94b3fb8e5d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+  background-image: url('../assets/banner2.png');
+  background-repeat: no-repeat;
+  background-size: cover;            /* Ensures image covers the section */
+  background-position: center;       /* Center the image */
   text-align: center;
   color: #fff;
 }

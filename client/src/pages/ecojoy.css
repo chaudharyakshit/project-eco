@@ -1,0 +1,232 @@
+.back-link {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height */
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
+  .back-link img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes it fill without distortion */
+    z-index: 1;
+  }
+  
+  .back-link a,
+  .back-link span {
+    position: relative;
+    z-index: 2;
+    color: rgb(0, 0, 0); /* Text on top of image */
+    font-weight: bold;
+  }
+  
+  
+  .back-link a:hover {
+    color: #00ffcc; /* Optional hover color */
+  }
+  
+  .back-link span {
+    margin-left: 5px;
+  }
+  
+  .blade-hero-gallery {
+    width: 80%;
+    margin-left:150px;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .blade-hero-gallery {
+    width: 80%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+  
+  .blade-image-row {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    
+  }
+  
+  .blade-image-slice {
+    flex: 1;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 80px; /* Adjust this value as per your header height */
+  }
+  
+  
+  .blade-image-slice img {
+    height: 70%;
+    width: 70%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  
+  }
+  
+  .blade-image-slice:hover {
+    flex: 3;
+    z-index: 2;
+  }
+  
+  .blade-image-slice:hover img {
+    transform: scale(1.1);
+  }
+  
+  
+  .blade-image-slice img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .blade-image-slice:hover {
+    transform: scale(1.1);
+  }
+  
+  .blade-image-slice:hover img {
+    transform: scale(1.15);
+  }
+  
+  .view-btn {
+    margin-top: 30px;
+  }
+  
+  .view-btn button {
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .view-btn button:hover {
+    background-color: #222;
+    color: white;
+  }
+  
+  .view-btn .view-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .quick-specs {
+    margin-top: 2rem;
+    background: rgba(255,255,255,0.85);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .quick-specs div {
+    margin-bottom: 0.5rem;
+  }
+  
+  .vehicle-specs {
+    padding: 3rem 5%;
+    background: #fff;
+  }
+  
+  .vehicle-specs h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  
+  .spec-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f9f9f9;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+  
+  .spec-item svg {
+    color: #ff3c2f;
+    font-size: 1.2rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .feature-category h4 {
+    margin-bottom: 0.5rem;
+    color: #ff3c2f;
+  }
+  
+  .feature-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .feature-category li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+  }
+  
+  .feature-category li svg {
+    color: #ff3c2f;
+  }
+  
+  .image-collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 1.5rem;
+  }
+  
+  .image-collage img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  

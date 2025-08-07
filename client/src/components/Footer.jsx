@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 
 import logo from '../assets/main-logo.png'; // Adjust the path if needed
+import ChatBot from './ChatBot';
 
 const Footer = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -95,6 +96,7 @@ const Footer = () => {
           <FaArrowUp />
         </button>
       )}
+    <ChatBot />
     </>
   );
 };

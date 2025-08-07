@@ -1,14 +1,11 @@
 import React from "react";
 import "./Services.css";
-import bannerImg from "../assets/Banner1.png";
+import bannerImg from "../assets/Banner4.png";
 
 // Service Images
-import carMaintenanceImg from "../assets/Banner1.png";
-import engineDiagnosisImg from "../assets/Banner1.png";
-import carBreakRepairImg from "../assets/Banner1.png";
-import carTireChangeImg from "../assets/Banner1.png";
-import engineOilChangingImg from "../assets/Banner1.png";
-import carWashingImg from "../assets/Banner1.png";
+import carMaintenanceImg from "../assets/service1.png";
+import engineDiagnosisImg from "../assets/service2.png";
+import carBreakRepairImg from "../assets/service3.png";
 import Testimonials from "../components/Testimonials";
 
 const services = [
