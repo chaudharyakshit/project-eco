@@ -11,6 +11,34 @@ const ChatBot = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const [userInput, setUserInput] = useState('');
 
+  useEffect(() => {
+    if (isOpen) {
+      // Reset all chat-related state when chatbot opens
+      setStep(0);
+      setName('');
+      setNumber('');
+      setSelectedCategory(null);
+      setSelectedQuestion(null);
+      setChatHistory([]);
+      setUserInput('');
+    }
+  }, [isOpen]);
+
+  const saveUserData = async () => {
+  try {
+    const res = await fetch('http://localhost:5000/api/chatuser', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone: number })  // number is state for phone
+    });
+    const data = await res.json();
+    console.log('User saved:', data);
+  } catch (error) {
+    console.error('Error saving user data:', error);
+  }
+};
+
+
   const questionCategories = [
     {
       name: "🛵 Product Info",
@@ -114,14 +142,16 @@ const ChatBot = () => {
     }
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name.trim() && number.trim()) {
-      addToChat(`User: ${name} (${number})`, 'user');
-      addToChat("Bot: Hi " + name + "! How can I assist you today? Here are the help categories:", 'bot');
-      setStep(1);
-    }
-  };
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (name.trim() && number.trim()) {
+    await saveUserData();
+    addToChat(`User: ${name} (${number})`, 'user');
+    addToChat("Bot: Hi " + name + "! How can I assist you today? Here are the help categories:", 'bot');
+    setStep(1);
+  }
+};
+
 
   const handleUserMessage = (e) => {
     e.preventDefault();

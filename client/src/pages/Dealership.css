@@ -1,103 +1,49 @@
 /* --- Responsive Bold Steps Banner (Red/Black/White) --- */
 .bold-banner {
   position: relative;
-  width: 100vw;
-  min-height: 420px;
+  width: 100%;
+  min-height: 300px;
   background: #111;
+  background-image: url("../assets/handshake.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  color: #fff;
+  text-align: center;
   margin-bottom: 22px;
 }
-.bold-banner-bg {
-  position: absolute;
-  left: 0; right: 0; bottom: 0; height: 76%;
-  background: #f60606;
-  clip-path: polygon(0 80%, 17% 36%, 44% 87%, 68% 44%, 100% 93%, 100% 100%, 0 100%);
-  z-index: 1;
-}
-.bold-banner-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 900px;
-  text-align: left;
-  padding-left: 18px;
-  margin: 0 auto;
-  color: #f2efef;
-}
-.banner-lines { margin-bottom: 31px; }
-.banner-line {
-  display: inline-block;
-  font-family: Impact, 'Arial Black', Arial, sans-serif;
-  font-weight: 900;
-  color: #f10a0a;
-  font-size: 2.10rem;
-  background: #f7f3f3;
-  letter-spacing: 1px;
-  padding: 7px 14px 4px 14px;
-  margin: 0 0 10px 8px;
-  box-shadow: 2px 2px 10px #0004;
-  line-height: 1.04;
-  text-transform: uppercase;
-  border-radius: 4px;
-}
-.banner-line-1 { margin-left: 16px; }
-.banner-line-3 { margin-left: 32px; }
-.banner-line-4 {
-  background: none;
-  font-size: 2.7rem;
-  color: #fff;
-  margin-left: 90px;
-  padding: 0;
-}
-.bold-word {
-  font-size: 3.05rem;
-  background: #f1f1f1;
-  color: #e30707;
-  font-family: Impact, 'Arial Black', Arial, sans-serif;
-  font-weight: 900;
-  padding: 2.5px 14px 4px 17px;
-  margin-right: 10px;
-  display: inline-block;
-  border-radius: 4px;
-}
-.banner-btn {
-  background: #f4f1f1;
-  color: #e90505;
-  font-size: 1.13rem;
-  font-weight: 700;
-  padding: 12px 40px;
-  border-radius: 2px;
-  margin-top: 25px;
-  border: none;
-  box-shadow: 1px 2px 10px #0003;
-  cursor: pointer;
-  letter-spacing: 1.1px;
-  transition: background 0.2s;
-}
-.banner-btn:hover {
-  background: #08bac7;
+
+.bold-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 700px) {
-  .bold-banner-content { padding-left: 6px; max-width: 98vw; }
-  .banner-line, .banner-line-1, .banner-line-2, .banner-line-3, .bold-word, .banner-line-4 {
-    font-size: 1.08rem !important;
-    margin-left: 0 !important;
-    padding: 4px 6px !important;
-  }
-  .bold-word, .banner-line-4 { font-size: 1.54rem !important; }
-  .bold-banner-bg { height: 55%; }
-  .banner-lines { margin-bottom: 12px; }
-  .banner-btn { padding: 9px 18px; font-size: .98rem; margin-top: 12px; }
+.bold-banner .breadcrumb {
+  font-size: 1rem;
 }
-@media (max-width: 480px) {
-  .bold-banner { min-height: 130px; }
-  .banner-btn { padding: 7px 11px; }
-  .banner-lines { margin-bottom: 3px; }
+
+.bold-banner .breadcrumb a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.bold-banner .breadcrumb a:hover {
+  color: #f0c14b; /* light gold hover */
+}
+
+
+
+
+
+
+
 
 
 

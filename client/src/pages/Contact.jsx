@@ -1,23 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
-// import contactImage from '../assets/contact-image.jpg'; // Add your image path
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+      alert(data.message || 'Message sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      alert('Error submitting form');
+    }
+  };
+
   return (
     <div className="contact-container">
-      {/* Main heading with decorative line */}
+      {/* Main heading */}
       <div className="contact-header">
         <h1>Our Contact Information</h1>
         <div className="header-line"></div>
       </div>
 
       <div className="contact-content">
-        {/* Left column - Contact information */}
+        {/* Left column */}
         <div className="contact-info">
           <div className="info-section">
             <h3>Our Address</h3>
             <ul>
-              <li>Block I-64 FOUNTAIN CHOWK </li>
+              <li>Block I-64 FOUNTAIN CHOWK</li>
               <li>NEHRU COLONY, DEHRADUN</li>
             </ul>
           </div>
@@ -37,31 +75,61 @@ const ContactUs = () => {
               <li>Sunday, Chapel</li>
             </ul>
           </div>
-
-          {/* Location image */}
-          <div className="contact-image">
-            {/* <img src={contactImage} alt="Our location" /> */}
-          </div>
         </div>
 
-        {/* Right column - Contact form */}
+        {/* Right column - Form */}
         <div className="contact-form">
           <h2>Get In Touch</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="form-group">
-              <input type="email" placeholder="Email Address" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="form-group">
-              <input type="tel" placeholder="Phone Number" />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
             </div>
             <div className="form-group">
-              <input type="text" placeholder="Electronic Dating" />
+              <input
+  type="text"
+  name="subject"               
+  placeholder="Subject"        
+  value={formData.subject}     
+  onChange={handleChange}
+/>
+
+            
             </div>
             <div className="form-group">
-              <textarea placeholder="Your Message" rows="5" required></textarea>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
             </div>
             <button type="submit" className="submit-btn">
               Submit
@@ -70,7 +138,7 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Additional decorative element */}
+      {/* Decorative footer line */}
       <div className="contact-footer-line"></div>
     </div>
   );
