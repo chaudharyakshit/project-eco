@@ -43,7 +43,7 @@ const scootyData = [
     img: Ecojoy,
   },
   {
-    title: "EcoGlide",
+    title: "EcoGlider",
     seller: "Ecocruze",
     cc: "130cc",
     type: "Electric",
@@ -59,7 +59,7 @@ const scootyData = [
     img: cruzeon,
   },
   {
-    title: "Rapidsign",
+    title: "Rapidesign",
     seller: "Ecocruze",
     cc: "105cc",
     type: "Electric",
@@ -154,16 +154,28 @@ const Inventory = () => {
 
               <a
   href={
-    scooty.title === "Cruze Blade"
-      ? "/cruze-blade-details"
-      : scooty.title === "EcoShine"
-      ? "/EcoShine-details"
-      : "#"
-  }
+  scooty.title === "Cruze Blade"
+    ? "/cruze-blade-details"
+    : scooty.title === "EcoShine"
+    ? "/EcoShine-details"
+    : scooty.title === "EcoJoy"
+    ? "/ecojoy-details"
+    : scooty.title === "EcoGlider"
+    ? "/eco-glider-details"
+    : scooty.title === "Cruzeon"
+    ? "/cruzeon-details"
+    : scooty.title === "Rapidesign"
+    ? "/rapidesign-details"
+    : scooty.title === "Ecoswift"
+    ? "/ecoswift-details"
+    : "#"
+}
+
   className="view-btn"
   target="_self"
-  onClick={(e) => {
-    if (scooty.title !== "Cruze Blade" && scooty.title !== "EcoShine") {
+  onClick={(e) => {   
+    if (scooty.title !== "Cruze Blade" && scooty.title !== "EcoShine" && scooty.title !== "EcoJoy" && scooty.title !== "EcoGlider" && scooty.title !== "Cruzeon" && scooty.title !== "Rapidesign"  && scooty.title !== "") {
+
       e.preventDefault();
       alert("Details page not available yet.");
     }

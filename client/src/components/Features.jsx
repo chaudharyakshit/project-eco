@@ -41,11 +41,11 @@ const Features = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="feature-icon">
+            <div className="feature-icon1">
               {feature.icon}
             </div>
-            <h3 className="feature-title">{feature.title}</h3>
-            <p className="feature-desc">{feature.description}</p>
+            <h3 className="feature-title1">{feature.title}</h3>
+            <p className="feature-desc1">{feature.description}</p>
           </motion.div>
         ))}
       </div>

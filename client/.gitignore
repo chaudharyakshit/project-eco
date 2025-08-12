@@ -41,5 +41,5 @@ coverage/
 
 # Optional: package manager cache
 .npm/
-.pnpm/
-.yarn/
+[.pnpm/
+].yarn/

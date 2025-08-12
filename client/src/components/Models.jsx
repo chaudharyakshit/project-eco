@@ -199,7 +199,7 @@ const Models = () => {
   target="_blank" 
   rel="noopener noreferrer"
 >
-  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" className="whatsapp-icon1" />
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" className="whatsapp-icon2" />
 </a>
 </div>
                   

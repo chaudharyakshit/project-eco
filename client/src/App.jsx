@@ -16,10 +16,13 @@ import Calculator from './components/calculator';
 import Contact from './pages/Contact';
 import CruzeBladeDetails from './pages/CruzeBladeDetails';
 import EcoShine from './pages/EcoShine';
-// import EcoswiftDetails from './pages/ecoswift'; 
+import EcoswiftDetails from './pages/ecoswift'; 
 import News from './pages/Newssection';
 import Dealership from './pages/Dealership';
 import EcoJoy from './pages/EcoJoy'; 
+import EcoGlider from './pages/ecoglider';
+import Cruzeon from './pages/cruzeon';
+import Rapidesign from './pages/rapidesign'
 
 import './index.css';
 
@@ -75,9 +78,13 @@ function App() {
 
               <Route path="/cruze-blade-details" element={<CruzeBladeDetails />} />
               <Route path = "/EcoShine-details" element={<EcoShine/>}/>  
-              {/* <Route path="/ecoswift-details" element={<EcoswiftDetails />} /> */}
+              <Route path="/ecoswift-details" element={<EcoswiftDetails />} />
               <Route path = "/News" element={<News/>}/>
-              <Route path="/EcoJoy-details" element={<EcoJoy />} />
+              <Route path="/ecojoy-details" element={<EcoJoy />} />
+              <Route path="/eco-glider-details" element={<EcoGlider />} />
+              <Route path="cruzeon-details" element={<Cruzeon />} />
+              <Route path="rapidesign-details" element={<Rapidesign />} />
+
              </Routes>
         </main>
         <Footer />

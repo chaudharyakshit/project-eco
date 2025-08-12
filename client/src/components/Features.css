@@ -26,22 +26,24 @@
 }
 
 .feature-card:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(236, 228, 228, 0.5);
   transform: translateY(-10px);
+ 
 }
 
-.feature-icon {
+.feature-icon1 {
   font-size: 3rem;
   color: #c00;
   margin-bottom: 20px;
 }
 
-.feature-title {
+.feature-title1 {
   font-size: 1.5rem;
   margin-bottom: 15px;
+  color : black;
 }
 
-.feature-desc {
+.feature-desc1 {
   font-size: 0.9rem;
   line-height: 1.6;
 }

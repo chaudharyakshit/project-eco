@@ -1,121 +1,353 @@
-import React, { useState } from 'react';
-import './ecojoy.css';
-import { motion } from 'framer-motion';
-import banner from '../assets/banner1.png';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import '../pages/ecojoy.css';
 
-import bladeWhite from '../assets/eco-joy.png';
-import bladeRed from '../assets/eco-joy.png';
-import bladeBlack from '../assets/eco-joy.png';
-import bladeGray from '../assets/eco-joy.png';
-import bladeGreen from '../assets/eco-joy.png';
+// Image Imports for EcoJoy
+import image1 from '../assets/Inner-Images/Eco joy/black/side.png';
+import image2 from '../assets/Inner-Images/Eco joy/black/left.png';
+import image3 from '../assets/Inner-Images/Eco joy/black/front.png';
+import image4 from '../assets/Inner-Images/Eco joy/black/right.png';
 
-import {
-  FaMotorcycle, FaBolt, FaCogs, FaCarBattery, FaRoad,
-  FaPalette, FaRegCalendarAlt, FaIdCard, FaTachometerAlt,
-  FaShieldAlt, FaLightbulb, FaLock, FaMobileAlt, FaUsb
-} from "react-icons/fa";
-import { GiCarWheel, GiWeight, GiSuspensionBridge } from "react-icons/gi";
+// Color options
+import nebulaGreen from '../assets/Inner-Images/Eco joy/blue/front.png';
+import lunarGray from '../assets/Inner-Images/Eco joy/white/front.png';
+import solarRed from '../assets/Inner-Images/Eco joy/red/front.png';
+import cosmicBlack from '../assets/Inner-Images/Eco joy/black/front.png';
+import stellarWhite from '../assets/Inner-Images/Eco joy/white/front.png';
 
-const colorOptions = [
-  { name: 'White', img: bladeWhite, code: '#ffffff' },
-  { name: 'Toile Red', img: bladeRed, code: '#8B0000' },
-  { name: 'Black', img: bladeBlack, code: '#000' },
-  { name: 'Gray', img: bladeGray, code: '#808080' },
-  { name: 'Labradorite Green', img: bladeGreen, code: '#3b6b4d' },
-];
+// Icons
+import { 
+  FaBolt, FaMotorcycle, FaCarBattery, FaTachometerAlt, 
+  FaPalette, FaExpand, FaChevronRight, FaChevronLeft,
+  FaRegLightbulb, FaShieldAlt, FaMobileAlt, FaWeightHanging
+} from 'react-icons/fa';
+import { GiPowerLightning, GiCarWheel } from 'react-icons/gi';
+import { IoMdColorPalette, IoMdSpeedometer } from 'react-icons/io';
+import { RiSteering2Fill } from 'react-icons/ri';
 
-const images = [
-  { src: bladeRed, alt: 'Toile Red' },
-  { src: bladeWhite, alt: 'White' },
-  { src: bladeGray, alt: 'Gray' },
-  { src: bladeBlack, alt: 'Black' },
-  { src: bladeGreen, alt: 'Labradorite Green' },
-];
+const EcoJoyShowcase = () => {
+  const [activeTab, setActiveTab] = useState('overview');
+  const [selectedColor, setSelectedColor] = useState(0);
+  const [zoomImage, setZoomImage] = useState(null);
+  const videoRef = useRef(null);
 
-const EcoJoyDetails = () => {
-  const [selected, setSelected] = useState(colorOptions[0]);
+  const colors = [
+    { name: "Nebula Green", code: "#2ecc71", price: "$1,999", img: nebulaGreen },
+    { name: "Lunar Gray", code: "#95a5a6", price: "$1,899", img: lunarGray },
+    { name: "Solar Red", code: "#e74c3c", price: "$2,099", img: solarRed },
+    { name: "Cosmic Black", code: "#2c3e50", price: "$2,199", img: cosmicBlack },
+    { name: "Stellar White", code: "#ecf0f1", price: "$2,049", img: stellarWhite }
+  ];
+
+  const specs = {
+    performance: [
+      { icon: <IoMdSpeedometer />, label: "Top Speed", value: "55 km/h" },
+      { icon: <FaBolt />, label: "Acceleration", value: "0-40km in 5.0s" },
+      { icon: <GiPowerLightning />, label: "Motor Power", value: "1200W BLDC" },
+      { icon: <FaCarBattery />, label: "Range", value: "80 km/charge" }
+    ],
+    design: [
+      { icon: <FaPalette />, label: "Colors", value: "5 Premium Options" },
+      { icon: <FaWeightHanging />, label: "Weight", value: "90 kg" },
+      { icon: <GiCarWheel />, label: "Wheels", value: "12\" Alloy" },
+      { icon: <RiSteering2Fill />, label: "Suspension", value: "Telescopic" }
+    ],
+    tech: [
+      { icon: <FaRegLightbulb />, label: "Lighting", value: "LED Headlamp & Indicators" },
+      { icon: <FaMobileAlt />, label: "Connectivity", value: "Basic App Support" },
+      { icon: <FaShieldAlt />, label: "Security", value: "Key Lock + Anti-theft" },
+      { icon: <FaTachometerAlt />, label: "Display", value: "Digital Meter" }
+    ]
+  };
+
+  const features = [
+    {
+      title: "Eco Performance",
+      desc: "1200W motor delivers smooth acceleration and hill-climbing power",
+      icon: <GiPowerLightning />
+    },
+    {
+      title: "Efficient Range",
+      desc: "60V lithium battery provides up to 80km per charge",
+      icon: <FaCarBattery />
+    },
+    {
+      title: "Smart Connectivity",
+      desc: "Basic app with ride stats and vehicle health monitoring",
+      icon: <FaMobileAlt />
+    },
+    {
+      title: "Sustainable Design",
+      desc: "Eco-friendly build with lightweight and aerodynamic frame",
+      icon: <FaPalette />
+    }
+  ];
+
+  const galleryImages = [
+    { id: 1, src: image1, alt: 'EcoJoy Front View' },
+    { id: 2, src: image2, alt: 'EcoJoy Side View' },
+    { id: 3, src: image3, alt: 'EcoJoy Dashboard' },
+    { id: 4, src: image4, alt: 'EcoJoy Rear View' },
+  ];
 
   return (
-    <>
-      <div className="back-link">
-        <img src={banner} alt="Banner" />
-        <a href="/">Home</a> &gt; <span>EcoJoy</span>
-      </div>
-
-      <div className="blade-hero-gallery">
-        <div className="blade-image-row">
-          {images.map((img, index) => (
-            <div className="blade-image-slice" key={index}>
-              <img src={img.src} alt={img.alt} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <section className="vehicle-specs">
-        <h2>Vehicle Overview</h2>
-        <div className="specs-grid">
-          <div className="spec-item"><FaMotorcycle /> Body: Scooter</div>
-          <div className="spec-item"><FaCogs /> Transmission: Automatic</div>
-          <div className="spec-item"><FaShieldAlt /> Condition: New</div>
-          <div className="spec-item"><FaTachometerAlt /> Range: 90 km</div>
-          <div className="spec-item"><FaBolt /> Drive Type: Electric</div>
-          <div className="spec-item"><FaBolt /> Motor: BLDC Motor</div>
-          <div className="spec-item"><FaCarBattery /> Battery: Lithium 2.5 kWh</div>
-          <div className="spec-item"><FaRoad /> Tyres: Tubeless 12”</div>
-          <div className="spec-item"><FaRegCalendarAlt /> Year: 2025</div>
-          <div className="spec-item"><FaPalette /> Colors: Multiple</div>
-          <div className="spec-item"><FaIdCard /> VIN: ECOJOY2025XYZ</div>
-          <div className="spec-item"><GiWeight /> Weight: 95 kg</div>
-        </div>
-
-        <h2>Vehicle Features</h2>
-        <div className="features-grid">
-          <div className="feature-category">
-            <h4>Interior</h4>
-            <ul>
-              <li><FaLightbulb /> LED Headlight</li>
-              <li><FaUsb /> USB Charging Port</li>
-              <li><FaMobileAlt /> Digital Display</li>
-              <li><FaLock /> Central Locking</li>
-            </ul>
-          </div>
-          <div className="feature-category">
-            <h4>Safety</h4>
-            <ul>
-              <li><FaShieldAlt /> Disc Brakes</li>
-              <li><FaLock /> Anti-Theft Alarm</li>
-              <li><FaMotorcycle /> Side Stand Sensor</li>
-            </ul>
-          </div>
-          <div className="feature-category">
-            <h4>Exterior</h4>
-            <ul>
-              <li><GiCarWheel /> Alloy Wheels</li>
-              <li><FaMotorcycle /> Stylish Body</li>
-              <li><GiSuspensionBridge /> Dual Suspension</li>
-            </ul>
-          </div>
-          <div className="feature-category">
-            <h4>Technology</h4>
-            <ul>
-              <li><FaMotorcycle /> Reverse Gear</li>
-              <li><FaBolt /> Cruise Control</li>
-              <li><FaMobileAlt /> App Connectivity</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2>Key Components</h2>
-        <div className="image-collage">
-          <img src={batteryImg} alt="Battery" />
-          <img src={tyreImg} alt="Tyre" />
-          <img src={motorImg} alt="Motor" />
-          <img src={dashImg} alt="Dashboard" />
+    <div className="ecojoy-showcase">
+      {/* Hero Video Section */}
+      <section className="hero-video">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          ref={videoRef}
+          className="hero-video-content"
+        >
+          {/* Replace with actual hero video */}
+        </video>
+        
+        <div className="hero-overlay">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="hero-title"
+          >
+            ECO<span>JOY</span>
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="hero-subtitle"
+          >
+            Eco-Friendly Ride for the Future
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+            className="hero-cta"
+          >
+            <button className="cta-primary">Configure Yours</button>
+            <button className="cta-secondary">Explore Features</button>
+          </motion.div>
         </div>
       </section>
-    </>
+
+      {/* Color Customizer */}
+      <section className="color-customizer">
+        <div className="section-header">
+          <IoMdColorPalette className="section-icon" />
+          <h2>Customize Your EcoJoy</h2>
+          <p>Select from our premium color options</p>
+        </div>
+        
+        <div className="color-selector">
+          <div className="color-row">
+            {colors.map((color, index) => (
+              <motion.div
+                key={index}
+                className={`color-circle ${selectedColor === index ? 'active' : ''}`}
+                onClick={() => setSelectedColor(index)}
+                whileHover={{ scale: 1.1 }}
+                style={{ backgroundColor: color.code }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="color-preview">
+          <motion.div 
+            className="preview-container"
+            animate={{ background: `linear-gradient(135deg, ${colors[selectedColor].code} 0%, #2c3e50 100%)` }}
+            transition={{ duration: 0.5 }}
+          >
+            <img 
+              src={colors[selectedColor].img} 
+              alt={`EcoJoy in ${colors[selectedColor].name}`} 
+              className="preview-image"
+            />
+            <div className="color-badge">
+              <span>{colors[selectedColor].name}</span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Feature Highlights */}
+      <section className="feature-highlights">
+        <div className="features-grid">
+          {features.map((feature, index) => (
+            <motion.div 
+              key={index}
+              className="feature-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10 }}
+            >
+              <div className="feature-icon">
+                {feature.icon}
+              </div>
+              <h3>{feature.title}</h3>
+              <p>{feature.desc}</p>
+              <div className="feature-line" style={{ backgroundColor: colors[selectedColor].code }} />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Technical Specifications */}
+      <section className="tech-specs">
+        <div className="specs-tabs">
+          <button 
+            className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
+            onClick={() => setActiveTab('overview')}
+          >
+            Overview
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'performance' ? 'active' : ''}`}
+            onClick={() => setActiveTab('performance')}
+          >
+            Performance
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'technology' ? 'active' : ''}`}
+            onClick={() => setActiveTab('technology')}
+          >
+            Technology
+          </button>
+        </div>
+        
+        <div className="specs-content">
+          <AnimatePresence mode='wait'>
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.3 }}
+              className="specs-grid"
+            >
+              {activeTab === 'overview' && specs.performance.map((spec, index) => (
+                <div key={index} className="spec-item">
+                  <div className="spec-icon">{spec.icon}</div>
+                  <div className="spec-details">
+                    <h4>{spec.label}</h4>
+                    <p>{spec.value}</p>
+                  </div>
+                </div>
+              ))}
+              
+              {activeTab === 'performance' && specs.performance.map((spec, index) => (
+                <div key={index} className="spec-item">
+                  <div className="spec-icon">{spec.icon}</div>
+                  <div className="spec-details">
+                    <h4>{spec.label}</h4>
+                    <p>{spec.value}</p>
+                  </div>
+                </div>
+              ))}
+              
+              {activeTab === 'technology' && specs.tech.map((spec, index) => (
+                <div key={index} className="spec-item">
+                  <div className="spec-icon">{spec.icon}</div>
+                  <div className="spec-details">
+                    <h4>{spec.label}</h4>
+                    <p>{spec.value}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="gallery-section">
+        <div className="section-header">
+          <h2>Gallery</h2>
+          <p>Explore the EcoJoy from every angle</p>
+        </div>
+        
+        <div className="gallery-container">
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            navigation={{
+              nextEl: '.gallery-next',
+              prevEl: '.gallery-prev',
+            }}
+            modules={[Navigation]}
+            breakpoints={{
+              320: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 }
+            }}
+            className="gallery-swiper"
+          >
+            {galleryImages.map((image) => (
+              <SwiperSlide key={image.id}>
+                <motion.div 
+                  className="gallery-item"
+                  whileHover={{ scale: 1.03 }}
+                  onClick={() => setZoomImage(image.src)}
+                >
+                  <img src={image.src} alt={image.alt} />
+                  <div className="zoom-indicator">
+                    <FaExpand />
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
+          <button className="gallery-nav gallery-prev">
+            <FaChevronLeft />
+          </button>
+          <button className="gallery-nav gallery-next">
+            <FaChevronRight />
+          </button>
+        </div>
+      </section>
+
+      {/* Fullscreen Image Viewer */}
+      <AnimatePresence>
+        {zoomImage && (
+          <motion.div 
+            className="image-viewer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setZoomImage(null)}
+          >
+            <motion.img 
+              src={zoomImage}
+              alt="Fullscreen view"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring" }}
+            />
+            <button 
+              className="close-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setZoomImage(null);
+              }}
+            >
+              &times;
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
-export default EcoJoyDetails;
+export default EcoJoyShowcase;

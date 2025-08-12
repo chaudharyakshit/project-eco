@@ -47,13 +47,13 @@ const AboutUs = () => {
             </p>
 
             {/* CEO Info */}
-            <div className="about-ceo">
+            {/* <div className="about-ceo">
               <img src="/images/ceo.jpg" alt="CEO" className="ceo-img" />
               <div>
                 <h4>Richard Smith Colin</h4>
                 <p>CEO, Founder of Kars</p>
               </div>
-            </div>
+            </div> */}
 
             {/* Stats Section */}
             <div className="about-stats">

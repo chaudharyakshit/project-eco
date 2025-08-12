@@ -58,16 +58,16 @@
 }
 
 /* Card */
-.inventory-card  .whatsapp-button .whatsapp-icon{
-  background: white;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 18px;
-  width: 18px !important;
-  height: 18px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
+.inventory-card .whatsapp-icon {
+  all: unset;
+  width: 30px;
+  height: 28px;
+  margin-bottom: -20px;
+  margin-right: 40px;
+  transition: transform 0.2s ease;
+  display: inline-block;
 }
+
 
 
 .inventory-card:hover {
@@ -131,6 +131,8 @@
   background-color: #222;
 }
 
+
+
 .whatsapp-container {
  display: inline-flex;
   align-items: center;
@@ -144,10 +146,20 @@
 
 
 .whatsapp-icon {
-  width: 14px;
-  height: 14px;
+  width: 30px;
+  height: 28px;
+  margin-bottom: -8px;
+  margin-right: 40px;
+  transition: transform 0.2s ease;
+  background: transparent;
+  padding: 0;
   object-fit: contain;
 }
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
 
 .load-more-container {
   display: flex;
