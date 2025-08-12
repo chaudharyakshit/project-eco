@@ -166,7 +166,7 @@ const Inventory = () => {
     ? "/cruzeon-details"
     : scooty.title === "Rapidesign"
     ? "/rapidesign-details"
-    : scooty.title === "Ecoswift"
+    : scooty.title === "EcoSwift"
     ? "/ecoswift-details"
     : "#"
 }
@@ -174,7 +174,7 @@ const Inventory = () => {
   className="view-btn"
   target="_self"
   onClick={(e) => {   
-    if (scooty.title !== "Cruze Blade" && scooty.title !== "EcoShine" && scooty.title !== "EcoJoy" && scooty.title !== "EcoGlider" && scooty.title !== "Cruzeon" && scooty.title !== "Rapidesign"  && scooty.title !== "") {
+    if (scooty.title !== "Cruze Blade" && scooty.title !== "EcoShine" && scooty.title !== "EcoJoy" && scooty.title !== "EcoGlider" && scooty.title !== "Cruzeon" && scooty.title !== "Rapidesign"  && scooty.title !== "EcoSwift") {
 
       e.preventDefault();
       alert("Details page not available yet.");

@@ -2,19 +2,20 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import '../pages/ecoswift.css';
 
 // EcoSwift Images
-import image1 from '../assets/Inner-Images/EcoSwift/black/side.png';
-import image2 from '../assets/Inner-Images/EcoSwift/black/left.png';
-import image3 from '../assets/Inner-Images/EcoSwift/black/front.png';
-import image4 from '../assets/Inner-Images/EcoSwift/black/front.png';
+import image1 from '../assets/Inner-Images/Eco Swift/black/side.png';
+import image2 from '../assets/Inner-Images/Eco Swift/black/left.png';
+import image3 from '../assets/Inner-Images/Eco Swift/black/front.png';
+import image4 from '../assets/Inner-Images/Eco Swift/black/right.png';
 
 // Color options
-import nebulaGreen from '../assets/Inner-Images/EcoSwift/green/front.png';
-import lunarGray from '../assets/Inner-Images/EcoSwift/gray/front.png';
-import solarRed from '../assets/Inner-Images/EcoSwift/red/front.png';
-import cosmicBlack from '../assets/Inner-Images/EcoSwift/black/front.png';
-import stellarWhite from '../assets/Inner-Images/EcoSwift/white/front.png';
+import nebulaGreen from '../assets/Inner-Images/Eco Swift/black/front.png';
+import lunarGray from '../assets/Inner-Images/Eco Swift/blue/front.png';
+import solarRed from '../assets/Inner-Images/Eco Swift/red/front.png';
+import cosmicBlack from '../assets/Inner-Images/Eco Swift/grey/front.png';
+import stellarWhite from '../assets/Inner-Images/Eco Swift/white/front.png';
 
 // Icons
 import { 
