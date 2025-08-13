@@ -93,48 +93,13 @@ const EcoShineShowcase = () => {
   return (
     <div className="ecoshine-showcase">
       {/* Hero Video Section */}
-      <section className="hero-video">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          ref={videoRef}
-          className="hero-video-content"
-        >
-          {/* Replace with actual EcoShine hero video */}
-        </video>
-        
-        <div className="hero-overlay">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="hero-title"
-          >
-            ECO<span>SHINE</span>
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="hero-subtitle"
-          >
-            Redefining Urban Mobility
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="hero-cta"
-          >
-            <button className="cta-primary">Configure Yours</button>
-            <button className="cta-secondary">Explore Features</button>
-          </motion.div>
-        </div>
-      </section>
+       <section className="hero">
+  <div className="hero-content">
+    <h1>Ride the Revolution</h1>
+    <p>Eco-friendly. Stylish. Powerful.</p>
+    <button>Explore Now</button>
+  </div>
+</section>
 
       {/* Color Customizer */}
       <section className="color-customizer">
@@ -178,11 +143,11 @@ const EcoShineShowcase = () => {
 
       {/* Feature Highlights */}
       <section className="feature-highlights">
-        <div className="features-grid">
+        <div className="features-grid1">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card"
+              className="feature-card1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}

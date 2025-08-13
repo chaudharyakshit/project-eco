@@ -1,27 +1,12 @@
-/* components/Header/Header.css */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #ffff;
+  background-color: #fff;
   transition: all 0.3s ease;
   color: black;
-}
-
-
-
-
-.top-bar a {
-  color: black;
-  text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-
-.top-bar a:hover {
-  color: #c00;
 }
 
 .main-header {
@@ -52,7 +37,6 @@ nav ul {
 
 nav ul li {
   margin: 0 15px;
-  position: relative;
 }
 
 nav ul li a {
@@ -62,8 +46,8 @@ nav ul li a {
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: color 0.3s;
   position: relative;
+  transition: color 0.3s;
 }
 
 nav ul li a::after {
@@ -90,22 +74,11 @@ nav ul li a:hover {
   align-items: center;
 }
 
-.header-actions a {
-  color: black;
-  margin-left: 20px;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.header-actions a:hover {
-  color: #c00;
-}
-
 .mobile-menu-btn {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: black; /* ✅ Now visible */
   font-size: 24px;
   cursor: pointer;
 }
@@ -114,13 +87,9 @@ nav ul li a:hover {
   nav ul {
     display: none;
   }
-  
+
   .mobile-menu-btn {
     display: block;
-  }
-  
-  .header-actions a:not(.mobile-menu-btn) {
-    display: none;
   }
 
   nav.mobile-open ul {
@@ -130,13 +99,20 @@ nav ul li a:hover {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #000;
-    padding: 20px 0;
+    background-color: #fff; /* ✅ Matches header */
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    z-index: 999;
   }
 
   nav.mobile-open ul li {
     margin: 10px 0;
     text-align: center;
+  }
+
+  nav.mobile-open ul li a {
+    color: black; /* ✅ Visible on white */
+    font-size: 18px;
   }
 }
 
@@ -146,6 +122,6 @@ nav ul li a:hover {
   }
   
   .logo {
-    width: 150px;
+    width: 120px;
   }
 }

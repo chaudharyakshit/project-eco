@@ -12,6 +12,7 @@ import lunarGray from '../assets/Inner-Images/Cruze-Blade/gray/front.png';
 import solarRed from '../assets/Inner-Images/Cruze-Blade/red/front.png';
 import cosmicBlack from '../assets/Inner-Images/Cruze-Blade/black/front.png';
 import stellarWhite from '../assets/Inner-Images/Cruze-Blade/white/front.png';
+import '../pages/CruzeBladeDetails.css';
 
 
 
@@ -94,48 +95,14 @@ const CruzeBladeShowcase = () => {
   return (
     <div className="cruze-blade-showcase">
       {/* Hero Video Section */}
-      <section className="hero-video">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          ref={videoRef}
-          className="hero-video-content"
-        >
-          {/* Replace with actual hero video */}
-        </video>
-        
-        <div className="hero-overlay">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="hero-title"
-          >
-            CRUZE <span>BLADE</span>
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="hero-subtitle"
-          >
-            Redefining Urban Mobility
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-            className="hero-cta"
-          >
-            <button className="cta-primary">Configure Yours</button>
-            <button className="cta-secondary">Explore Features</button>
-          </motion.div>
-        </div>
-      </section>
+      <section className="hero">
+  <div className="hero-content">
+    <h1>Ride the Revolution</h1>
+    <p>Eco-friendly. Stylish. Powerful.</p>
+    <button>Explore Now</button>
+  </div>
+</section>
+
 
       {/* Color Customizer */}
       <section className="color-customizer">
@@ -179,19 +146,19 @@ const CruzeBladeShowcase = () => {
       </section>
 
       {/* Feature Highlights */}
-      <section className="feature-highlights">
-        <div className="features-grid">
+      <section className="feature-highlights3">
+        <div className="features-grid3">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card"
+              className="feature-card3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="feature-icon">
+              <div className="feature-icon3">
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>

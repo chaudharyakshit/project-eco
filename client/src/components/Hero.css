@@ -140,3 +140,41 @@
 .dot.active {
   background-color: #ff3c2f;
 }
+
+/* 📱 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hero-slide {
+    flex-direction: column; /* Image on top, text below */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-right {
+    order: -1; /* Put image first */
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-section {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .hero-pagination {
+    flex-direction: row;
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+}

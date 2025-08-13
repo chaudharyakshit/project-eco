@@ -54,7 +54,7 @@
 }
 
 .chat-header {
-  background: linear-gradient(135deg, #4b6cb7, #182848);
+  background: linear-gradient(135deg, #cb4343, red);
   color: white;
   padding: 15px 20px;
   display: flex;
@@ -105,7 +105,7 @@
   background: #e3f2fd;
   align-self: flex-end;
   border-bottom-right-radius: 5px;
-  color: #0d47a1;
+  color: #cb4343;
 }
 
 .message.bot {
@@ -131,11 +131,11 @@
 
 .intro-form input:focus {
   outline: none;
-  border-color: #4b6cb7;
+  border-color: cb4343;
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #4b6cb7, #182848);
+  background: linear-gradient(135deg, #cb4343, red);
   color: white;
   border: none;
   padding: 12px;
@@ -205,7 +205,7 @@
 .back-btn {
   background: none;
   border: none;
-  color: #4b6cb7;
+  color: #cb4343;
   cursor: pointer;
   padding: 5px 0;
   margin-bottom: 15px;
@@ -252,7 +252,7 @@
 }
 
 .message-input button {
-  background: #4b6cb7;
+  background: #cb4343;
   color: white;
   border: none;
   border-radius: 20px;
@@ -275,7 +275,7 @@
 }
 
 .quick-links a {
-  color: #4b6cb7;
+  color: #cb4343;
   text-decoration: none;
 }
 
