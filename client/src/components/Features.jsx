@@ -7,12 +7,12 @@ import { motion } from 'framer-motion';
 const features = [
   {
     icon: <FaCogs />,
-    title: 'American Engineering',
+    title: 'Indian Engineering',
     description: 'Each Thunderbolt motorcycle is built with precision engineering and uncompromising quality standards in our U.S. facilities.'
   },
   {
     icon: <FaShieldAlt />,
-    title: '5-Year Warranty',
+    title: '3-Year Warranty',
     description: 'We stand behind our bikes with the industry\'s best warranty coverage for complete peace of mind.'
   },
   {

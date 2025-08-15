@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.css';
 import { AnimatePresence, motion } from 'framer-motion';
-import hero1 from '../assets/hero1.png'; 
-import hero2 from '../assets/hero2.png'; 
-import hero3 from '../assets/hero3.png'; 
+import hero1 from '../assets/Inner-Images/New folder/14c.png'; 
+import hero2 from '../assets/Inner-Images/New folder/4D.png'; 
+import hero3 from '../assets/Inner-Images/New folder/13A.png'; 
 
 
 
@@ -20,7 +20,7 @@ const heroData = [
     title: 'Power Meets Elegance',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero2,
-    primaryBtn: 'Build Yours',
+    primaryBtn: 'Make Yours',
     secondaryBtn: 'Learn More',
   },
    {

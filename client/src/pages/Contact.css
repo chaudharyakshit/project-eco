@@ -1,21 +1,24 @@
 /* Contact Us Page Styles */
+
 .contact-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  margin:  auto;
+  padding-top: 120px;
   font-family: 'Arial', sans-serif;
   color: #333;
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .contact-header h1 {
+  display: block; /* ensure it's visible */
   font-size: 36px;
   margin-bottom: 15px;
   color: #222;
+  font-weight: bold;
 }
 
 .header-line {
@@ -29,16 +32,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+  flex-direction: row;
 }
 
 .contact-info {
   flex: 1;
   min-width: 300px;
+  order: 1; /* Ensure info is first */
 }
 
 .contact-form {
   flex: 1;
   min-width: 300px;
+  order: 2; /* Form after info */
 }
 
 .info-section {
@@ -133,6 +139,14 @@
 @media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
+  }
+
+  .contact-info {
+    order: 1; /* info first */
+  }
+
+  .contact-form {
+    order: 2;
   }
   
   .contact-header h1 {

@@ -171,3 +171,26 @@
   background: linear-gradient(to right, transparent, #ffffff33, transparent);
   transform: translateY(-50%);
 }
+@media (max-width: 768px) {
+  .main-banner {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .scooty-image {
+    order: 1; /* Image comes first */
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .offer-section {
+    order: 2; /* Offer content after image */
+    padding: 0;
+  }
+
+  .scooty-img {
+    max-width: 90%;
+    height: auto;
+  }
+}

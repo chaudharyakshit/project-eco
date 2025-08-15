@@ -147,10 +147,16 @@
     flex-direction: column; /* Image on top, text below */
     text-align: center;
     gap: 30px;
+    height: auto !important;        /* ✅ allow full height */
+    overflow: visible !important;  
+       align-items: center;
   }
 
-  .hero-right {
-    order: -1; /* Put image first */
+   .hero-right {
+    order: -1;
+    height: auto !important; /* ✅ Force auto height */
+    width: 100%; /* ✅ Ensure full width */
+    align-items: center; /* ✅ Center image horizontally */
   }
 
   .hero-text h1 {
@@ -164,6 +170,7 @@
   .hero-section {
     padding: 30px 20px;
     min-height: auto;
+    padding-top: 100px; 
   }
 
   .hero-pagination {
@@ -174,7 +181,11 @@
     margin-top: 20px;
   }
 
-  .hero-image {
+.hero-image {
+    width: 100% !important; /* ✅ Fill container */
+    height: auto !important; /* ✅ Keep proportions */
     max-width: 100%;
+    max-height: none;
+    object-fit: contain; /* ✅ Prevent cropping */
   }
 }

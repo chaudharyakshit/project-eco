@@ -6,23 +6,22 @@ const testimonials = [
   {
     id: 1,
     text: "I've ridden many bikes over the years, but nothing compares to the raw power and smooth handling of my Thunder Chief. Thunderbolt has truly created something special with this machine.",
-    name: "Mike Johnson",
-    role: "Thunder Chief Owner",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    name: "Akshit",
+  
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_uAf2BeFSO3fp2XLvsBOigcSVs4doSFTzCA&s"
   },
   {
     id: 2,
     text: "The Storm Scout is the perfect balance of power and agility. I've taken it on cross-country trips and city commutes - it handles everything with ease and turns heads everywhere I go.",
-    name: "Sarah Williams",
-    role: "Storm Scout Owner",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
+    name: "Rohit",
+    
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmt7mgLLJbU_An415Sur0-Iq8kRKQzzAwCw&s"
   },
   {
     id: 3,
     text: "As a long-time rider, I was skeptical about trying a new brand. The Lightning FTR completely changed my mind. The performance and build quality are unmatched in its class.",
-    name: "David Chen",
-    role: "Lightning FTR Owner",
-    image: "https://randomuser.me/api/portraits/men/67.jpg"
+    name: "Ananya",
+    image: "https://thumbs.dreamstime.com/b/serious-young-indian-woman-standing-indoor-arms-crossed-unsmiling-dressed-blue-casual-shirt-having-calm-composed-face-364421490.jpg"
   }
 ];
 

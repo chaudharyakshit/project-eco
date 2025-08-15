@@ -1,6 +1,6 @@
 import React from "react";
 import "./Services.css";
-import bannerImg from "../assets/Banner4.png";
+import bannerImg from "../assets/Inner-Images/Cruze-Blade/black/left.png";
 
 // Service Images
 import carMaintenanceImg from "../assets/service1.png";
@@ -10,7 +10,7 @@ import Testimonials from "../components/Testimonials";
 
 const services = [
   {
-    title: "Car Maintenance",
+    title: "Scooty Maintenance",
     description:
       "We offer various warranty plans on both new and certified pre-owned vehicles. These plans can cover essential components.",
     img: carMaintenanceImg,
@@ -18,7 +18,7 @@ const services = [
     icon: "fa-solid fa-gears"
   },
   {
-    title: "Engine Diagnosis",
+    title: "Motor Diagnosis",
     description:
       "We offer various warranty plans on both new and certified pre-owned vehicles. These plans can cover essential components.",
     img: engineDiagnosisImg,
@@ -26,7 +26,7 @@ const services = [
     icon: "fa-solid fa-screwdriver-wrench"
   },
   {
-    title: "Car Break Repair",
+    title: "Break Repair",
     description:
       "We offer various warranty plans on both new and certified pre-owned vehicles. These plans can cover essential components.",
     img: carBreakRepairImg,

@@ -6,7 +6,7 @@ import Features from '../components/Features';
 import Calculator from '../components/calculator';
 import banner1 from '../assets/banner1.png';
 import Testimonials from '../components/Testimonials';
-import banner2 from '../assets/banner1.png';
+import banner2 from '../assets/about.png';
 
 const AboutUs = () => {
   return (
@@ -28,13 +28,13 @@ const AboutUs = () => {
         <div className="about-container">
           {/* Left Side - Images */}
           <div className="about-images">
-            <img src={banner1} alt="Handshake" className="about-img top-img" />
-            <img src={banner2} alt="Luxury Car" className="about-img bottom-img" />
+            <img src={banner2} alt="Handshake" className="about-img top-img" />
+            
           </div>
 
           {/* Right Side - Text */}
           <div className="about-content">
-            <h5 className="about-subtitle">Welcome To Kars</h5>
+            <h5 className="about-subtitle">Welcome To Ecocruze</h5>
             <h2 className="about-heading">About Us Our Auto Dealership Company</h2>
             <p>
               Our multi-brand trade-in program allows you to bring in your current vehicle, 

@@ -133,7 +133,7 @@ const Models = () => {
     <section className="models-section">
       <div className="models-header">
         <h2 className="section-title1">Our Latest Models</h2>
-        <p className="section-subtitle">Innovative design meets sustainable performance</p>
+        <p className="section-subtitle">Build Yours ➡️ Make it Your's</p>
       </div>
       
       <div className="models-container">

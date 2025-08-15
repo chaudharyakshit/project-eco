@@ -63,16 +63,16 @@ const ContactUs = () => {
           <div className="info-section">
             <h3>Contact Number</h3>
             <ul>
-              <li>10am, +00.3019.2019</li>
-              <li>Email: sunbeng@mail.com</li>
+              <li> +917017175520</li>
+              <li>Email: Indiasgodigital5@gmail.com</li>
             </ul>
           </div>
 
           <div className="info-section">
             <h3>Opening Hour</h3>
             <ul>
-              <li>Monday - 9:00 - 18:00</li>
-              <li>Sunday, Chapel</li>
+              <li>Monday - Saturday</li>
+              <li>9:00 AM to 6:00 PM</li>
             </ul>
           </div>
         </div>

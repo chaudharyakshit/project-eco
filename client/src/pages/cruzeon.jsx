@@ -62,6 +62,11 @@ const CruzeonShowcase = () => {
       desc: "Mobile app with GPS tracking, ride stats, and diagnostics",
       icon: <FaMobileAlt />
     },
+    {
+          title: "Premium Design",
+          desc: "Aerodynamic body with premium finishes and customizable lighting",
+          icon: <FaPalette />
+        }
    
   ];
 
@@ -85,18 +90,18 @@ const CruzeonShowcase = () => {
 
       {/* Feature Highlights */}
       <section className="feature-highlights">
-        <div className="features-grid">
+        <div className="features-grid3">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card"
+              className="feature-card3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="feature-icon">
+              <div className="feature-icon3">
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>

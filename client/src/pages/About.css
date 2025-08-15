@@ -1,6 +1,6 @@
 /* ====== Banner Section ====== */
 .about-banner {
-  background: url('/images/banner-bg.jpg') center/cover no-repeat;
+  background: url('../assets/Cruze-Blade.png') center/cover no-repeat;
   height: 250px;
   display: flex;
   align-items: center;
@@ -141,12 +141,13 @@
   }
 
   .about-images {
-    flex-direction: row;
+    flex-direction: column; /* stack images */
     justify-content: center;
+    align-items: center;
   }
 
   .about-img {
-    max-width: 45%;
+    max-width: 100%; /* make full width */
   }
 
   .about-stats {
