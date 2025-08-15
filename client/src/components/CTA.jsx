@@ -15,7 +15,7 @@ const CTA = () => {
       >
         <h2 className="cta-title">Ready to Ride the Ecocruze?</h2>
         <p className="cta-text">Schedule a test ride at your nearest Thunderbolt dealer and experience the power, performance, and craftsmanship for yourself.</p>
-        <a href="#" className="btn btn-primary">Find a Dealer</a>
+        <a href="/dealership" className="btn btn-primary">Find a Dealer</a>
       </motion.div>
     </section>
   );

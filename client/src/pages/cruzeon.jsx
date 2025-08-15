@@ -9,13 +9,14 @@ import '../pages/cruzeon.css'; // New CSS file for Cruzeon styling
 import image1 from '../assets/Inner-Images/Cruzeon/1.png';
 import image2 from '../assets/Inner-Images/Cruzeon/2.png';
 import image3 from '../assets/Inner-Images/Cruzeon/3.png';
+import brand6 from '../assets/Inner-Images/Cruzeon/3.png';
 
 
 // Icons
 import { 
   FaBolt, FaMotorcycle, FaCarBattery, FaTachometerAlt, 
   FaExpand, FaChevronRight, FaChevronLeft,
-  FaRegLightbulb, FaShieldAlt, FaMobileAlt, FaWeightHanging
+  FaRegLightbulb, FaShieldAlt, FaMobileAlt, FaWeightHanging,FaPalette 
 } from 'react-icons/fa';
 import { GiPowerLightning, GiCarWheel } from 'react-icons/gi';
 import { IoMdSpeedometer } from 'react-icons/io';
@@ -79,29 +80,32 @@ const CruzeonShowcase = () => {
 
   return (
     <div className="cruzeon-showcase">
-      {/* Hero Video Section */}
-       <section className="hero">
-  <div className="hero-content">
-    <h1>Ride the Revolution</h1>
-    <p>Eco-friendly. Stylish. Powerful.</p>
-    <button>Explore Now</button>
-  </div>
-</section>
+    <section className="cruzeon-hero">
+          <img
+            src={brand6}
+            alt="Cruzeon"
+            className="cruzeon-hero-image"
+          />
+          <div className="cruzeon-hero-content">
+            <h1>Ride the Revolution</h1>
+            <p>Eco-friendly. Stylish. Powerful.</p>
+          </div>
+        </section>
 
       {/* Feature Highlights */}
-      <section className="feature-highlights">
-        <div className="features-grid3">
+      <section className="cruzeon-feature-highlights">
+        <div className="cruzeon-feature-grid">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card3"
+              className="cruzeon-feature-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="feature-icon3">
+              <div className="cruzeon-feature-icon">
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>
@@ -180,50 +184,26 @@ const CruzeonShowcase = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="gallery-section">
+       <section className="gallery-section">
         <div className="section-header">
           <h2>Gallery</h2>
-          <p>Explore the Cruzeon from every angle</p>
+          <p>Explore the Cruze Blade from every angle</p>
         </div>
-        
+      
         <div className="gallery-container">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={{
-              nextEl: '.gallery-next',
-              prevEl: '.gallery-prev',
-            }}
-            modules={[Navigation]}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="gallery-swiper"
-          >
-            {galleryImages.map((image) => (
-              <SwiperSlide key={image.id}>
-                <motion.div 
-                  className="gallery-item"
-                  whileHover={{ scale: 1.03 }}
-                  onClick={() => setZoomImage(image.src)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                  <div className="zoom-indicator">
-                    <FaExpand />
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          
-          <button className="gallery-nav gallery-prev">
-            <FaChevronLeft />
-          </button>
-          <button className="gallery-nav gallery-next">
-            <FaChevronRight />
-          </button>
+          {galleryImages.map((image) => (
+            <motion.div 
+              key={image.id} 
+              className="gallery-item"
+              whileHover={{ scale: 1.03 }}
+              onClick={() => setZoomImage(image.src)}
+            >
+              <img src={image.src} alt={image.alt} />
+              <div className="zoom-indicator">
+                <FaExpand />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

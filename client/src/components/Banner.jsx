@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import "./Banner.css";
 import banner1 from "../assets/banner1.png";
+import { Link } from "react-router-dom";
 
 const ScootyBanner = () => {
   const bannerRef = useRef();
@@ -39,9 +40,10 @@ const ScootyBanner = () => {
             <span className="discount">
               70<span className="percent">%</span>
             </span>
-            <span className="upto">Up To Off</span>
+            {/* <span className="upto">Up To Off</span> */}
           </div>
-          <button className="buy-btn">BUY NOW →</button>
+  
+<Link to="/contact" className="buy-btn">Contact Us →</Link>
         </div>
       </div>
 

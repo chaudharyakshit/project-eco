@@ -76,11 +76,12 @@ function App() {
              <Route path="/services" element={<Services/>} />
              <Route path="/contact" element={<Contact />} /> 
              <Route path="/dealership" element={<Dealership />} />
+                 <Route path = "/News" element={<News/>}/>
 
               <Route path="/cruze-blade-details" element={<CruzeBladeDetails />} />
               <Route path = "/EcoShine-details" element={<EcoShine/>}/>  
               <Route path="/ecoswift-details" element={<Ecoswift/>} />
-              <Route path = "/News" element={<News/>}/>
+          
               <Route path="/ecojoy-details" element={<EcoJoy />} />
               <Route path="/eco-glider-details" element={<EcoGlider />} />
               <Route path="cruzeon-details" element={<Cruzeon />} />

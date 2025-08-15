@@ -15,7 +15,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="floating"
         >
-          Ride The Thunder
+          Ride The  Bike
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="delay-1"
         >
-          Experience the raw power and unmatched craftsmanship of Thunderbolt Motorcycles - where American heritage meets modern performance.
+          Experience the raw power and unmatched craftsmanship of Ecocruze Scooty - where Inidan heritage meets modern performance.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,8 +31,8 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="hero-buttons delay-2"
         >
-          <a href="#" className="btn btn-primary">Build Your Bike</a>
-          <a href="#" className="btn btn-secondary">Explore Models</a>
+          <a href="/" className="btn btn-primary">Build Your Bike</a>
+          <a href="/contact" className="btn btn-secondary">Explore Models</a>
         </motion.div>
       </div>
       

@@ -4,16 +4,17 @@ import { AnimatePresence, motion } from 'framer-motion';
 import hero1 from '../assets/Inner-Images/New folder/14c.png'; 
 import hero2 from '../assets/Inner-Images/New folder/4D.png'; 
 import hero3 from '../assets/Inner-Images/New folder/13A.png'; 
+import { Link } from 'react-router-dom'; 
 
 
 
 const heroData = [
   {
     title: 'Find Your Perfect Scooty For Ride',
-    desc: 'Explore stylish and high-performance electric scooties built for modern commuters.',
+    desc: 'Explore stylish and high-performance electric scooty built for modern commuters.',
     img :  hero1,
     alt: "Ecocruze Motorcycles",
-    primaryBtn: 'Go To Listing',
+    primaryBtn: 'Learn More',
     secondaryBtn: 'Contact Us',
   },
   {
@@ -21,14 +22,14 @@ const heroData = [
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero2,
     primaryBtn: 'Make Yours',
-    secondaryBtn: 'Learn More',
+    secondaryBtn: 'Contact us',
   },
    {
     title: 'Power Meets Elegance',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero3,
     primaryBtn: 'Build Yours',
-    secondaryBtn: 'Learn More',
+    secondaryBtn: 'Contact us',
   }
 ];
 
@@ -71,8 +72,8 @@ const Hero = () => {
                   <h1>{data.title}</h1>
                   <p>{data.desc}</p>
                   <div className="hero-buttons">
-                    <a href="#" className="btn primary">{data.primaryBtn} →</a>
-                    <a href="#" className="btn secondary">{data.secondaryBtn} →</a>
+                    <a href="/" className="btn primary">{data.primaryBtn} →</a>
+                    <a href="/contact" className="btn secondary">{data.secondaryBtn} →</a>
                   </div>
                 </div>
               </div>

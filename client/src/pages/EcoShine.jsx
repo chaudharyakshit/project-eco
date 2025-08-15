@@ -8,6 +8,7 @@ import image1 from '../assets/Inner-Images/Eco-Shine/bondiblue/1.png';
 import image2 from '../assets/Inner-Images/Eco-Shine/bondiblue/2.png';
 import image3 from '../assets/Inner-Images/Eco-Shine/bondiblue/3.png';
 import image4 from '../assets/Inner-Images/Eco-Shine/bondiblue/4.png';
+import brand2 from '../assets/Inner-Images/Eco-Shine/bondiblue/4.png';
 
 import nebulaGreen from '../assets/Inner-Images/Eco-Shine/bondiblue/1.png';
 import lunarGray from '../assets/Inner-Images/Eco-Shine/red/1.png';
@@ -92,14 +93,19 @@ const EcoShineShowcase = () => {
 
   return (
     <div className="ecoshine-showcase">
-      {/* Hero Video Section */}
-       <section className="hero">
-  <div className="hero-content">
-    <h1>Ride the Revolution</h1>
-    <p>Eco-friendly. Stylish. Powerful.</p>
-    <button>Explore Now</button>
-  </div>
-</section>
+    
+    
+        <section className="Ecoshine-hero">
+        <img
+          src={brand2}
+          alt="Ecoshine"
+          className="Ecoshine-hero-image"
+        />
+        <div className="Ecoshine-hero-content">
+          <h1>Ride the Revolution</h1>
+          <p>Eco-friendly. Stylish. Powerful.</p>
+        </div>
+      </section>
 
       {/* Color Customizer */}
       <section className="color-customizer">
@@ -142,24 +148,24 @@ const EcoShineShowcase = () => {
       </section>
 
       {/* Feature Highlights */}
-      <section className="feature-highlights">
-        <div className="features-grid1">
+      <section className="Ecoshine-feature-highlights">
+        <div className="Ecoshine-feature-grid">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card1"
+              className="Ecoshine-feature-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="feature-icon">
+              <div className="Ecoshine-feature-icon">
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.desc}</p>
-              <div className="feature-line" style={{ backgroundColor: colors[selectedColor].code }} />
+              <div className="Ecoshine-feature-line" style={{ backgroundColor: colors[selectedColor].code }} />
             </motion.div>
           ))}
         </div>
@@ -233,50 +239,26 @@ const EcoShineShowcase = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="gallery-section">
+       <section className="gallery-section">
         <div className="section-header">
           <h2>Gallery</h2>
-          <p>Explore the EcoShine from every angle</p>
+          <p>Explore the Cruze Blade from every angle</p>
         </div>
-        
+      
         <div className="gallery-container">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={{
-              nextEl: '.gallery-next',
-              prevEl: '.gallery-prev',
-            }}
-            modules={[Navigation]}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="gallery-swiper"
-          >
-            {galleryImages.map((image) => (
-              <SwiperSlide key={image.id}>
-                <motion.div 
-                  className="gallery-item"
-                  whileHover={{ scale: 1.03 }}
-                  onClick={() => setZoomImage(image.src)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                  <div className="zoom-indicator">
-                    <FaExpand />
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          
-          <button className="gallery-nav gallery-prev">
-            <FaChevronLeft />
-          </button>
-          <button className="gallery-nav gallery-next">
-            <FaChevronRight />
-          </button>
+          {galleryImages.map((image) => (
+            <motion.div 
+              key={image.id} 
+              className="gallery-item"
+              whileHover={{ scale: 1.03 }}
+              onClick={() => setZoomImage(image.src)}
+            >
+              <img src={image.src} alt={image.alt} />
+              <div className="zoom-indicator">
+                <FaExpand />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

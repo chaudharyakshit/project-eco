@@ -76,7 +76,7 @@ const RapidsignShowcase = () => {
   <div className="hero-content">
     <h1>Ride the Revolution</h1>
     <p>Eco-friendly. Stylish. Powerful.</p>
-    <button>Explore Now</button>
+   
   </div>
 </section>
 
@@ -172,50 +172,26 @@ const RapidsignShowcase = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="gallery-section">
+       <section className="gallery-section">
         <div className="section-header">
           <h2>Gallery</h2>
-          <p>Explore the Rapidsign from every angle</p>
+          <p>Explore the Cruze Blade from every angle</p>
         </div>
-        
+      
         <div className="gallery-container">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={{
-              nextEl: '.gallery-next',
-              prevEl: '.gallery-prev',
-            }}
-            modules={[Navigation]}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="gallery-swiper"
-          >
-            {galleryImages.map((image) => (
-              <SwiperSlide key={image.id}>
-                <motion.div 
-                  className="gallery-item"
-                  whileHover={{ scale: 1.03 }}
-                  onClick={() => setZoomImage(image.src)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                  <div className="zoom-indicator">
-                    <FaExpand />
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          
-          <button className="gallery-nav gallery-prev">
-            <FaChevronLeft />
-          </button>
-          <button className="gallery-nav gallery-next">
-            <FaChevronRight />
-          </button>
+          {galleryImages.map((image) => (
+            <motion.div 
+              key={image.id} 
+              className="gallery-item"
+              whileHover={{ scale: 1.03 }}
+              onClick={() => setZoomImage(image.src)}
+            >
+              <img src={image.src} alt={image.alt} />
+              <div className="zoom-indicator">
+                <FaExpand />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

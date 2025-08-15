@@ -6,6 +6,7 @@ import image1 from '../assets/Inner-Images/Cruze-Blade/black/side.png';
 import image2 from '../assets/Inner-Images/Cruze-Blade/black/left.png';
 import image3 from '../assets/Inner-Images/Cruze-Blade/black/front.png';
 import image4 from '../assets/Inner-Images/Cruze-Blade/black/front.png';
+import brand1 from '../assets/Inner-Images/Cruze-Blade/black/side.png';
 // Assets
 import nebulaGreen from '../assets/Inner-Images/Cruze-Blade/green/front.png';
 import lunarGray from '../assets/Inner-Images/Cruze-Blade/gray/front.png';
@@ -94,14 +95,18 @@ const CruzeBladeShowcase = () => {
 
   return (
     <div className="cruze-blade-showcase">
-      {/* Hero Video Section */}
-      <section className="hero">
-  <div className="hero-content">
-    <h1>Ride the Revolution</h1>
-    <p>Eco-friendly. Stylish. Powerful.</p>
-    <button>Explore Now</button>
-  </div>
-</section>
+   
+      <section className="cruze-hero">
+      <img
+        src={brand1}
+        alt="Cruze Blade"
+        className="cruze-hero-image"
+      />
+      <div className="cruze-hero-content">
+        <h1>Ride the Revolution</h1>
+        <p>Eco-friendly. Stylish. Powerful.</p>
+      </div>
+    </section>
 
 
       {/* Color Customizer */}
@@ -146,24 +151,24 @@ const CruzeBladeShowcase = () => {
       </section>
 
       {/* Feature Highlights */}
-      <section className="feature-highlights3">
-        <div className="features-grid3">
+      <section className="cruze-feature-highlights">
+        <div className="cruze-feature-grid">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card3"
+              className="cruze-feature-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="feature-icon3">
+              <div className="cruze-feature-icon">
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.desc}</p>
-              <div className="feature-line" style={{ backgroundColor: colors[selectedColor].code }} />
+              <div className="cruze-feature-line" style={{ backgroundColor: colors[selectedColor].code }} />
             </motion.div>
           ))}
         </div>
@@ -238,51 +243,27 @@ const CruzeBladeShowcase = () => {
 
       {/* Gallery Section */}
       <section className="gallery-section">
-        <div className="section-header">
-          <h2>Gallery</h2>
-          <p>Explore the Cruze Blade from every angle</p>
+  <div className="section-header">
+    <h2>Gallery</h2>
+    <p>Explore the Cruze Blade from every angle</p>
+  </div>
+
+  <div className="gallery-container">
+    {galleryImages.map((image) => (
+      <motion.div 
+        key={image.id} 
+        className="gallery-item"
+        whileHover={{ scale: 1.03 }}
+        onClick={() => setZoomImage(image.src)}
+      >
+        <img src={image.src} alt={image.alt} />
+        <div className="zoom-indicator">
+          <FaExpand />
         </div>
-        
-        <div className="gallery-container">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={{
-              nextEl: '.gallery-next',
-              prevEl: '.gallery-prev',
-            }}
-            modules={[Navigation]}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="gallery-swiper"
-          >
-            {galleryImages.map((image) => (
-              <SwiperSlide key={image.id}>
-                <motion.div 
-                  className="gallery-item"
-                  whileHover={{ scale: 1.03 }}
-                  onClick={() => setZoomImage(image.src)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                  <div className="zoom-indicator">
-                    <FaExpand />
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          
-          <button className="gallery-nav gallery-prev">
-            <FaChevronLeft />
-          </button>
-          <button className="gallery-nav gallery-next">
-            <FaChevronRight />
-          </button>
-        </div>
-      </section>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
       {/* Fullscreen Image Viewer */}
       <AnimatePresence>

@@ -66,14 +66,14 @@ const scootyData = [
     fuel: "Battery",
     img: Rapidsign,
   },
-  {
-    title: "Okaya Faast F4",
-    seller: "Okaya Mobility",
-    cc: "125cc",
-    type: "Electric",
-    fuel: "Battery",
-    img: "https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600",
-  },
+  // {
+  //   title: "Okaya Faast F4",
+  //   seller: "Okaya Mobility",
+  //   cc: "125cc",
+  //   type: "Electric",
+  //   fuel: "Battery",
+  //   img: "https://images.unsplash.com/photo-1648204834832-78e68052c04f?w=600",
+  // },
   // {
   //   title: 'Pure EV EPluto',
   //   seller: 'Pure EV Dealer',

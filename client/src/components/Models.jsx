@@ -133,7 +133,7 @@ const Models = () => {
     <section className="models-section">
       <div className="models-header">
         <h2 className="section-title1">Our Latest Models</h2>
-        <p className="section-subtitle">Build Yours ➡️ Make it Your's</p>
+        <p className="section-subtitle"> Make it Yours</p>
       </div>
       
       <div className="models-container">
@@ -167,9 +167,9 @@ const Models = () => {
                       ar-modes="webxr scene-viewer quick-look"
                       className="model-3d-viewer"
                     >
-                      <button slot="ar-button" className="ar-button">
+                      {/* <button slot="ar-button" className="ar-button">
                         View in AR
-                      </button>
+                      </button> */}
                     </model-viewer>
                   ) : (
                     <img src={model.poster} alt={model.name} className="model-image" />
@@ -213,8 +213,8 @@ const Models = () => {
                   </div>
                   
                   <div className="model-actions">
-                    <a href="#" className="btn btn-primary">Build Yours</a>
-                    <a href="#" className="btn btn-secondary">Test Ride</a>
+                    <a href="/contact" className="btn btn-primary">Make Yours</a>
+                    <a href="/contact" className="btn btn-secondary">Contact Us</a>
                   </div>
                 </div>
               </motion.div>

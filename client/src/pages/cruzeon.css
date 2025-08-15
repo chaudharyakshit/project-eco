@@ -1,81 +1,67 @@
-/* Base Styles */
-:root {
-  --primary: #ff4757;
-  --dark: #2f3542;
-  --light: #f1f2f6;
-  --accent: #3742fa;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: var(--dark);
-  overflow-x: hidden;
-}
-
-.cruze-blade-showcase {
+/* ======== Base ======== */
+.cruzeon-showcase {
   max-width: 100%;
   overflow: hidden;
 }
 
-/* Hero Video Section */
-.hero {
+/* ======== Hero Section ======== */
+.cruzeon-hero {
   position: relative;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   width: 100%;
-  background-image: url('../assets/Inner-Images/cruzeon/1.png');
-  background-size: contain; /* Cover entire area */
-  background-position: center;
-  background-repeat: no-repeat; /* No repeat */
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: white;
-  background-color: black;
+  overflow: hidden;
 }
 
-.hero::before {
+.cruzeon-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: black;
+  z-index: 0;
+}
+
+.cruzeon-hero::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better readability */
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
-.hero-content {
+.cruzeon-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 900px; /* Limit width so text stays readable */
+  text-align: center;
+  color: white;
+  padding: 0 10px;
 }
 
-.hero-content h1 {
-  font-size: 4rem; /* Bigger heading */
+.cruzeon-hero-content h1 {
+  font-size: 4rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Decorative shadow */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero-content p {
-  font-size: 1.5rem; /* Bigger paragraph */
+.cruzeon-hero-content p {
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.8;
   margin-top: 20px;
   font-family: 'Roboto', sans-serif;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
-
-
 
 
 /* Section Styles */
@@ -210,49 +196,65 @@ body {
 }
 
 /* Feature Highlights */
-.features-grid3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* gap: 10px; */
-  max-width: 1000px;
-  margin: 10px ;
-  padding: 0 40px;
+.cruzeon-feature-highlights {
+  padding: 100px 0;
+  background: url('spec-bg.jpg') no-repeat center center;
+  background-size: cover;
   position: relative;
-  z-index: 2;
-   flex-wrap: nowrap;
 }
 
-.feature-card3 {
+.cruzeon-feature-highlights:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.cruzeon-feature-grid {
+display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards in one line */
+  gap: 10px;
+  width: 100%; /* take full width */
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.cruzeon-feature-card {
   background: rgba(255,255,255,0.9);
   border-radius: 15px;
-  padding: 20px 10px;
+  padding: 40px 30px;
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.feature-card3:hover {
+.cruzeon-feature-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.feature-icon3 {
+.cruzeon-feature-icon {
   font-size: 3rem;
   color: var(--primary);
   margin-bottom: 20px;
 }
 
-.feature-card3 h3 {
+.cruzeon-feature-card h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
 }
 
-.feature-card3 p {
+.cruzeon-feature-card p {
   color: #666;
   margin-bottom: 20px;
 }
 
-.feature-line {
+.cruzeon-feature-line {
   height: 4px;
   width: 60px;
   margin: 0 auto;
@@ -457,79 +459,71 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 5rem;
-  }
-  
-  .color-preview {
-    height: 400px;
-  }
-}
-
 @media (max-width: 768px) {
-  .hero-video {
-    min-height: 600px;
+  .cruzeon-hero-content h1 {
+    font-size: 2.5rem;
   }
-  
-  .hero-title {
-    font-size: 3.5rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .color-selector {
-    padding: 0 20px;
-  }
-  
-  .color-preview {
-    height: 300px;
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr;
+
+  .cruzeon-hero-content p {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .section-header h2 {
+  .cruzeon-hero-content h1 {
     font-size: 2rem;
   }
-  
-  .specs-tabs {
-    flex-wrap: wrap;
+
+  .cruzeon-hero-content p {
+    font-size: 0.9rem;
   }
-  
-  .gallery-container {
+
+  .cruzeon-hero-content {
+    padding: 0 15px;
+  }
+}
+
+/* ======== Responsive Feature Highlights Text & Grid ======== */
+@media (max-width: 1200px) {
+  .cruzeon-feature-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .cruzeon-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cruzeon-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
     padding: 0 20px;
   }
-}
-.color-row {
-  display: flex;
-  gap: 20px; /* space between circles */
-  justify-content: center; /* center the row */
-  flex-wrap: nowrap; /* keep them in one row */
+
+  .cruzeon-feature-card {
+    padding: 30px 20px;
+  }
 }
 
-.color-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+@media (max-width: 480px) {
+  .cruzeon-feature-card {
+    padding: 20px 15px;
+  }
 
-.color-circle.active {
-  border: 3px solid red; /* highlight active circle */
+  .cruzeon-feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .cruzeon-feature-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .cruzeon-feature-card p {
+    font-size: 0.95rem;
+  }
 }

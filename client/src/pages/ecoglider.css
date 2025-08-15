@@ -1,82 +1,66 @@
-/* Base Styles */
-:root {
-  --primary: #ff4757;
-  --dark: #2f3542;
-  --light: #f1f2f6;
-  --accent: #3742fa;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: var(--dark);
-  overflow-x: hidden;
-}
-
-.cruze-blade-showcase {
+.ecoglider-showcase {
   max-width: 100%;
   overflow: hidden;
 }
 
-/* Hero Video Section */
-.hero {
+/* ======== Hero Section ======== */
+.ecoglider-hero {
   position: relative;
-  height: 100vh; /* Full screen height */
+  height: 100vh;
   width: 100%;
-  background-image: url('../assets/Inner-Images/Eco Glider/1.png');
-  background-size: contain; /* Cover entire area */
-  background-position: center;
-  background-repeat: no-repeat; /* No repeat */
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: white;
-  background-color: black;
+  overflow: hidden;
 }
 
-.hero::before {
+.ecoglider-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: black;
+  z-index: 0;
+}
+
+.ecoglider-hero::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay for better readability */
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
-.hero-content {
+.ecoglider-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 900px; /* Limit width so text stays readable */
+  text-align: center;
+  color: white;
+  padding: 0 10px;
 }
 
-.hero-content h1 {
-  font-size: 4rem; /* Bigger heading */
+.ecoglider-hero-content h1 {
+  font-size: 4rem;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Decorative shadow */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero-content p {
-  font-size: 1.5rem; /* Bigger paragraph */
+.ecoglider-hero-content p {
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.8;
   margin-top: 20px;
   font-family: 'Roboto', sans-serif;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
-
-
-
 
 
 /* Section Styles */
@@ -211,65 +195,49 @@ body {
 }
 
 /* Feature Highlights */
-.feature-highlights {
-  padding: 100px 0;
-  background: url('spec-bg.jpg') no-repeat center center;
-  background-size: cover;
-  position: relative;
-}
-
-.feature-highlights:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.feature-card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 15px;
-  padding: 40px 30px;
+.ecoglider-feature-highlights {
+  padding: 80px 5%;
+  background-color: #333;
+  color: #fff;
   text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.feature-card:hover {
+.ecoglider-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.ecoglider-feature-card {
+  padding: 30px;
+  background-color: rgb(234, 229, 229);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.ecoglider-feature-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.feature-icon {
+.ecoglider-feature-icon {
   font-size: 3rem;
   color: var(--primary);
   margin-bottom: 20px;
 }
 
-.feature-card h3 {
+.ecoglider-feature-card h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
+  color: #000;
 }
 
-.feature-card p {
-  color: #666;
+.ecoglider-feature-card p {
+  color: #000;
   margin-bottom: 20px;
 }
 
-.feature-line {
+.ecoglider-feature-line {
   height: 4px;
   width: 60px;
   margin: 0 auto;
@@ -474,79 +442,44 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 5rem;
+@media (max-width: 1200px) {
+  .ecoglider-hero-content h1 {
+    font-size: 3.5rem;
   }
-  
-  .color-preview {
-    height: 400px;
+  .ecoglider-hero-content p {
+    font-size: 1.3rem;
+  }
+  .ecoglider-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .hero-video {
-    min-height: 600px;
+  .ecoglider-hero-content h1 {
+    font-size: 2.8rem;
   }
-  
-  .hero-title {
-    font-size: 3.5rem;
+  .ecoglider-hero-content p {
+    font-size: 1.1rem;
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .hero-cta {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .color-selector {
-    padding: 0 20px;
-  }
-  
-  .color-preview {
-    height: 300px;
-  }
-  
-  .features-grid {
+  .ecoglider-feature-grid {
     grid-template-columns: 1fr;
+  }
+  .ecoglider-feature-card {
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .section-header h2 {
+  .ecoglider-hero-content h1 {
     font-size: 2rem;
   }
-  
-  .specs-tabs {
-    flex-wrap: wrap;
+  .ecoglider-hero-content p {
+    font-size: 1rem;
   }
-  
-  .gallery-container {
-    padding: 0 20px;
+  .ecoglider-feature-card h3 {
+    font-size: 1.2rem;
   }
-}
-.color-row {
-  display: flex;
-  gap: 20px; /* space between circles */
-  justify-content: center; /* center the row */
-  flex-wrap: nowrap; /* keep them in one row */
-}
-
-.color-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.color-circle.active {
-  border: 3px solid red; /* highlight active circle */
+  .ecoglider-feature-card p {
+    font-size: 0.9rem;
+  }
 }

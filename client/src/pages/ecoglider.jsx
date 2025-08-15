@@ -9,6 +9,7 @@ import image1 from '../assets/Inner-Images/Eco Glider/1.png';
 import image2 from '../assets/Inner-Images/Eco Glider/2.png';
 import image3 from '../assets/Inner-Images/Eco Glider/3.png';
 import image4 from '../assets/Inner-Images/Eco Glider/4.png';
+import brand5 from '../assets/Inner-Images/Eco Glider/1.png';
 
 // Icons
 import { 
@@ -76,35 +77,38 @@ const EcoGliderShowcase = () => {
   ];
 
   return (
-    <div className="eco-glider-showcase">
-      {/* Hero Video Section */}
-       <section className="hero">
-  <div className="hero-content">
-    <h1>Ride the Revolution</h1>
-    <p>Eco-friendly. Stylish. Powerful.</p>
-    <button>Explore Now</button>
-  </div>
-</section>
+    <div className="ecoglider-showcase">
+     <section className="ecoglider-hero">
+          <img
+            src={brand5}
+            alt="EcoGlider"
+            className="ecoglider-hero-image"
+          />
+          <div className="ecoglider-hero-content">
+            <h1>Ride the Revolution</h1>
+            <p>Eco-friendly. Stylish. Powerful.</p>
+          </div>
+        </section>
 
       {/* Feature Highlights */}
-      <section className="feature-highlights">
-        <div className="features-grid">
+      <section className="ecoglider-feature-highlights">
+        <div className="ecoglider-feature-grid">
           {features.map((feature, index) => (
             <motion.div 
               key={index}
-              className="feature-card"
+              className="ecoglider-feature-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="feature-icon">
+              <div className="ecoglider-feature-icon">
                 {feature.icon}
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.desc}</p>
-              <div className="feature-line" style={{ backgroundColor: "#2c3e50" }} />
+              <div className="ecoglider-feature-line" style={{ backgroundColor: "#2c3e50" }} />
             </motion.div>
           ))}
         </div>
@@ -178,50 +182,26 @@ const EcoGliderShowcase = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="gallery-section">
+       <section className="gallery-section">
         <div className="section-header">
           <h2>Gallery</h2>
-          <p>Explore the Eco Glider from every angle</p>
+          <p>Explore the Cruze Blade from every angle</p>
         </div>
-        
+      
         <div className="gallery-container">
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={{
-              nextEl: '.gallery-next',
-              prevEl: '.gallery-prev',
-            }}
-            modules={[Navigation]}
-            breakpoints={{
-              320: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="gallery-swiper"
-          >
-            {galleryImages.map((image) => (
-              <SwiperSlide key={image.id}>
-                <motion.div 
-                  className="gallery-item"
-                  whileHover={{ scale: 1.03 }}
-                  onClick={() => setZoomImage(image.src)}
-                >
-                  <img src={image.src} alt={image.alt} />
-                  <div className="zoom-indicator">
-                    <FaExpand />
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          
-          <button className="gallery-nav gallery-prev">
-            <FaChevronLeft />
-          </button>
-          <button className="gallery-nav gallery-next">
-            <FaChevronRight />
-          </button>
+          {galleryImages.map((image) => (
+            <motion.div 
+              key={image.id} 
+              className="gallery-item"
+              whileHover={{ scale: 1.03 }}
+              onClick={() => setZoomImage(image.src)}
+            >
+              <img src={image.src} alt={image.alt} />
+              <div className="zoom-indicator">
+                <FaExpand />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 

@@ -85,6 +85,7 @@
   transition: all 0.3s;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .poster-btn:hover {

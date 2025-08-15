@@ -36,37 +36,38 @@ const Footer = () => {
               <img src={logo} alt="Thunderbolt Motorcycles" />
             </div>
             <p>
-              Thunderbolt Motorcycles is America's premier motorcycle manufacturer,
+              ECOCRUZE Scooty is Inidan's premier Scooter manufacturer,
               crafting legendary bikes since 1952. Born from a passion for the open road
               and built with uncompromising quality.
             </p>
             <div className="social-links">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaYoutube /></a>
-              <a href="#"><FaTwitter /></a>
+              <a href="https://www.facebook.com/share/1JuSJHBnKw/"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/ecocruze_?igsh=MWN6OGdqamltOWI5cg=="><FaInstagram /></a>
+              <a href="https://youtube.com/@ecocruze-1?si=zgzQhs6w3e0f6pLa"><FaYoutube /></a>
+              <a href="https://x.com/ecocruze79264?t=WkZ00rJI4tay5tOlwBizqw&s=08 "><FaTwitter /></a>
             </div>
           </div>
 
           <div className="footer-links">
             <h3>Motorcycles</h3>
             <ul>
-              <li><a href="#">Thunder Chief</a></li>
-              <li><a href="#">Storm Scout</a></li>
-              <li><a href="#">Lightning FTR</a></li>
-              <li><a href="#">All Models</a></li>
-              <li><a href="#">Build Your Bike</a></li>
+              <li><a href="/cruze-blade-details">Cruze Blade</a></li>
+              <li><a href="/EcoShine-details">EcoShine</a></li>
+              <li><a href="/ecoswift-details">Ecoswift</a></li>
+              <li><a href="/ecojoy-details">Ecojoy</a></li>
+              <li><a href="/eco-glider-details">EcoGlider</a></li>
             </ul>
           </div>
 
           <div className="footer-links">
             <h3>Support</h3>
             <ul>
-              <li><a href="#">Owners Manuals</a></li>
-              <li><a href="#">Warranty</a></li>
-              <li><a href="#">Service & Maintenance</a></li>
-              <li><a href="#">Recalls</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/contact">Contact us</a></li>
+              <li><a href="/dealership">Dealership</a></li>
+              <li><a href="/News">News</a></li>
             </ul>
           </div>
 
@@ -74,7 +75,7 @@ const Footer = () => {
             <h3>Stay Connected</h3>
             <p>
               Subscribe to our newsletter for the latest news, events, and exclusive offers
-              from Thunderbolt Motorcycles.
+              from ECOCRUZE Scooter.
             </p>
             <form className="newsletter-form">
               <input type="email" placeholder="Your email address" />
@@ -84,7 +85,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2023 Ecocruse Motorcycles. All rights reserved. |
+          <p>&copy; 2023  ECOCRUZE Scootyw. All rights reserved. |
             <a href="#"> Privacy Policy </a> |
             <a href="#"> Terms of Use </a>
           </p>
