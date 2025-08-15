@@ -19,6 +19,7 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const messageDiv = document.getElementById('contactMessage');
     try {
       const res = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
@@ -27,17 +28,24 @@ const ContactUs = () => {
       });
 
       const data = await res.json();
-      alert(data.message || 'Message sent successfully!');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
+
+      // Show success message
+      messageDiv.style.display = 'block';
+      messageDiv.className = 'dealership-message success';
+      messageDiv.innerText = data.message || 'Message sent successfully!';
+
+      // Clear form
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+      // Redirect to home after 2 seconds
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
     } catch (error) {
       console.error('Error submitting contact form:', error);
-      alert('Error submitting form');
+      messageDiv.style.display = 'block';
+      messageDiv.className = 'dealership-message error';
+      messageDiv.innerText = 'Error submitting form';
     }
   };
 
@@ -131,6 +139,7 @@ const ContactUs = () => {
                 required
               ></textarea>
             </div>
+             <div className="contact-message" id="contactMessage"></div>
             <button type="submit" className="submit-btn">
               Submit
             </button>

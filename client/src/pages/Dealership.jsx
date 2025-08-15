@@ -29,20 +29,35 @@ const DealershipForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:5000/api/dealership", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-      const data = await res.json();
-      alert(data.message);
-    } catch (err) {
-      alert("Error submitting form");
-    }
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const messageDiv = document.getElementById("formMessage");
+
+  try {
+    const res = await fetch("http://localhost:5000/api/dealership", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    const data = await res.json();
+
+    // Show success message
+    messageDiv.style.display = "block";
+    messageDiv.className = "dealership-message success";
+    messageDiv.innerText = data.message;
+
+    // Redirect to home after 4 seconds
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 2000);
+  } catch (err) {
+    messageDiv.style.display = "block";
+    messageDiv.className = "dealership-message error";
+    messageDiv.innerText = "Error submitting form";
+  }
+};
+
+
 
   return (
     <div className="dealership-root">
@@ -100,6 +115,7 @@ const DealershipForm = () => {
             <textarea name="message" rows={3} placeholder="Type your message..." onChange={handleChange} />
           </div>
         </div>
+        <div className="dealership-message" id="formMessage"></div>
         <div className="dealership-actions">
           <button type="submit">Submit</button>
         </div>
