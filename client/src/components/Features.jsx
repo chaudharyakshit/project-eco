@@ -8,22 +8,22 @@ const features = [
   {
     icon: <FaCogs />,
     title: 'Indian Engineering',
-    description: 'Each Thunderbolt motorcycle is built with precision engineering and uncompromising quality standards in our U.S. facilities.'
+    description: 'Each ECOCRUZE Scooter is built with precision engineering and uncompromising quality standards in our Indian facilities.'
   },
   {
     icon: <FaShieldAlt />,
     title: '3-Year Warranty',
-    description: 'We stand behind our bikes with the industry\'s best warranty coverage for complete peace of mind.'
+    description: 'We stand behind our scooter with the industry\'s best warranty coverage for complete peace of mind.'
   },
   {
     icon: <FaTools />,
     title: 'Customization',
-    description: 'Make it uniquely yours with our extensive customization options and genuine Thunderbolt accessories.'
+    description: 'Make it uniquely yours with our extensive customization options and genuine ECOCRUZE accessories.'
   },
   {
     icon: <FaUsers />,
     title: 'Rider Community',
-    description: 'Join our passionate community of Thunderbolt riders with exclusive events and rides across the country.'
+    description: 'Join our passionate community of ECOCRUZE riders with exclusive events and rides across the country.'
   }
 ];
 

@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             <p>
               ECOCRUZE Scooty is Inidan's premier Scooter manufacturer,
-              crafting legendary bikes since 1952. Born from a passion for the open road
+              crafting legendary Scooters. Born from a passion for the open road
               and built with uncompromising quality.
             </p>
             <div className="social-links">
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2023  ECOCRUZE Scootyw. All rights reserved. |
+          <p>&copy; 2023  ECOCRUZE Scooter. All rights reserved. |
             <a href="#"> Privacy Policy </a> |
             <a href="#"> Terms of Use </a>
           </p>

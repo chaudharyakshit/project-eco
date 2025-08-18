@@ -26,7 +26,7 @@ const ChatBot = () => {
 
   const saveUserData = async () => {
   try {
-    const res = await fetch('http://localhost:5000/api/chatuser', {
+    const res = await fetch('http://localhost:5001/api/chatuser', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, phone: number })  // number is state for phone

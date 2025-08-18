@@ -35,10 +35,10 @@ const ScootyBanner = () => {
       <div className="offer-section">
         <div className="offer-box">
           <div className="offer-text">
-            <span className="black">BLACK</span>
-            <span className="friday">FRIDAY</span>
+            <span className="black">SAVE</span>
+            <span className="friday">EARTH</span>
             <span className="discount">
-              70<span className="percent">%</span>
+              WITH<span className="percent"> ECOCRUZE </span>
             </span>
             {/* <span className="upto">Up To Off</span> */}
           </div>

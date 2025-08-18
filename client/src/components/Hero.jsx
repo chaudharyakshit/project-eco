@@ -14,21 +14,21 @@ const heroData = [
     desc: 'Explore stylish and high-performance electric scooty built for modern commuters.',
     img :  hero1,
     alt: "Ecocruze Motorcycles",
-    primaryBtn: 'Learn More',
+    primaryBtn: 'explore more',
     secondaryBtn: 'Contact Us',
   },
   {
-    title: 'Power Meets Elegance',
+    title: 'Power Blends with Design',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero2,
-    primaryBtn: 'Make Yours',
+    primaryBtn: 'Make it Yours',
     secondaryBtn: 'Contact us',
   },
    {
-    title: 'Power Meets Elegance',
+    title: 'Power Blends with a style',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero3,
-    primaryBtn: 'Build Yours',
+    primaryBtn: 'Make it Yours',
     secondaryBtn: 'Contact us',
   }
 ];
@@ -67,7 +67,7 @@ const Hero = () => {
               <div className="hero-left">
                 <div className="hero-text">
                   <span className="tagline">
-                    LUXURY <span className="grey">MEETS AFFORDABILITY</span>
+                    RIDE<span className="grey">THE REVOLUTION</span>
                   </span>
                   <h1>{data.title}</h1>
                   <p>{data.desc}</p>

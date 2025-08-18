@@ -21,7 +21,7 @@ const ContactUs = () => {
     e.preventDefault();
     const messageDiv = document.getElementById('contactMessage');
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const res = await fetch('http://localhost:5001/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -71,7 +71,7 @@ const ContactUs = () => {
           <div className="info-section">
             <h3>Contact Number</h3>
             <ul>
-              <li> +917017175520</li>
+              <li> +919557533303</li>
               <li>Email: Indiasgodigital5@gmail.com</li>
             </ul>
           </div>
@@ -152,5 +152,4 @@ const ContactUs = () => {
     </div>
   );
 };
-
 export default ContactUs;

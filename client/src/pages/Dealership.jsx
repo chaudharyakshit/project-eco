@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
   const messageDiv = document.getElementById("formMessage");
 
   try {
-    const res = await fetch("http://localhost:5000/api/dealership", {
+    const res = await fetch("http://localhost:5001/api/dealership", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

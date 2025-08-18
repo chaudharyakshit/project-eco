@@ -64,12 +64,12 @@ const newsItems = [
   },
   {
     id: 6,
-    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkaUIWs_BHl03YKM6N2D63IHLzsx0f6JaipEj69q6wEzaohpfC8sLapS4uOY6eiRDJhdNyD740pIB4hpdROBLVzJ-22LrcOj2jwTQv9PKafhMtaZXyWk32k_plXwsIfQEcIa1DbvWOarVZfjxHUIG_13b8s-TRo2Ue7p6uX_CKV_USGTb7OzZxc6QmjO1G/w498-h373/WhatsApp%20Image%202023-10-23%20at%204.41.19%20PM%20(1).jpeg",
+    image: img1,
     tag: "",
     tagColor: "#e26c21",
     lang: "en",
-    title: "Dial India का कॉल सेंटर 25 को देहरादून में होगा शुरुआत",
-    link: "https://www.indiasgonews.com/2023/10/25.html"
+    title: "इकोक्रूज़ ने नई पर्यावरण अनुकूल उत्पाद श्रृंखला लॉन्च की*",
+    link: ""
   }
 ];
 

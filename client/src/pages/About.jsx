@@ -37,9 +37,8 @@ const AboutUs = () => {
             <h5 className="about-subtitle">Welcome To Ecocruze</h5>
             <h2 className="about-heading">About Us Our Auto Dealership Company</h2>
             <p>
-              Our multi-brand trade-in program allows you to bring in your current vehicle, 
-              regardless of make or model, and receive a competitive trade-in value. 
-              This makes upgrading to a new car even easier and more affordable.
+            EcoCruze is a pioneering eco-friendly brand dedicated to promoting sustainable living and reducing environmental impact.
+             Our mission is to empower individuals and communities to make conscious choices, fostering a healthier planet for future generations.
             </p>
             <p>
               We offer flexible payment plans to meet your financial needs and even provide 
@@ -58,15 +57,15 @@ const AboutUs = () => {
             {/* Stats Section */}
             <div className="about-stats">
               <div className="stat-box">
-                <span className="stat-number">2760+</span>
+                <span className="stat-number">176+</span>
                 <p>SUCCESS PROJECTS</p>
               </div>
               <div className="stat-box">
-                <span className="stat-number">300+</span>
+                <span className="stat-number">50+</span>
                 <p>PROFESSIONAL TEAM</p>
               </div>
               <div className="stat-box">
-                <span className="stat-number">2660+</span>
+                <span className="stat-number">2100+</span>
                 <p>CLIENTS SATISFIED</p>
               </div>
             </div>
@@ -81,5 +80,5 @@ const AboutUs = () => {
     </>
   );
 };
-
 export default AboutUs;
+

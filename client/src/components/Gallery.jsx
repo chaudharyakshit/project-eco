@@ -138,7 +138,7 @@ const Inventory = () => {
               {/* WhatsApp CTA */}
 
               <a
-                href={`https://wa.me/918607998882?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(
+                href={`https://wa.me/919557533303?text=Hi%2C%20I'm%20interested%20in%20the%20${encodeURIComponent(
                   scooty.title
                 )}.%20Please%20share%20more%20details.%20(No%20price%20disclosed)`}
                 target="_blank"
