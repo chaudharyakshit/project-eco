@@ -11,11 +11,12 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "http://localhost:5173",  // removed extra space
+  origin: ["http://localhost:5173", "https://ecocruze.in"], // array of allowed origins
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
 app.use(express.json());
 
 // Routes
