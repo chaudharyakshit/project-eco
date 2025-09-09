@@ -9,6 +9,8 @@ const ContactUs = () => {
     subject: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+
 
   const handleChange = (e) => {
     setFormData({
@@ -20,8 +22,10 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const messageDiv = document.getElementById('contactMessage');
+    setLoading(true);
     try {
-      const res = await fetch('http://localhost:5001/api/contact', {
+      const res = await fetch('/api/contact', {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -41,11 +45,13 @@ const ContactUs = () => {
       setTimeout(() => {
         window.location.href = '/';
       }, 2000);
+      setLoading(false);
     } catch (error) {
       console.error('Error submitting contact form:', error);
       messageDiv.style.display = 'block';
       messageDiv.className = 'dealership-message error';
       messageDiv.innerText = 'Error submitting form';
+      setLoading(false);
     }
   };
 
