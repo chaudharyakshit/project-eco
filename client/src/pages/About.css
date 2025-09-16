@@ -1,6 +1,6 @@
 /* ====== Banner Section ====== */
 .about-banner {
-  background: url('../assets/Cruze-Blade.png') center/cover no-repeat;
+  background: url('../assets/about1.png') center/cover no-repeat;
   height: 250px;
   display: flex;
   align-items: center;
@@ -153,5 +153,35 @@
   .about-stats {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-section {
+    padding: 40px 6%;
+  }
+  .about-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-banner {
+    height: 180px;
+    background-position: center;
+    padding-top: 8px; /* ensure safe space under fixed header */
+  }
+  .about-title {
+    font-size: 1.6rem;
+  }
+  .about-section {
+    padding: 28px 4%;
+    margin-top: 8px;
+  }
+  .about-ceo {
+    gap: 10px;
+  }
+  .about-stats {
+    gap: 16px;
   }
 }

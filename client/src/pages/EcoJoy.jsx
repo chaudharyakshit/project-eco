@@ -1,298 +1,419 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import './Ecojoy.css';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import '../pages/ecojoy.css';
 
-// Image Imports for EcoJoy
-import image1 from '../assets/Inner-Images/Eco joy/black/side.png';
-import image2 from '../assets/Inner-Images/Eco joy/black/left.png';
-import image3 from '../assets/Inner-Images/Eco joy/black/front.png';
-import image4 from '../assets/Inner-Images/Eco joy/black/right.png';
-import brand4 from '../assets/Inner-Images/Eco joy/black/side.png';
 
-// Color options
-import nebulaGreen from '../assets/Inner-Images/Eco joy/blue/front.png';
-import lunarGray from '../assets/Inner-Images/Eco joy/white/front.png';
-import solarRed from '../assets/Inner-Images/Eco joy/red/front.png';
-import cosmicBlack from '../assets/Inner-Images/Eco joy/black/front.png';
-import stellarWhite from '../assets/Inner-Images/Eco joy/white/front.png';
 
-// Icons
-import { 
-  FaBolt, FaMotorcycle, FaCarBattery, FaTachometerAlt, 
-  FaPalette, FaExpand, FaChevronRight, FaChevronLeft,
-  FaRegLightbulb, FaShieldAlt, FaMobileAlt, FaWeightHanging
-} from 'react-icons/fa';
-import { GiPowerLightning, GiCarWheel } from 'react-icons/gi';
-import { IoMdColorPalette, IoMdSpeedometer } from 'react-icons/io';
-import { RiSteering2Fill } from 'react-icons/ri';
+import blackFront from '../assets/Inner-Images/Eco joy/black/front.png';
+import blackLeft from '../assets/Inner-Images/Eco joy/black/left.png';
+import blackRight from '../assets/Inner-Images/Eco joy/black/right.png';
+import blackSide from '../assets/Inner-Images/Eco joy/black/side.png';  
+import blueFront from '../assets/Inner-Images/Eco joy/blue/front.png';
+import blueLeft from '../assets/Inner-Images/Eco joy/blue/left.png';
+import blueRight from '../assets/Inner-Images/Eco joy/blue/right.png';
+import blueSide from '../assets/Inner-Images/Eco joy/blue/side.png';  
+import grayFront from '../assets/Inner-Images/Eco joy/gray/front.png';
+import grayleft from '../assets/Inner-Images/Eco joy/gray/left.png';
+import grayRight from '../assets/Inner-Images/Eco joy/gray/right.png';
+import graySide from '../assets/Inner-Images/Eco joy/gray/side.png';  
+import redFront from '../assets/Inner-Images/Eco joy/red/front.png';
+import redLeft from '../assets/Inner-Images/Eco joy/red/left.png';
+import redRight from '../assets/Inner-Images/Eco joy/red/right.png';
+import redSide from '../assets/Inner-Images/Eco joy/red/side.png';  
+import whiteFront from '../assets/Inner-Images/Eco joy/white/front.png';
+import whiteLeft from '../assets/Inner-Images/Eco joy/white/left.png';
+import whiteRight from '../assets/Inner-Images/Eco joy/white/right.png';
+import whiteSide from '../assets/Inner-Images/Eco joy/white/side.png';
 
-const EcoJoyShowcase = () => {
-  const [activeTab, setActiveTab] = useState('overview');
-  const [selectedColor, setSelectedColor] = useState(0);
-  const [zoomImage, setZoomImage] = useState(null);
-  const videoRef = useRef(null);
+// fallback if you later add more images
+const PLACEHOLDER = '/src/assets/hero-1.webp';
 
-  const colors = [
-    { name: "Nebula Green", code: "#2ecc71", price: "$1,999", img: nebulaGreen },
-    { name: "Lunar Gray", code: "#95a5a6", price: "$1,899", img: lunarGray },
-    { name: "Solar Red", code: "#e74c3c", price: "$2,099", img: solarRed },
-    { name: "Cosmic Black", code: "#2c3e50", price: "$2,199", img: cosmicBlack },
-    { name: "Stellar White", code: "#ecf0f1", price: "$2,049", img: stellarWhite }
-  ];
+export default function ScootyDetails() {
+  const [variantIndex, setVariantIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const specs = {
-    performance: [
-      { icon: <IoMdSpeedometer />, label: "Top Speed", value: "55 km/h" },
-      { icon: <FaBolt />, label: "Acceleration", value: "0-40km in 5.0s" },
-      { icon: <GiPowerLightning />, label: "Motor Power", value: "1200W BLDC" },
-      { icon: <FaCarBattery />, label: "Range", value: "80 km/charge" }
-    ],
-    design: [
-      { icon: <FaPalette />, label: "Colors", value: "5 Premium Options" },
-      { icon: <FaWeightHanging />, label: "Weight", value: "90 kg" },
-      { icon: <GiCarWheel />, label: "Wheels", value: "12\" Alloy" },
-      { icon: <RiSteering2Fill />, label: "Suspension", value: "Telescopic" }
-    ],
-    tech: [
-      { icon: <FaRegLightbulb />, label: "Lighting", value: "LED Headlamp & Indicators" },
-      { icon: <FaMobileAlt />, label: "Connectivity", value: "Basic App Support" },
-      { icon: <FaShieldAlt />, label: "Security", value: "Key Lock + Anti-theft" },
-      { icon: <FaTachometerAlt />, label: "Display", value: "Digital Meter" }
-    ]
-  };
+  const product = useMemo(
+    () => ({
+      name: 'Eco Joy',
+      brand: 'Ecocruze',
+      slug: 'ecocruze-spark-x',
+      tags: ['New', 'Bestseller'],
+      rating: 4.8,
+      ratingCount: 128,
+      price: 89999,
+      mrp: 99999,
+      currency: 'INR',
+      shortDescription:
+        'Electric scooter with 110 km range, CBS braking, and commuter‑first ergonomics.',
+      includes: ['1 Scooter', '1 Charger', "Owner’s Manual"],
+      variants: [
+        {
+          colorName: 'black',
+          colorHex: '#0b0b0bff',
+          sku: 'SPARKX-WHT-01',
+          stock: 12,
+          images: [blackFront, blackLeft, blackRight, blackSide]
+        },
+        {
+          colorName: 'Blue',
+          colorHex: '#0a7f93ff',
+          sku: 'SPARKX-BLK-01',
+          stock: 8,
+          images: [blueFront, blueLeft, blueRight, blueSide]
+        },
+        { 
+          colorName: 'Gray',
+           colorHex: '#a1a1a1ff', 
+           sku: 'SPARKX-NBL-01',
+            stock: 5,
+            images: [grayFront, grayleft, grayRight, graySide] 
+            },
+        
+        { colorName: 'Red',
+           colorHex: '#dc1c0fff', 
+           sku: 'SPARKX-LGR-01',
+            stock: 5,
+             images: [redFront, redLeft, redRight, redSide]
+             },
+       
+       
+        { colorName: 'white',
+           colorHex: '#f8f4f2ff',
+            sku: 'SPARKX-SRD-01',
+             stock: 5, 
+             images: [whiteFront, whiteLeft, whiteRight, whiteSide] 
+           },
+      ],
+      specs: {
+        motorPowerW: 1200,
+        batteryCapacityWh: 2880,
+        rangeKm: 150,
+        topSpeedKmph: 60,
+        chargingTimeHrs: 3.5,
+        braking: 'Front & rear disc Brake',
+        suspension: 'Telescopic front, dual shock rear',
+        weightKg: 85,
+        dimensions: '1730 × 690 × 1280 mm'
+      },
+      deliveryReturns: {
+        deliveryText: 'Standard delivery in 7–14 working days. Free shipping on eligible orders.',
+        returnsText: '7‑day return for manufacturing defects. Registration/RTO charges non‑refundable.'
+      }
+    }),
+    []
+  );
 
-  const features = [
-    {
-      title: "Eco Performance",
-      desc: "1200W motor delivers smooth acceleration and hill-climbing power",
-      icon: <GiPowerLightning />
-    },
-    {
-      title: "Efficient Range",
-      desc: "60V lithium battery provides up to 80km per charge",
-      icon: <FaCarBattery />
-    },
-    {
-      title: "Smart Connectivity",
-      desc: "Basic app with ride stats and vehicle health monitoring",
-      icon: <FaMobileAlt />
-    },
-    {
-      title: "Sustainable Design",
-      desc: "Eco-friendly build with lightweight and aerodynamic frame",
-      icon: <FaPalette />
-    }
-  ];
+  const variant = product.variants[variantIndex];
+  const gallery = variant.images;
 
-  const galleryImages = [
-    { id: 1, src: image1, alt: 'EcoJoy Front View' },
-    { id: 2, src: image2, alt: 'EcoJoy Side View' },
-    { id: 3, src: image3, alt: 'EcoJoy Dashboard' },
-    { id: 4, src: image4, alt: 'EcoJoy Rear View' },
-  ];
+  // Always show 5 thumbnails (auto-fill by repeating images if needed)
+  const galleryToShow = useMemo(() => {
+    const imgs = [...(gallery || [])];
+    if (imgs.length === 0) return imgs;
+    while (imgs.length < 5) imgs.push(imgs[imgs.length % (gallery.length || 1)]);
+    return imgs.slice(0, 5);
+  }, [gallery]);
+
+  useEffect(() => {
+    if (activeImageIndex >= galleryToShow.length) setActiveImageIndex(0);
+  }, [galleryToShow.length, activeImageIndex]);
+
+  useEffect(() => {
+    document.title = `${product.name} | ${product.brand}`;
+    const meta =
+      document.querySelector('meta[name="description"]') || document.createElement('meta');
+    meta.name = 'description';
+    meta.content = product.shortDescription;
+    if (!meta.parentElement) document.head.appendChild(meta);
+  }, [product]);
+
+  const currency = (v) =>
+    new Intl.NumberFormat('en-IN', { style: 'currency', currency: product.currency || 'INR' }).format(
+      v
+    );
 
   return (
-    <div className="ecojoy-showcase">
-     <section className="ecojoy-hero">
-             <img
-               src={brand4}
-               alt="Ecojoy"
-               className="ecojoy-hero-image"
-             />
-             <div className="ecojoy-hero-content">
-               <h1>Ride the Revolution</h1>
-               <p>Eco-friendly. Stylish. Powerful.</p>
-             </div>
-           </section>
+    <main className="pdp">
+      <div className="pdp-container">
+        <nav className="pdp-breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span className="sep">/</span>
+          <a href="/scooters">Scooters</a>
+          <span className="sep">/</span>
+          <span aria-current="page">{product.name}</span>
+        </nav>
 
-      {/* Color Customizer */}
-      <section className="color-customizer">
-        <div className="section-header">
-          <IoMdColorPalette className="section-icon" />
-          <h2>Customize Your EcoJoy</h2>
-          <p>Select from our premium color options</p>
-        </div>
-        
-        <div className="color-selector">
-          <div className="color-row">
-            {colors.map((color, index) => (
-              <motion.div
-                key={index}
-                className={`color-circle ${selectedColor === index ? 'active' : ''}`}
-                onClick={() => setSelectedColor(index)}
-                whileHover={{ scale: 1.1 }}
-                style={{ backgroundColor: color.code }}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="color-preview">
-          <motion.div 
-            className="preview-container"
-            animate={{ background: `linear-gradient(135deg, ${colors[selectedColor].code} 0%, #2c3e50 100%)` }}
-            transition={{ duration: 0.5 }}
-          >
-            <img 
-              src={colors[selectedColor].img} 
-              alt={`EcoJoy in ${colors[selectedColor].name}`} 
-              className="preview-image"
-            />
-            <div className="color-badge">
-              <span>{colors[selectedColor].name}</span>
+        <div className="pdp-grid">
+          {/* LEFT COLUMN: Gallery + assurance badges */}
+          <section className="pdp-gallery">
+            <div className="pdp-thumbs" role="list">
+              {galleryToShow.map((src, idx) => (
+                <button
+                  key={String(src) + idx}
+                  role="listitem"
+                  className={`thumb ${idx === activeImageIndex ? 'is-active' : ''}`}
+                  onClick={() => setActiveImageIndex(idx)}
+                  aria-label={`View image ${idx + 1}`}
+                  type="button"
+                >
+                  <img src={src} alt={`Thumbnail ${idx + 1}`} loading="lazy" />
+                </button>
+              ))}
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Feature Highlights */}
-      <section className="ecojoy-feature-highlights">
-        <div className="ecojoy-feature-grid">
-          {features.map((feature, index) => (
-            <motion.div 
-              key={index}
-              className="ecojoy-feature-card"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+            <div
+              className="pdp-hero"
+              onClick={() => setLightboxOpen(true)}
+              role="button"
+              tabIndex={0}
             >
-              <div className="ecojoy-feature-icon">
-                {feature.icon}
+              <img src={galleryToShow[activeImageIndex]} alt={`${product.name} - ${variant.colorName}`} />
+              <div className="zoom-hint">Click to zoom</div>
+            </div>
+
+          
+          </section>
+
+          {/* RIGHT COLUMN: Summary */}
+          <aside className="pdp-summary">
+            <div className="pdp-title-row">
+              <h1 className="pdp-title">{product.name}</h1>
+              <div className="pdp-badges">
+                {product.tags.map((t) => (
+                  <span className={`badge ${t.toLowerCase()}`} key={t}>
+                    {t}
+                  </span>
+                ))}
               </div>
-              <h3>{feature.title}</h3>
-              <p>{feature.desc}</p>
-              <div className="ecojoy-feature-line" style={{ backgroundColor: colors[selectedColor].code }} />
-            </motion.div>
-          ))}
-        </div>
-      </section>
+            </div>
 
-      {/* Technical Specifications */}
-      <section className="tech-specs">
-        <div className="specs-tabs">
-          <button 
-            className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
-            onClick={() => setActiveTab('overview')}
-          >
-            Overview
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'performance' ? 'active' : ''}`}
-            onClick={() => setActiveTab('performance')}
-          >
-            Performance
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'technology' ? 'active' : ''}`}
-            onClick={() => setActiveTab('technology')}
-          >
-            Technology
-          </button>
-        </div>
-        
-        <div className="specs-content">
-          <AnimatePresence mode='wait'>
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              transition={{ duration: 0.3 }}
-              className="specs-grid"
-            >
-              {activeTab === 'overview' && specs.performance.map((spec, index) => (
-                <div key={index} className="spec-item">
-                  <div className="spec-icon">{spec.icon}</div>
-                  <div className="spec-details">
-                    <h4>{spec.label}</h4>
-                    <p>{spec.value}</p>
-                  </div>
-                </div>
-              ))}
-              
-              {activeTab === 'performance' && specs.performance.map((spec, index) => (
-                <div key={index} className="spec-item">
-                  <div className="spec-icon">{spec.icon}</div>
-                  <div className="spec-details">
-                    <h4>{spec.label}</h4>
-                    <p>{spec.value}</p>
-                  </div>
-                </div>
-              ))}
-              
-              {activeTab === 'technology' && specs.tech.map((spec, index) => (
-                <div key={index} className="spec-item">
-                  <div className="spec-icon">{spec.icon}</div>
-                  <div className="spec-details">
-                    <h4>{spec.label}</h4>
-                    <p>{spec.value}</p>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
+            <div className="pdp-rating">
+              <Stars value={product.rating} />
+              <span className="rating-num">{product.rating.toFixed(1)}</span>
+              <span className="rating-count">({product.ratingCount})</span>
+            </div>
 
-      {/* Gallery Section */}
-       <section className="gallery-section">
-        <div className="section-header">
-          <h2>Gallery</h2>
-          <p>Explore the Cruze Blade from every angle</p>
-        </div>
-      
-        <div className="gallery-container">
-          {galleryImages.map((image) => (
-            <motion.div 
-              key={image.id} 
-              className="gallery-item"
-              whileHover={{ scale: 1.03 }}
-              onClick={() => setZoomImage(image.src)}
-            >
-              <img src={image.src} alt={image.alt} />
-              <div className="zoom-indicator">
-                <FaExpand />
+            <div className="pdp-price-row">
+              <span className="Starting-Text1">Starting at</span>
+              <a
+                href={`https://wa.me/918607998882?text=Hi, I'm interested in the ${product.name} model!`}
+                className="whatsapp-link1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+                  alt="WhatsApp"
+                  className="whatsapp-icon2"
+                />
+              </a>
+            </div>
+
+            <p className="pdp-desc">{product.shortDescription}</p>
+            <p className="pdp-includes">Includes: {product.includes.join(', ')}</p>
+
+            <div className="pdp-variant">
+              <div className="label">Colour</div>
+              <div className="swatches" role="radiogroup" aria-label="Select color">
+                {product.variants.map((v, i) => (
+                  <button
+                    key={v.sku}
+                    role="radio"
+                    aria-checked={i === variantIndex}
+                    className={`swatch ${i === variantIndex ? 'is-selected' : ''}`}
+                    style={{ backgroundColor: v.colorHex }}
+                    onClick={() => {
+                      setVariantIndex(i);
+                      setActiveImageIndex(0);
+                    }}
+                    title={v.colorName}
+                    type="button"
+                  />
+                ))}
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+              <div className="variant-name">{variant.colorName}</div>
+            </div>
 
-      {/* Fullscreen Image Viewer */}
-      <AnimatePresence>
-        {zoomImage && (
-          <motion.div 
-            className="image-viewer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setZoomImage(null)}
-          >
-            <motion.img 
-              src={zoomImage}
-              alt="Fullscreen view"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring" }}
-            />
-            <button 
-              className="close-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                setZoomImage(null);
-              }}
-            >
-              &times;
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {/* pdp-cta intentionally removed */}
+            
+            <div className="pdp-trust">
+              <TrustItem icon="🚚" label="Free Shipping" sub="On eligible orders" />
+              <TrustItem icon="↩️" label="Easy Returns" sub="7‑day policy" />
+              <TrustItem icon="🔒" label="Secure Payment" sub="PCI DSS" />
+            </div>
+
+            <Accordion title="Details">
+              <KeyValueList specs={product.specs} />
+            </Accordion>
+
+            <Accordion title="Delivery & Returns">
+              <p className="plain">{product.deliveryReturns.deliveryText}</p>
+              <p className="plain">{product.deliveryReturns.returnsText}</p>
+            </Accordion>
+
+            {/* Assurance icons (gold SVG) on the right too */}
+            <section className="assurance">
+              <div className="assurance-grid">
+                <div className="assurance-item">
+                  <span className="ai-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" stroke="#f0b429" strokeWidth="1.8" fill="none"/><path d="M8 12l2 2 6-6" stroke="#f0b429" strokeWidth="1.8" fill="none"/></svg>
+                  </span>
+                  <div>
+                    <div className="ai-title">Easy Exchange</div>
+                    <div className="ai-sub">Easy exchange & return</div>
+                  </div>
+                </div>
+                <div className="assurance-item">
+                  <span className="ai-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="10" width="18" height="10" rx="2" stroke="#f0b429" strokeWidth="1.8"/><path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="#f0b429" strokeWidth="1.8"/></svg>
+                  </span>
+                  <div>
+                    <div className="ai-title">Secure Payment</div>
+                    <div className="ai-sub">Secure payment</div>
+                  </div>
+                </div>
+                <div className="assurance-item">
+                  <span className="ai-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 7h16l2 5H6M3 7l3 10h12" stroke="#f0b429" strokeWidth="1.8"/><circle cx="10" cy="20" r="1.6" stroke="#f0b429" strokeWidth="1.8"/><circle cx="17" cy="20" r="1.6" stroke="#f0b429" strokeWidth="1.8"/></svg>
+                  </span>
+                  <div>
+                    <div className="ai-title">Express Pickup</div>
+                    <div className="ai-sub">Stores near you</div>
+                  </div>
+                </div>
+                <div className="assurance-item">
+                  <span className="ai-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#f0b429" strokeWidth="1.8"/><path d="M8.5 12l2.5 2.5L15.5 10" stroke="#f0b429" strokeWidth="1.8"/></svg>
+                  </span>
+                  <div>
+                    <div className="ai-title">Authentic Products</div>
+                    <div className="ai-sub">100% Genuine</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </div>
+
+      <div className="pdp-sticky-cta">
+        <span className="Starting-Text1">Starting at</span>
+        <a
+          href={`https://wa.me/9195575 33303?text=Hi, I'm interested in the ${product.name} model!`}
+          className="whatsapp-link1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+            alt="WhatsApp"
+            className="whatsapp-icon2"
+          />
+        </a>
+      </div>
+             <CTA />
+      {lightboxOpen && (
+        <div className="lightbox" onClick={() => setLightboxOpen(false)}>
+          <img src={galleryToShow[activeImageIndex]} alt="Zoomed" />
+        </div>
+      )}
+    </main>
+  );
+}
+
+function Stars({ value = 0 }) {
+  const full = Math.floor(value);
+  const half = value - full >= 0.5;
+  return (
+    <span className="stars" aria-label={`${value} out of 5`}>
+      {'★'.repeat(full)}
+      {half ? '★' : ''}
+      {'☆'.repeat(5 - full - (half ? 1 : 0))}
+    </span>
+  );
+}
+
+function TrustItem({ icon, label, sub }) {
+  return (
+    <div className="trust-item">
+      <span className="ic">{icon}</span>
+      <div className="txt">
+        <div className="label">{label}</div>
+        <div className="sub">{sub}</div>
+      </div>
     </div>
   );
-};
+}
 
-export default EcoJoyShowcase;
+function Accordion({ title, children }) {
+  const [open, setOpen] = useState(true);
+  return (
+    <section className="accordion">
+      <button
+        className="acc-head"
+        onClick={() => setOpen(!open)}
+        type="button"
+        aria-expanded={open}
+      >
+        <span>{title}</span>
+        <span className={`chev ${open ? 'up' : ''}`}>⌄</span>
+      </button>
+      {open && <div className="acc-body">{children}</div>}
+    </section>
+  );
+}
+
+function KeyValueList({ specs }) {
+  const rows = [
+    ['Motor', specs?.motorPowerW ? `${specs.motorPowerW} W` : '-'],
+    ['Battery', specs?.batteryCapacityWh ? `${specs.batteryCapacityWh} Wh` : '-'],
+    ['Range', specs?.rangeKm ? `${specs.rangeKm} km` : '-'],
+    ['Top Speed', specs?.topSpeedKmph ? `${specs.topSpeedKmph} km/h` : '-'],
+    ['Charging', specs?.chargingTimeHrs ? `${specs.chargingTimeHrs} hrs` : '-'],
+    ['Braking', specs?.braking || '-'],
+    ['Suspension', specs?.suspension || '-'],
+    ['Weight', specs?.weightKg ? `${specs.weightKg} kg` : '-'],
+    ['Dimensions', specs?.dimensions || '-']
+  ];
+  return (
+    <ul className="kv">
+      {rows.map(([k, v]) => (
+        <li key={k}>
+          <span className="k">{k}</span>
+          <span className="v">{v}</span>
+        </li>
+      ))}
+    </ul>
+  );
+} // components/CTA/CTA.jsx
+
+
+
+
+// CTA Component Definition
+const CTA = () => {
+  return (
+    <section className="cta-section">
+      <motion.div
+        className="cta-content"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="cta-title">Ready to Ride the Ecocruze?</h2>
+        <p className="cta-text">
+          Schedule a test ride at your nearest Thunderbolt dealer and experience the power,
+          performance, and craftsmanship for yourself.
+        </p>
+        <a href="/dealership" className="btn btn-primary">
+          Find a Dealer
+        </a>
+      </motion.div>
+    </section>
+  );
+};

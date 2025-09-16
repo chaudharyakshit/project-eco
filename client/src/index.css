@@ -1,4 +1,7 @@
 /* Add these rules to your existing index.css */
+:root {
+  --header-h: 80px;
+}
 html, body {
   overflow-x: hidden; /* This prevents horizontal scrolling */
   width: 100%;
@@ -14,4 +17,21 @@ body {
 /* This will prevent any child element from causing overflow */
 .container, .dual-posters, .scooty-poster {
   max-width: 100%;
+}
+
+/* Ensure content clears the fixed header */
+main {
+  padding-top: var(--header-h);
+}
+
+@media (max-width: 576px) {
+  :root { --header-h: 88px; }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  :root { --header-h: 80px; }
+}
+
+@media (min-width: 993px) {
+  :root { --header-h: 72px; }
 }

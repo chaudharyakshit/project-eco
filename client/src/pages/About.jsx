@@ -4,7 +4,7 @@ import './About.css';
 import { Link } from 'react-router-dom';
 import Features from '../components/Features';
 import Calculator from '../components/calculator';
-import banner1 from '../assets/banner1.png';
+import banner1 from '../assets/about1.png';
 import Testimonials from '../components/Testimonials';
 import banner2 from '../assets/about.png';
 

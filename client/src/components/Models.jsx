@@ -10,43 +10,43 @@ import Ecojoy from '../assets/eco-joy.png'
 const models = [
   {
     id: 1,
-    name: 'EcoShine',
+    name: 'Eco Shine',
     tagline: 'Premium Electric Cruiser',
-    price: 'Starting at $4,499',
+    price: 'Starting at ',
     image: EcoShine,
     poster: EcoShine,
     specs: [
-      { value: '60', label: 'MPH' },
-      { value: '90mi', label: 'Range' },
-      { value: '4h', label: 'Charge Time' }
+      { value: '60', label: 'Km/h' },
+      { value: '90Km', label: 'Range' },
+      { value: '3.5h', label: 'Charge Time' }
     ],
     colors: ['#c00', '#333', '#0066cc']
   },
   {
     id: 2,
-    name: 'EcoGilder',
+    name: 'Eco Gilder',
     tagline: 'City Commuter Pro',
-    price: 'Starting at $2,999',
+    price: 'Starting at ',
     image: EcoGlider,
     poster: EcoGlider,
     specs: [
-      { value: '45', label: 'MPH' },
-      { value: '75mi', label: 'Range' },
+      { value: '60', label: 'Km/h' },
+      { value: '75Km', label: 'Range' },
       { value: '3.5h', label: 'Charge Time' }
     ],
     colors: ['#00cc66', '#222', '#ffcc00']
   },
   {
     id: 3,
-    name: 'EcoJoy',
+    name: 'Eco Joy',
     tagline: 'Off-Road Adventure',
-    price: 'Starting at $5,299',
+    price: 'Starting at ',
     image: Ecojoy ,
     poster: Ecojoy,
     specs: [
-      { value: '55', label: 'MPH' },
-      { value: '80mi', label: 'Range' },
-      { value: '5h', label: 'Charge Time' }
+      { value: '60', label: 'Km/h' },
+      { value: '80Km', label: 'Range' },
+      { value: '3.5', label: 'Charge Time' }
     ],
     colors: ['#663300', '#222', '#cc0000']
   }
@@ -63,7 +63,7 @@ const Models = () => {
     // Auto-scroll every 2 seconds
     intervalRef.current = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % models.length);
-    }, 2000);
+    }, 9000);
 
     return () => {
       if (intervalRef.current) {

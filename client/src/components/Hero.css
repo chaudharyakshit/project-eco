@@ -189,3 +189,16 @@
     object-fit: contain; /* ✅ Prevent cropping */
   }
 }
+
+@media (max-width: 900px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  .hero-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}

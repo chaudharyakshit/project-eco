@@ -52,10 +52,10 @@ const Footer = () => {
             <h3>Motorcycles</h3>
             <ul>
               <li><a href="/cruze-blade-details">Cruze Blade</a></li>
-              <li><a href="/EcoShine-details">EcoShine</a></li>
-              <li><a href="/ecoswift-details">Ecoswift</a></li>
-              <li><a href="/ecojoy-details">Ecojoy</a></li>
-              <li><a href="/eco-glider-details">EcoGlider</a></li>
+              <li><a href="/EcoShine-details">Eco Shine</a></li>
+              <li><a href="/ecoswift-details">Eco swift</a></li>
+              <li><a href="/ecojoy-details">Eco joy</a></li>
+              <li><a href="/eco-glider-details">Eco Glider</a></li>
             </ul>
           </div>
 

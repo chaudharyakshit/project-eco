@@ -11,16 +11,16 @@ const Calculator = () => {
           <p>Estimate your monthly scooty loan payment easily.</p>
 
           <div className="calc-inputs">
-            <input type="text" placeholder="Price of Scooty ($)" />
+            <input type="text" placeholder="Price of Scooty (₹)" />
             <input type="text" placeholder="Interest Rate (%)" />
             <input type="text" placeholder="Loan Term (Months)" />
-            <input type="text" placeholder="Down Payment ($)" />
+            <input type="text" placeholder="Down Payment (₹)" />
           </div>
 
           <div className="calc-summary">
-            <p>Down payment: <span>$0</span></p>
-            <p>Financed: <span>$0</span></p>
-            <p>Monthly: <span>$0</span></p>
+            <p>Down payment: <span>₹0</span></p>
+            <p>Financed: <span>₹0</span></p>
+            <p>Monthly: <span>₹0</span></p>
           </div>
 
           <button className="calc-btn">CALCULATE →</button>

@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.css';
 import { AnimatePresence, motion } from 'framer-motion';
-import hero1 from '../assets/Inner-Images/New folder/14c.png'; 
-import hero2 from '../assets/Inner-Images/New folder/4D.png'; 
-import hero3 from '../assets/Inner-Images/New folder/13A.png'; 
-import { Link } from 'react-router-dom'; 
-
-
+import hero1 from "../assets/8b.png";
+import hero2 from "../assets/9b.png";
+import hero3 from "../assets/10b.png";
 
 const heroData = [
   {
     title: 'Find Your Perfect Scooty For Ride',
     desc: 'Explore stylish and high-performance electric scooty built for modern commuters.',
-    img :  hero1,
+    img: hero1,
     alt: "Ecocruze Motorcycles",
     primaryBtn: 'explore more',
     secondaryBtn: 'Contact Us',
@@ -21,13 +18,15 @@ const heroData = [
     title: 'Power Blends with Design',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero2,
+    alt: "Power Design",
     primaryBtn: 'Make it Yours',
     secondaryBtn: 'Contact us',
   },
-   {
+  {
     title: 'Power Blends with a style',
     desc: 'Experience the thrill of a powerful ride blended with premium design and eco-efficiency.',
     img: hero3,
+    alt: "Power Style",
     primaryBtn: 'Make it Yours',
     secondaryBtn: 'Contact us',
   }
@@ -43,7 +42,7 @@ const Hero = () => {
       setTimeout(() => {
         setIndex((prev) => (prev + 1) % heroData.length);
         setVisible(true);
-      }, 400); // transition time
+      }, 400);
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -79,7 +78,14 @@ const Hero = () => {
               </div>
 
               <div className="hero-right">
-                <img src={data.img} alt="Scooty" className="hero-image" />
+                <img
+                  src={data.img}
+                  alt={data.alt}
+                  className="hero-image"
+                  loading="eager"
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/600x400?text=Image+Not+Found'; }}
+                />
               </div>
             </motion.div>
           )}
@@ -98,7 +104,9 @@ const Hero = () => {
                 setVisible(true);
               }, 400);
             }}
-          ></span>
+            role="button"
+            aria-label={`Go to slide ${i + 1}`}
+          />
         ))}
       </div>
     </section>

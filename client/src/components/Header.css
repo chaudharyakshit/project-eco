@@ -17,7 +17,7 @@ header {
 }
 
 .logo {
-  width: 90px;
+  width: 120px;
   transition: all 0.3s;
 }
 
@@ -122,6 +122,6 @@ nav ul li a:hover {
   }
   
   .logo {
-    width: 120px;
+    width: 110px; /* reduce for small phones */
   }
 }

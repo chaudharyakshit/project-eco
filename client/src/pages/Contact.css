@@ -175,3 +175,21 @@
     font-size: 28px;
   }
 }
+
+@media (max-width: 992px) {
+  .contact-container {
+    padding: 100px 16px 0;
+  }
+  .contact-content {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-header h1 {
+    font-size: 24px;
+  }
+  .contact-message { padding: 10px 14px; }
+  .contact-content { gap: 18px; }
+  .contact-image { margin-top: 16px; }
+}

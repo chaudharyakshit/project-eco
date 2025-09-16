@@ -1,11 +1,17 @@
-const mongoose = require("mongoose");
+// routes/contact.js
+const express = require("express");
+const Contact = require("../models/Contact"); // <-- Contact model we just fixed
+const router = express.Router();
 
-const contactSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true },
-    phone: { type: String, required: true },
-    subject: { type: String }, // if "Electronic Dating" is actually a subject or date field
-    message: { type: String, required: true }
-}, { timestamps: true });
+// POST - Save contact form data
+router.post("/", async (req, res) => {
+  try {
+    const newContact = new Contact(req.body);
+    await newContact.save();
+    res.json({ message: "Contact form submitted successfully!" });
+  } catch (err) {
+    res.status(500).json({ message: "Error saving contact data", error: err.message });
+  }
+});
 
-module.exports = mongoose.model("Contact", contactSchema);
+module.exports = router;
