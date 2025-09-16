@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import "./Gallery.css";
 import cruzeon from "../assets/cruzeon.png";
-import CruzeBlade from "../assets/Cruze-blade.png";
-import EcoShine from "../assets/eco-shine.png";
+import CruzeBlade from "../assets/Cruze-Blade.png";
+import EcoShine from "../assets/Eco-Shine.png";
 import EcoSwift from "../assets/EcoSwift.png";
 import Ecojoy from "../assets/eco-joy.png";
 import EcoGlide from "../assets/Eco-Glider.png";

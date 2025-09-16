@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './cruzeon.css';
+import './EcoZeon.css';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
