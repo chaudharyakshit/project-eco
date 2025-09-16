@@ -36,8 +36,8 @@ export default function ScootyDetails() {
       includes: ['1 Scooter', '1 Charger', "Owner’s Manual"],
       variants: [
         {
-          colorName: 'Mint Green',
-          colorHex: '#7FC5B5',
+          colorName: 'black',
+          colorHex: '#010b09ff',
           sku: 'SPARKX-WHT-01',
           stock: 12,
           images: [Rapidshinefront, Rapidshineleft, Rapidshineright, Rapidshineleft]
