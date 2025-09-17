@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './Ecojoy.css';
+import './ecojoy.css';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
