@@ -1,11 +1,11 @@
 .bold-banner1 {
   position: relative;
-  width: 100vw;
-  min-height: 420px;
-  background: #6A89A7;
+  width: 100%;
+  min-height: clamp(200px, 35vh, 420px);
+  background: #000;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   margin-bottom: 22px;
 }
@@ -20,7 +20,7 @@
   height: 100%;
   background-image: url('../assets/Cruze-Blade.png');
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   z-index: 1;
 }
@@ -148,6 +148,14 @@
 
 @media (max-width: 800px) {
   .news-root { padding-top: 40px; }
+  .bold-banner1 {
+    min-height: clamp(180px, 32vh, 300px);
+  }
+  .bold-banner-bg1 {
+    background-size: contain; /* show full image without cropping */
+    background-position: center bottom;
+    background-color: #000; /* avoid white gaps when using contain */
+  }
   .news-title { font-size: 2rem; }
   .news-subhead { font-size: 1.1rem; margin-bottom: 1.1em; }
   .news-grid { gap: 15px; }

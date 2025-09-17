@@ -1,7 +1,7 @@
 /* ====== Banner Section ====== */
 .about-banner {
   background: url('../assets/about1.png') center/cover no-repeat;
-  height: 250px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,9 +167,11 @@
 
 @media (max-width: 576px) {
   .about-banner {
-    height: 180px;
-    background-position: center;
-    padding-top: 8px; /* ensure safe space under fixed header */
+    height: 220px;
+    background-position: center bottom;
+    padding-top: calc(var(--header-h, 80px) + 8px);
+    background-size: contain; /* show full artwork on small screens */
+    background-color: #000; /* match theme, avoid gaps */
   }
   .about-title {
     font-size: 1.6rem;
