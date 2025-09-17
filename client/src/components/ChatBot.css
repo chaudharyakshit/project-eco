@@ -300,11 +300,11 @@
 
 /* Responsive: keep chatbot usable on small phones */
 @media (max-width: 576px) {
-  .chatbot-container { left: 16px; bottom: 16px; }
+  .chatbot-container { left: max(12px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); }
   .chatbot-toggle { width: 54px; height: 54px; }
-  .chatbox { width: 92vw; height: 70vh; }
+  .chatbox { width: 92vw; height: 70vh; max-height: calc(100vh - 100px); }
 }
 
 @media (max-width: 360px) {
-  .chatbox { width: 94vw; height: 68vh; }
+  .chatbox { width: 96vw; height: 68vh; }
 }
