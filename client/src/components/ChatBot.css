@@ -297,3 +297,14 @@
   color: #666;
   font-size: 14px;
 }
+
+/* Responsive: keep chatbot usable on small phones */
+@media (max-width: 576px) {
+  .chatbot-container { left: 16px; bottom: 16px; }
+  .chatbot-toggle { width: 54px; height: 54px; }
+  .chatbox { width: 92vw; height: 70vh; }
+}
+
+@media (max-width: 360px) {
+  .chatbox { width: 94vw; height: 68vh; }
+}
