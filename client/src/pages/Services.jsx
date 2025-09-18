@@ -1,6 +1,6 @@
 import React from "react";
 import "./Services.css";
-import bannerImg from "../assets/Inner-Images/Cruze-Blade/black/left.png";
+import bannerImg from "../assets/banner11.png";
 
 // Service Images
 import carMaintenanceImg from "../assets/service1.png";
@@ -42,7 +42,6 @@ const Services = () => {
     <div className="services-page">
       {/* Banner */}
       <div className="services-banner">
-        <img src={bannerImg} alt="Services Banner" />
         <div className="banner-text">
           <h1>Services</h1>
           <p>

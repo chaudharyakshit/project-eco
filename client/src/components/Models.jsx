@@ -24,7 +24,7 @@ const models = [
   },
   {
     id: 2,
-    name: 'Eco Gilder',
+    name: 'Eco Glider',
     tagline: 'City Commuter Pro',
     price: 'Starting at ',
     image: EcoGlider,

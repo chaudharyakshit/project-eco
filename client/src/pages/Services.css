@@ -1,6 +1,6 @@
 .services-banner {
-  background: url('../assets/Cruze-Blade.png') center/cover no-repeat;
-  height: 250px;
+  background: url('../assets/banner11.png') right center/cover no-repeat;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +114,12 @@
 }
 
 @media (max-width: 768px) {
-  .services-banner { height: 200px; }
+  .services-banner {
+    height: 220px;
+    background-size: cover; /* fill area without black bars */
+    background-position: right center;
+    background-color: #000;
+  }
   .banner-text { left: 16px; bottom: 16px; }
   .banner-text h1 { font-size: 26px; }
   .services-grid { gap: 20px; }

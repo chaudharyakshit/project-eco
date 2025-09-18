@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Hero.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import hero1 from "../assets/8b.png";
@@ -35,39 +35,8 @@ const heroData = [
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
-  const [imagesLoaded, setImagesLoaded] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
 
-  // Preload images for better performance
   useEffect(() => {
-    const preloadImages = () => {
-      const imagePromises = heroData.map((item, idx) => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.onload = () => {
-            setImagesLoaded(prev => ({ ...prev, [idx]: true }));
-            resolve();
-          };
-          img.onerror = () => {
-            setImagesLoaded(prev => ({ ...prev, [idx]: true }));
-            resolve();
-          };
-          img.src = item.img;
-        });
-      });
-      
-      Promise.all(imagePromises).then(() => {
-        setIsLoading(false);
-      });
-    };
-
-    preloadImages();
-  }, []);
-
-  // Auto-rotate slides
-  useEffect(() => {
-    if (isLoading) return;
-    
     const timer = setTimeout(() => {
       setVisible(false);
       setTimeout(() => {
@@ -77,31 +46,15 @@ const Hero = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [index, isLoading]);
+  }, [index]);
 
   const data = heroData[index];
-
-  // Handle manual slide change
-  const handleSlideChange = useCallback((newIndex) => {
-    setVisible(false);
-    setTimeout(() => {
-      setIndex(newIndex);
-      setVisible(true);
-    }, 400);
-  }, []);
 
   return (
     <section className="hero-section">
       <div className="hero-wrapper">
-        {isLoading && (
-          <div className="hero-loading">
-            <div className="loading-spinner"></div>
-            <p>Loading...</p>
-          </div>
-        )}
-        
         <AnimatePresence mode="wait">
-          {visible && !isLoading && (
+          {visible && (
             <motion.div
               key={index}
               className="hero-slide"
@@ -130,15 +83,8 @@ const Hero = () => {
                   alt={data.alt}
                   className="hero-image"
                   loading="eager"
-                  style={{ 
-                    maxWidth: '100%', 
-                    height: 'auto',
-                    opacity: imagesLoaded[index] ? 1 : 0.7,
-                    transition: 'opacity 0.3s ease'
-                  }}
-                  onError={(e) => { 
-                    e.currentTarget.src = 'https://via.placeholder.com/600x400?text=Image+Not+Found'; 
-                  }}
+                  style={{ maxWidth: '100%', height: 'auto' }}
+                  onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/600x400?text=Image+Not+Found'; }}
                 />
               </div>
             </motion.div>
@@ -151,16 +97,15 @@ const Hero = () => {
           <span
             key={i}
             className={`dot ${index === i ? 'active' : ''}`}
-            onClick={() => handleSlideChange(i)}
+            onClick={() => {
+              setVisible(false);
+              setTimeout(() => {
+                setIndex(i);
+                setVisible(true);
+              }, 400);
+            }}
             role="button"
             aria-label={`Go to slide ${i + 1}`}
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                handleSlideChange(i);
-              }
-            }}
           />
         ))}
       </div>

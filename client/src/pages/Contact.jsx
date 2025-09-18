@@ -58,6 +58,10 @@ const ContactUs = () => {
 
   return (
     <div className="contact-container">
+      <div className="contact-banner">
+        <div className="overlay"></div>
+        <div className="title">Contact Us</div>
+      </div>
       {/* Main heading */}
       <div className="contact-header">
         <h1>Our Contact Information</h1>
@@ -79,7 +83,7 @@ const ContactUs = () => {
             <h3>Contact Number</h3>
             <ul>
               <li> +919557533303</li>
-              <li>Email: Indiasgodigital5@gmail.com</li>
+              <li>Email: info@indiasgo.com</li>
             </ul>
           </div>
 

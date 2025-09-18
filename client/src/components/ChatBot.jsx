@@ -44,9 +44,9 @@ const ChatBot = () => {
       name: "🛵 Product Info",
       icon: "scooter",
       questions: [
-        "What are the features of the EcoShine model?",
+        "What are the features of the Eco Shine model?",
         "What is the battery range of your electric scooters?",
-        "What colors are available for the EcoJoy?",
+        "What colors are available for the Eco Joy?",
         "Can I compare different scooty models?",
         "What is the top speed of Cruze Blade?",
         "Are your scooters suitable for city commuting?",
@@ -56,30 +56,31 @@ const ChatBot = () => {
         "What is the warranty on the battery and motor?"
       ],
       answers: [
-        "The EcoShine model features LED lighting, digital dashboard, 3 riding modes, and regenerative braking.",
+        "The Eco Shine model features LED lighting, digital dashboard, 3 riding modes, and regenerative braking.",
         "Our electric scooters offer a range of 80-120 km per charge depending on model and riding conditions.",
-        "EcoJoy comes in 5 colors: Midnight Black, Pearl White, Ocean Blue, Ruby Red, and Forest Green.",
+        "Eco Joy comes in 5 colors: Midnight Black, Pearl White, Ocean Blue, Ruby Red, and Forest Green.",
         "Yes! Use our comparison tool on the product page to compare up to 3 models side by side.",
-        "The Cruze Blade has a top speed of 75 km/h in sports mode.",
+        "The Cruze Blade has a top speed of 60 km/h in sports mode.",
         "Absolutely! Our scooters are designed specifically for urban commuting with compact size and good maneuverability.",
-        "Charging time is 4-6 hours for a full charge from empty.",
-        "Yes, our premium models (EcoShine Pro and Cruze Blade) feature reverse gear for easy parking.",
+        "Charging time is 4 hours max for a full charge from empty.",
+        "Yes, our premium models (Eco Shine Pro and Cruze Blade) feature reverse gear for easy parking.",
         "We use disc brakes in front and drum brakes in rear for optimal stopping power.",
-        "Battery warranty is 3 years or 30,000 km, motor warranty is 5 years unlimited km."
+        "Battery warranty is 1 years or 30,000 km, motor warranty is 1 years unlimited km."
       ]
     },
     {
       name: "💰 Pricing & Finance",
       icon: "currency-rupee",
       questions: [
-        "What is the price of the EcoSwift?",
+        "What is the price of the  Ecocruze Scooters?",
         "Do you offer EMI or loan options?",
         "Is there a calculator to estimate monthly payments?",
         "Are there any discounts for bulk orders?",
         "What's included in the on-road price?"
+        
       ],
       answers: [
-        "EcoSwift starts at ₹85,999 (ex-showroom). On-road price varies by location.",
+        "Ecocruze Scooters start at ₹ as you will get this info from our contact or sales team(ex-showroom). On-road price varies by location.",
         "Yes, we partner with major banks offering EMI options starting at 6.99% interest.",
         "Our website has an EMI calculator under the 'Finance' section.",
         "For orders of 5+ units, we offer 5% discount and free accessories.",
@@ -116,10 +117,10 @@ const ChatBot = () => {
       ],
       answers: [
         "Our website shows all service centers. Share your location for nearest one.",
-        "Free first service, paid annual services, roadside assistance, and warranty claims.",
+        " first service, paid annual services, roadside assistance, and warranty claims.",
         "First service at 500km, then every 6 months or 5000km (whichever comes first).",
-        "First 2 services are free. Extended warranty includes 2 more free services.",
-        "Book service appointments through our app, website, or by calling customer care."
+        "Free servicing is depend on the model and warranty package.",
+        "Book service appointments through our website, or by calling customer care."
       ]
     },
     {
@@ -134,21 +135,24 @@ const ChatBot = () => {
       ],
       answers: [
         "Submit dealer inquiry form on our website. Our team will contact you.",
-        "Minimum 1000 sq.ft showroom space and ₹25L investment required.",
+        "Minimum 200 sq.ft showroom space and ₹15L investment required.",
         "Franchise fee is ₹5L refundable deposit for metro locations.",
-        "Email dealership@bikejunction.com or call 1800-123-4567.",
-        "We have 87 showrooms across India. View complete list on our dealership page."
+        "Email info@indiasgo.com or call +91 9557533303.",
+        "We have many showrooms across India. View complete list on our dealership page."
       ]
     }
   ];
 
  const handleSubmit = async (e) => {
   e.preventDefault();
-  if (name.trim() && number.trim()) {
+  const isValidPhone = /^\d{10}$/.test(number.trim());
+  if (name.trim() && isValidPhone) {
     await saveUserData();
     addToChat(`User: ${name} (${number})`, 'user');
     addToChat("Bot: Hi " + name + "! How can I assist you today? Here are the help categories:", 'bot');
     setStep(1);
+  } else {
+    addToChat('Bot: Please enter a valid 10-digit mobile number to start.', 'bot');
   }
 };
 
@@ -227,7 +231,7 @@ const ChatBot = () => {
                   type="tel"
                   placeholder="Phone Number"
                   value={number}
-                  onChange={(e) => setNumber(e.target.value)}
+                  onChange={(e) => setNumber(e.target.value.replace(/[^0-9]/g, '').slice(0, 10))}
                   required
                 />
                 <button type="submit" className="submit-btn">Start Chat</button>

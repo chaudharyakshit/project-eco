@@ -73,19 +73,19 @@ export default function ScootyDetails() {
            // },
       ],
       specs: {
-        motorPowerW: 1000,
+        motorPowerW: 1200,
         batteryCapacityWh: 2160,
         rangeKm: 90,
         topSpeedKmph: 60,
         chargingTimeHrs: 3.5,
-        braking: 'Front Disc & Rear Drum  Brake',
+        braking: 'Double disc brake',
         suspension: 'Telescopic front, dual shock rear',
-        weightKg: 80,
+        weightKg: 95,
         dimensions: '1740 × 720 × 1170 mm'
       },
       deliveryReturns: {
         deliveryText: 'Standard delivery in 7–14 working days. Free shipping on eligible orders.',
-        returnsText: '7‑day return for manufacturing defects. Registration/RTO charges non‑refundable.'
+        returnsText: '7‑day return for manufacturing defects. Registration charges non‑refundable.'
       }
     }),
     []

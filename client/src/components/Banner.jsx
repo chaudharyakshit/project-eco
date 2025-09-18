@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./Banner.css";
-import banner1 from "../assets/banner1.png";
+import banner1 from "../assets/banner21.png";
 import { Link } from "react-router-dom";
 
 const ScootyBanner = () => {

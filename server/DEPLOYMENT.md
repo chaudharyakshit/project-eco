@@ -37,7 +37,7 @@
    PORT=5001
    HOST=0.0.0.0
    NODE_ENV=production
-   FRONTEND_URL=https://your-frontend-domain.com
+   FRONTEND_URL=https://ecocruze.in
    ```
 
 2. **Install Dependencies**:

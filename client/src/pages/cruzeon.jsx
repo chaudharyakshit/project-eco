@@ -84,7 +84,7 @@ export default function ScootyDetails() {
       },
       deliveryReturns: {
         deliveryText: 'Standard delivery in 7–14 working days. Free shipping on eligible orders.',
-        returnsText: '7‑day return for manufacturing defects. Registration/RTO charges non‑refundable.'
+        returnsText: '7‑day return for manufacturing defects. Registration charges non‑refundable.'
       }
     }),
     []

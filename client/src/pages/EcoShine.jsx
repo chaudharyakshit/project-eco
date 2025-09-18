@@ -23,7 +23,7 @@ import  whiteside  from '../assets/Inner-Images/Eco-Shine/white/1.png';
 const PLACEHOLDER = '/src/assets/hero-1.webp';
 
 export default function ScootyDetails() {
-  const [variantIndex, setVariantIndex] = useState(0);
+  const [variantIndex, setVariantIndex] = useState(1);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -92,7 +92,7 @@ export default function ScootyDetails() {
       },
       deliveryReturns: {
         deliveryText: 'Standard delivery in 7–14 working days. Free shipping on eligible orders.',
-        returnsText: '7‑day return for manufacturing defects. Registration/RTO charges non‑refundable.'
+        returnsText: '7‑day return for manufacturing defects. Registration charges non‑refundable.'
       }
     }),
     []

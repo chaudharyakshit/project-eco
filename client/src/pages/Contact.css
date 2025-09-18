@@ -1,9 +1,26 @@
+/* Contact banner like About */
+.contact-banner {
+  background: url('../assets/banner11.png') right center/cover no-repeat;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-banner .overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.35);
+}
+
+.contact-banner .title {
+  position: relative; color: #fff; font-size: 2rem; font-weight: 700;
+}
 /* Contact Us Page Styles */
 
 .contact-container {
   max-width: 1200px;
   margin:  auto;
-  padding-top: 120px;
+  padding-top: 0; /* main already offsets for fixed header */
   font-family: 'Arial', sans-serif;
   color: #333;
 }
@@ -108,6 +125,8 @@
 .contact-image img {
   width: 100%;
   height: auto;
+  max-height: 420px;
+  object-fit: cover; /* keep image filled without distortion */
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -159,6 +178,12 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .contact-banner {
+    height: 220px;
+    background-position: center;
+    background-size: cover; /* fill area on small screens */
+    background-color: #000; /* letterbox background if needed */
+  }
   .contact-content {
     flex-direction: column;
   }
@@ -192,4 +217,5 @@
   .contact-message { padding: 10px 14px; }
   .contact-content { gap: 18px; }
   .contact-image { margin-top: 16px; }
+  .contact-banner { height: 200px; }
 }
