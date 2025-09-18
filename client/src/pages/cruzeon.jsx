@@ -78,12 +78,12 @@ export default function ScootyDetails() {
         topSpeedKmph: 60,
         chargingTimeHrs: 3.5,
         braking: 'Front Disc & Rear Drum  Brake',
-        suspension: 'Telescopic front, dual shock rear',
+        suspension: 'Telescopic front, dual shocker rear',
         weightKg: 85,
         dimensions: '1850 × 720 × 1120 mm'
       },
       deliveryReturns: {
-        deliveryText: 'Standard delivery in 7–14 working days. Free shipping on eligible orders.',
+        deliveryText: 'Standard delivery in 5–14 working days. Free shipping on eligible orders.',
         returnsText: '7‑day return for manufacturing defects. Registration charges non‑refundable.'
       }
     }),

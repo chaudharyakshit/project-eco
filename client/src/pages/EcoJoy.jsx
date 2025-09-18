@@ -100,8 +100,8 @@ export default function ScootyDetails() {
         dimensions: '1730 × 690 × 1280 mm'
       },
       deliveryReturns: {
-        deliveryText: 'Standard delivery in 7–14 working days. Free shipping on eligible orders.',
-        returnsText: '7‑day return for manufacturing defects. Registration charges non‑refundable.'
+        deliveryText: 'Standard delivery in 5–14 working days. Free shipping on eligible orders.',
+        returnsText: '5‑day return for manufacturing defects. Registration charges non‑refundable.'
       }
     }),
     []
